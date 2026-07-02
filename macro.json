@@ -1,6 +1,6 @@
 {
   "macro": {
-    "updatedAt": "2026-07-02T08:32:35.182844+00:00",
+    "updatedAt": "2026-07-02T23:11:11.281044+00:00",
     "regime": "RISK-ON",
     "risk_lr": 1.0,
     "headline": "RISK-ON \u2014 0 red, 1 watch",
@@ -8,21 +8,21 @@
     "signals": [
       {
         "signal": "Credit (HY OAS)",
-        "value": "275 bps",
+        "value": "274 bps",
         "grade": "green",
         "reason": "Junk-bond stress is low \u2014 lenders relaxed.",
         "trend": "flat \u2192"
       },
       {
         "signal": "Credit speed (5-day)",
-        "value": "-1 bps",
+        "value": "-4 bps",
         "grade": "green",
         "reason": "Credit is barely moving \u2014 calm.",
         "trend": "improving \u2193"
       },
       {
         "signal": "Contagion (HY-IG)",
-        "value": "199 bps",
+        "value": "198 bps",
         "grade": "green",
         "reason": "Junk-vs-safe gap normal \u2014 not spreading.",
         "trend": "flat \u2192"
@@ -36,33 +36,33 @@
       },
       {
         "signal": "Nasdaq drawdown",
-        "value": "-2.7%",
+        "value": "-4.4%",
         "grade": "green",
         "reason": "Near highs.",
-        "trend": "improving \u2193"
+        "trend": "flat \u2192"
       },
       {
         "signal": "Breadth",
-        "value": "73%",
+        "value": "70%",
         "grade": "green",
-        "reason": "73% of stocks healthy \u2014 broad.",
+        "reason": "70% of stocks healthy \u2014 broad.",
         "trend": "improving \u2193"
       },
       {
         "signal": "Semis vs trend",
-        "value": "+46%",
+        "value": "+39%",
         "grade": "yellow",
         "reason": "Semis far above trend \u2014 stretched.",
-        "trend": "flat \u2192"
+        "trend": "worsening \u2191"
       }
     ],
     "raw": {
-      "hy_oas": 275,
-      "hy_ig": 199,
+      "hy_oas": 274,
+      "hy_ig": 198,
       "vix_slope": -2.6,
-      "qqq_dd": -0.027,
-      "breadth": 0.73,
-      "smh_vs_200dma": 0.462
+      "qqq_dd": -0.044,
+      "breadth": 0.7,
+      "smh_vs_200dma": 0.391
     },
     "alerts": []
   }
