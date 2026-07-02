@@ -1,6 +1,6 @@
 {
   "macro": {
-    "updatedAt": "2026-07-01T18:41:03.985904+00:00",
+    "updatedAt": "2026-07-02T08:32:35.182844+00:00",
     "regime": "RISK-ON",
     "risk_lr": 1.0,
     "headline": "RISK-ON \u2014 0 red, 1 watch",
@@ -36,7 +36,7 @@
       },
       {
         "signal": "Nasdaq drawdown",
-        "value": "-2.5%",
+        "value": "-2.7%",
         "grade": "green",
         "reason": "Near highs.",
         "trend": "improving \u2193"
@@ -60,9 +60,9 @@
       "hy_oas": 275,
       "hy_ig": 199,
       "vix_slope": -2.6,
-      "qqq_dd": -0.025,
+      "qqq_dd": -0.027,
       "breadth": 0.73,
-      "smh_vs_200dma": 0.464
+      "smh_vs_200dma": 0.462
     },
     "alerts": []
   }
