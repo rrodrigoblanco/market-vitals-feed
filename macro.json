@@ -1,6 +1,6 @@
 {
   "macro": {
-    "updatedAt": "2026-07-03T10:16:06.340588+00:00",
+    "updatedAt": "2026-07-04T07:31:32.224456+00:00",
     "regime": "RISK-ON",
     "risk_lr": 1.0,
     "headline": "RISK-ON \u2014 0 red, 1 watch",
@@ -8,21 +8,21 @@
     "signals": [
       {
         "signal": "Credit (HY OAS)",
-        "value": "274 bps",
+        "value": "275 bps",
         "grade": "green",
         "reason": "Junk-bond stress is low \u2014 lenders relaxed.",
         "trend": "flat \u2192"
       },
       {
         "signal": "Credit speed (5-day)",
-        "value": "-4 bps",
+        "value": "-3 bps",
         "grade": "green",
         "reason": "Credit is barely moving \u2014 calm.",
         "trend": "improving \u2193"
       },
       {
         "signal": "Contagion (HY-IG)",
-        "value": "198 bps",
+        "value": "200 bps",
         "grade": "green",
         "reason": "Junk-vs-safe gap normal \u2014 not spreading.",
         "trend": "flat \u2192"
@@ -57,8 +57,8 @@
       }
     ],
     "raw": {
-      "hy_oas": 274,
-      "hy_ig": 198,
+      "hy_oas": 275,
+      "hy_ig": 200,
       "vix_slope": -2.6,
       "qqq_dd": -0.044,
       "breadth": 0.7,
