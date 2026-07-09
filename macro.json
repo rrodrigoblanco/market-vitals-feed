@@ -1,6 +1,6 @@
 {
   "macro": {
-    "updatedAt": "2026-07-08T09:16:13.364637+00:00",
+    "updatedAt": "2026-07-09T08:59:04.463541+00:00",
     "regime": "RISK-ON",
     "risk_lr": 1.0,
     "headline": "RISK-ON \u2014 0 red, 1 watch",
@@ -8,7 +8,7 @@
     "signals": [
       {
         "signal": "Credit (HY OAS)",
-        "value": "272 bps",
+        "value": "267 bps",
         "grade": "green",
         "reason": "Junk-bond stress is low \u2014 lenders relaxed.",
         "trend": "improving \u2193"
@@ -22,21 +22,21 @@
       },
       {
         "signal": "Contagion (HY-IG)",
-        "value": "197 bps",
+        "value": "191 bps",
         "grade": "green",
         "reason": "Junk-vs-safe gap normal \u2014 not spreading.",
         "trend": "flat \u2192"
       },
       {
         "signal": "Volatility shape",
-        "value": "slope -3.2",
+        "value": "slope -2.9",
         "grade": "green",
         "reason": "Near-term fear below 3-month \u2014 calm.",
-        "trend": "improving \u2193"
+        "trend": "flat \u2192"
       },
       {
         "signal": "Nasdaq drawdown",
-        "value": "-4.8%",
+        "value": "-4.5%",
         "grade": "green",
         "reason": "Near highs.",
         "trend": "worsening \u2191"
@@ -46,23 +46,23 @@
         "value": "70%",
         "grade": "green",
         "reason": "70% of stocks healthy \u2014 broad.",
-        "trend": "flat \u2192"
+        "trend": "worsening \u2191"
       },
       {
         "signal": "Semis vs trend",
-        "value": "+36%",
+        "value": "+38%",
         "grade": "yellow",
         "reason": "Semis far above trend \u2014 stretched.",
         "trend": "worsening \u2191"
       }
     ],
     "raw": {
-      "hy_oas": 272,
-      "hy_ig": 197,
-      "vix_slope": -3.2,
-      "qqq_dd": -0.048,
+      "hy_oas": 267,
+      "hy_ig": 191,
+      "vix_slope": -2.9,
+      "qqq_dd": -0.045,
       "breadth": 0.7,
-      "smh_vs_200dma": 0.357
+      "smh_vs_200dma": 0.379
     },
     "alerts": []
   }
