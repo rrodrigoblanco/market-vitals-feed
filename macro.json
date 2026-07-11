@@ -1,6 +1,6 @@
 {
   "macro": {
-    "updatedAt": "2026-07-10T11:23:19.565921+00:00",
+    "updatedAt": "2026-07-11T00:13:43.267063+00:00",
     "regime": "RISK-ON",
     "risk_lr": 1.0,
     "headline": "RISK-ON \u2014 0 red, 1 watch",
@@ -15,7 +15,7 @@
       },
       {
         "signal": "Credit speed (5-day)",
-        "value": "-4 bps",
+        "value": "-5 bps",
         "grade": "green",
         "reason": "Credit is barely moving \u2014 calm.",
         "trend": "flat \u2192"
@@ -29,40 +29,40 @@
       },
       {
         "signal": "Volatility shape",
-        "value": "slope -2.6",
+        "value": "slope -3.1",
         "grade": "green",
         "reason": "Near-term fear below 3-month \u2014 calm.",
         "trend": "flat \u2192"
       },
       {
         "signal": "Nasdaq drawdown",
-        "value": "-3.0%",
+        "value": "-2.7%",
         "grade": "green",
         "reason": "Near highs.",
-        "trend": "flat \u2192"
+        "trend": "improving \u2193"
       },
       {
         "signal": "Breadth",
-        "value": "70%",
+        "value": "73%",
         "grade": "green",
-        "reason": "70% of stocks healthy \u2014 broad.",
-        "trend": "worsening \u2191"
+        "reason": "73% of stocks healthy \u2014 broad.",
+        "trend": "improving \u2193"
       },
       {
         "signal": "Semis vs trend",
         "value": "+41%",
         "grade": "yellow",
         "reason": "Semis far above trend \u2014 stretched.",
-        "trend": "worsening \u2191"
+        "trend": "flat \u2192"
       }
     ],
     "raw": {
       "hy_oas": 270,
       "hy_ig": 194,
-      "vix_slope": -2.6,
-      "qqq_dd": -0.03,
-      "breadth": 0.7,
-      "smh_vs_200dma": 0.409
+      "vix_slope": -3.1,
+      "qqq_dd": -0.027,
+      "breadth": 0.73,
+      "smh_vs_200dma": 0.411
     },
     "alerts": []
   }
