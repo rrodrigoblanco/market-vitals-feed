@@ -1,9 +1,9 @@
 {
   "macro": {
-    "updatedAt": "2026-07-14T07:24:20.211039+00:00",
+    "updatedAt": "2026-07-14T23:38:27.548966+00:00",
     "regime": "RISK-ON",
     "risk_lr": 1.0,
-    "headline": "RISK-ON \u2014 all clear",
+    "headline": "RISK-ON \u2014 0 red, 1 watch",
     "advice": "Stay invested. Add to conviction names on normal pullbacks, in thirds. Keep dry powder.",
     "signals": [
       {
@@ -15,54 +15,54 @@
       },
       {
         "signal": "Credit speed (5-day)",
-        "value": "-3 bps",
+        "value": "+2 bps",
         "grade": "green",
         "reason": "Credit is barely moving \u2014 calm.",
         "trend": "worsening \u2191"
       },
       {
         "signal": "Contagion (HY-IG)",
-        "value": "192 bps",
+        "value": "191 bps",
         "grade": "green",
         "reason": "Junk-vs-safe gap normal \u2014 not spreading.",
         "trend": "flat \u2192"
       },
       {
         "signal": "Volatility shape",
-        "value": "slope -3.5",
+        "value": "slope -2.5",
         "grade": "green",
         "reason": "Near-term fear below 3-month \u2014 calm.",
         "trend": "flat \u2192"
       },
       {
         "signal": "Nasdaq drawdown",
-        "value": "-4.5%",
+        "value": "-3.4%",
         "grade": "green",
         "reason": "Near highs.",
-        "trend": "worsening \u2191"
+        "trend": "improving \u2193"
       },
       {
         "signal": "Breadth",
         "value": "73%",
         "grade": "green",
         "reason": "73% of stocks healthy \u2014 broad.",
-        "trend": "flat \u2192"
+        "trend": "improving \u2193"
       },
       {
         "signal": "Semis vs trend",
-        "value": "+35%",
-        "grade": "green",
-        "reason": "Semis above trend.",
-        "trend": "worsening \u2191"
+        "value": "+38%",
+        "grade": "yellow",
+        "reason": "Semis far above trend \u2014 stretched.",
+        "trend": "flat \u2192"
       }
     ],
     "raw": {
       "hy_oas": 269,
-      "hy_ig": 192,
-      "vix_slope": -3.5,
-      "qqq_dd": -0.045,
+      "hy_ig": 191,
+      "vix_slope": -2.5,
+      "qqq_dd": -0.034,
       "breadth": 0.73,
-      "smh_vs_200dma": 0.349
+      "smh_vs_200dma": 0.378
     },
     "alerts": []
   }
