@@ -1,9 +1,9 @@
 {
   "macro": {
-    "updatedAt": "2026-07-14T23:38:27.548966+00:00",
+    "updatedAt": "2026-07-15T07:30:11.398734+00:00",
     "regime": "RISK-ON",
     "risk_lr": 1.0,
-    "headline": "RISK-ON \u2014 0 red, 1 watch",
+    "headline": "RISK-ON \u2014 all clear",
     "advice": "Stay invested. Add to conviction names on normal pullbacks, in thirds. Keep dry powder.",
     "signals": [
       {
@@ -36,23 +36,23 @@
       },
       {
         "signal": "Nasdaq drawdown",
-        "value": "-3.4%",
+        "value": "-4.5%",
         "grade": "green",
         "reason": "Near highs.",
-        "trend": "improving \u2193"
+        "trend": "flat \u2192"
       },
       {
         "signal": "Breadth",
-        "value": "73%",
+        "value": "78%",
         "grade": "green",
-        "reason": "73% of stocks healthy \u2014 broad.",
+        "reason": "78% of stocks healthy \u2014 broad.",
         "trend": "improving \u2193"
       },
       {
         "signal": "Semis vs trend",
-        "value": "+38%",
-        "grade": "yellow",
-        "reason": "Semis far above trend \u2014 stretched.",
+        "value": "+34%",
+        "grade": "green",
+        "reason": "Semis above trend.",
         "trend": "flat \u2192"
       }
     ],
@@ -60,9 +60,9 @@
       "hy_oas": 269,
       "hy_ig": 191,
       "vix_slope": -2.5,
-      "qqq_dd": -0.034,
-      "breadth": 0.73,
-      "smh_vs_200dma": 0.378
+      "qqq_dd": -0.045,
+      "breadth": 0.78,
+      "smh_vs_200dma": 0.345
     },
     "alerts": []
   }
