@@ -1,6 +1,6 @@
 {
   "macro": {
-    "updatedAt": "2026-07-18T07:10:55.494965+00:00",
+    "updatedAt": "2026-07-21T00:15:34.960054+00:00",
     "regime": "RISK-ON",
     "risk_lr": 1.0,
     "headline": "RISK-ON \u2014 0 red, 1 watch",
@@ -8,35 +8,35 @@
     "signals": [
       {
         "signal": "Credit (HY OAS)",
-        "value": "271 bps",
+        "value": "273 bps",
         "grade": "green",
         "reason": "Junk-bond stress is low \u2014 lenders relaxed.",
         "trend": "flat \u2192"
       },
       {
         "signal": "Credit speed (5-day)",
-        "value": "+2 bps",
+        "value": "+4 bps",
         "grade": "green",
         "reason": "Credit is barely moving \u2014 calm.",
         "trend": "worsening \u2191"
       },
       {
         "signal": "Contagion (HY-IG)",
-        "value": "193 bps",
+        "value": "194 bps",
         "grade": "green",
         "reason": "Junk-vs-safe gap normal \u2014 not spreading.",
         "trend": "flat \u2192"
       },
       {
         "signal": "Volatility shape",
-        "value": "slope -2.8",
+        "value": "slope -1.8",
         "grade": "green",
         "reason": "Near-term fear below 3-month \u2014 calm.",
         "trend": "worsening \u2191"
       },
       {
         "signal": "Nasdaq drawdown",
-        "value": "-6.7%",
+        "value": "-6.6%",
         "grade": "yellow",
         "reason": "Pulling back.",
         "trend": "worsening \u2191"
@@ -57,12 +57,12 @@
       }
     ],
     "raw": {
-      "hy_oas": 271,
-      "hy_ig": 193,
-      "vix_slope": -2.8,
-      "qqq_dd": -0.067,
+      "hy_oas": 273,
+      "hy_ig": 194,
+      "vix_slope": -1.8,
+      "qqq_dd": -0.066,
       "breadth": 0.73,
-      "smh_vs_200dma": 0.267
+      "smh_vs_200dma": 0.268
     },
     "alerts": []
   }
