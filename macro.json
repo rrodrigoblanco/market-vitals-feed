@@ -1,9 +1,9 @@
 {
   "macro": {
-    "updatedAt": "2026-07-22T01:54:33.297951+00:00",
+    "updatedAt": "2026-07-22T22:02:29.873505+00:00",
     "regime": "RISK-ON",
     "risk_lr": 1.0,
-    "headline": "RISK-ON \u2014 all clear",
+    "headline": "RISK-ON \u2014 0 red, 1 watch",
     "advice": "Stay invested. Add to conviction names on normal pullbacks, in thirds. Keep dry powder.",
     "signals": [
       {
@@ -15,10 +15,10 @@
       },
       {
         "signal": "Credit speed (5-day)",
-        "value": "-3 bps",
+        "value": "-2 bps",
         "grade": "green",
         "reason": "Credit is barely moving \u2014 calm.",
-        "trend": "improving \u2193"
+        "trend": "flat \u2192"
       },
       {
         "signal": "Contagion (HY-IG)",
@@ -29,16 +29,16 @@
       },
       {
         "signal": "Volatility shape",
-        "value": "slope -1.8",
+        "value": "slope -2.5",
         "grade": "green",
         "reason": "Near-term fear below 3-month \u2014 calm.",
         "trend": "worsening \u2191"
       },
       {
         "signal": "Nasdaq drawdown",
-        "value": "-4.9%",
-        "grade": "green",
-        "reason": "Near highs.",
+        "value": "-5.4%",
+        "grade": "yellow",
+        "reason": "Pulling back.",
         "trend": "worsening \u2191"
       },
       {
@@ -53,16 +53,16 @@
         "value": "+32%",
         "grade": "green",
         "reason": "Semis above trend.",
-        "trend": "worsening \u2191"
+        "trend": "flat \u2192"
       }
     ],
     "raw": {
       "hy_oas": 269,
       "hy_ig": 191,
-      "vix_slope": -1.8,
-      "qqq_dd": -0.049,
+      "vix_slope": -2.5,
+      "qqq_dd": -0.054,
       "breadth": 0.73,
-      "smh_vs_200dma": 0.322
+      "smh_vs_200dma": 0.325
     },
     "alerts": []
   }
