@@ -1,6 +1,6 @@
 {
   "macro": {
-    "updatedAt": "2026-07-28T01:49:58.400337+00:00",
+    "updatedAt": "2026-07-28T22:02:54.194993+00:00",
     "regime": "RISK-ON",
     "risk_lr": 1.0,
     "headline": "RISK-ON \u2014 0 red, 2 watch",
@@ -8,61 +8,61 @@
     "signals": [
       {
         "signal": "Credit (HY OAS)",
-        "value": "279 bps",
+        "value": "281 bps",
         "grade": "green",
         "reason": "Junk-bond stress is low \u2014 lenders relaxed.",
         "trend": "worsening \u2191"
       },
       {
         "signal": "Credit speed (5-day)",
-        "value": "+10 bps",
+        "value": "+12 bps",
         "grade": "yellow",
         "reason": "Credit is widening \u2014 watch pace.",
         "trend": "worsening \u2191"
       },
       {
         "signal": "Contagion (HY-IG)",
-        "value": "199 bps",
+        "value": "200 bps",
         "grade": "green",
         "reason": "Junk-vs-safe gap normal \u2014 not spreading.",
-        "trend": "flat \u2192"
+        "trend": "worsening \u2191"
       },
       {
         "signal": "Volatility shape",
-        "value": "slope -1.9",
+        "value": "slope -1.5",
         "grade": "green",
         "reason": "Near-term fear below 3-month \u2014 calm.",
-        "trend": "flat \u2192"
+        "trend": "worsening \u2191"
       },
       {
         "signal": "Nasdaq drawdown",
-        "value": "-8.5%",
+        "value": "-9.4%",
         "grade": "yellow",
         "reason": "Pulling back.",
         "trend": "worsening \u2191"
       },
       {
         "signal": "Breadth",
-        "value": "67%",
+        "value": "63%",
         "grade": "green",
-        "reason": "67% of stocks healthy \u2014 broad.",
+        "reason": "63% of stocks healthy \u2014 broad.",
         "trend": "worsening \u2191"
       },
       {
         "signal": "Semis vs trend",
-        "value": "+23%",
+        "value": "+18%",
         "grade": "green",
         "reason": "Semis above trend.",
         "trend": "worsening \u2191"
       }
     ],
     "raw": {
-      "hy_oas": 279,
-      "hy_ig": 199,
-      "vix_slope": -1.9,
-      "qqq_dd": -0.085,
-      "breadth": 0.67,
-      "smh_vs_200dma": 0.229
+      "hy_oas": 281,
+      "hy_ig": 200,
+      "vix_slope": -1.5,
+      "qqq_dd": -0.094,
+      "breadth": 0.63,
+      "smh_vs_200dma": 0.184
     },
     "alerts": []
   }
