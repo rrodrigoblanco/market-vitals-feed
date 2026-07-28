@@ -1,28 +1,28 @@
 {
   "macro": {
-    "updatedAt": "2026-07-27T22:04:34.889646+00:00",
+    "updatedAt": "2026-07-28T01:49:58.400337+00:00",
     "regime": "RISK-ON",
     "risk_lr": 1.0,
-    "headline": "RISK-ON \u2014 0 red, 1 watch",
+    "headline": "RISK-ON \u2014 0 red, 2 watch",
     "advice": "Stay invested. Add to conviction names on normal pullbacks, in thirds. Keep dry powder.",
     "signals": [
       {
         "signal": "Credit (HY OAS)",
-        "value": "277 bps",
+        "value": "279 bps",
         "grade": "green",
         "reason": "Junk-bond stress is low \u2014 lenders relaxed.",
-        "trend": "flat \u2192"
+        "trend": "worsening \u2191"
       },
       {
         "signal": "Credit speed (5-day)",
-        "value": "+4 bps",
-        "grade": "green",
-        "reason": "Credit is barely moving \u2014 calm.",
-        "trend": "flat \u2192"
+        "value": "+10 bps",
+        "grade": "yellow",
+        "reason": "Credit is widening \u2014 watch pace.",
+        "trend": "worsening \u2191"
       },
       {
         "signal": "Contagion (HY-IG)",
-        "value": "198 bps",
+        "value": "199 bps",
         "grade": "green",
         "reason": "Junk-vs-safe gap normal \u2014 not spreading.",
         "trend": "flat \u2192"
@@ -57,12 +57,12 @@
       }
     ],
     "raw": {
-      "hy_oas": 277,
-      "hy_ig": 198,
+      "hy_oas": 279,
+      "hy_ig": 199,
       "vix_slope": -1.9,
       "qqq_dd": -0.085,
       "breadth": 0.67,
-      "smh_vs_200dma": 0.232
+      "smh_vs_200dma": 0.229
     },
     "alerts": []
   }
