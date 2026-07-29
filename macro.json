@@ -1,69 +1,71 @@
 {
   "macro": {
-    "updatedAt": "2026-07-29T01:52:36.041399+00:00",
-    "regime": "RISK-ON",
-    "risk_lr": 1.0,
-    "headline": "RISK-ON \u2014 0 red, 2 watch",
-    "advice": "Stay invested. Add to conviction names on normal pullbacks, in thirds. Keep dry powder.",
+    "updatedAt": "2026-07-29T21:58:47.901838+00:00",
+    "regime": "GROWTH SCARE",
+    "risk_lr": 0.75,
+    "headline": "GROWTH SCARE \u2014 1 red, 1 watch",
+    "advice": "Likely a buyable dip. Start small, confirm credit stays calm before sizing up.",
     "signals": [
       {
         "signal": "Credit (HY OAS)",
-        "value": "281 bps",
+        "value": "284 bps",
         "grade": "green",
         "reason": "Junk-bond stress is low \u2014 lenders relaxed.",
         "trend": "worsening \u2191"
       },
       {
         "signal": "Credit speed (5-day)",
-        "value": "+12 bps",
+        "value": "+16 bps",
         "grade": "yellow",
         "reason": "Credit is widening \u2014 watch pace.",
         "trend": "worsening \u2191"
       },
       {
         "signal": "Contagion (HY-IG)",
-        "value": "200 bps",
+        "value": "203 bps",
         "grade": "green",
         "reason": "Junk-vs-safe gap normal \u2014 not spreading.",
         "trend": "worsening \u2191"
       },
       {
         "signal": "Volatility shape",
-        "value": "slope -1.5",
+        "value": "slope -1.6",
         "grade": "green",
         "reason": "Near-term fear below 3-month \u2014 calm.",
         "trend": "worsening \u2191"
       },
       {
         "signal": "Nasdaq drawdown",
-        "value": "-9.4%",
-        "grade": "yellow",
-        "reason": "Pulling back.",
+        "value": "-11.2%",
+        "grade": "red",
+        "reason": "Real drawdown.",
         "trend": "worsening \u2191"
       },
       {
         "signal": "Breadth",
-        "value": "63%",
+        "value": "57%",
         "grade": "green",
-        "reason": "63% of stocks healthy \u2014 broad.",
+        "reason": "57% of stocks healthy \u2014 broad.",
         "trend": "worsening \u2191"
       },
       {
         "signal": "Semis vs trend",
-        "value": "+18%",
+        "value": "+13%",
         "grade": "green",
         "reason": "Semis above trend.",
         "trend": "worsening \u2191"
       }
     ],
     "raw": {
-      "hy_oas": 281,
-      "hy_ig": 200,
-      "vix_slope": -1.5,
-      "qqq_dd": -0.094,
-      "breadth": 0.63,
-      "smh_vs_200dma": 0.184
+      "hy_oas": 284,
+      "hy_ig": 203,
+      "vix_slope": -1.6,
+      "qqq_dd": -0.112,
+      "breadth": 0.57,
+      "smh_vs_200dma": 0.125
     },
-    "alerts": []
+    "alerts": [
+      "Nasdaq drawdown is RED"
+    ]
   }
 }
