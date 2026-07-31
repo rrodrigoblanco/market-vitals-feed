@@ -1,52 +1,52 @@
 {
   "macro": {
-    "updatedAt": "2026-07-31T02:02:44.730086+00:00",
+    "updatedAt": "2026-07-31T22:02:55.006799+00:00",
     "regime": "RISK-ON",
     "risk_lr": 1.0,
-    "headline": "RISK-ON \u2014 0 red, 2 watch",
+    "headline": "RISK-ON \u2014 0 red, 1 watch",
     "advice": "Stay invested. Add to conviction names on normal pullbacks, in thirds. Keep dry powder.",
     "signals": [
       {
         "signal": "Credit (HY OAS)",
-        "value": "287 bps",
+        "value": "284 bps",
         "grade": "green",
         "reason": "Junk-bond stress is low \u2014 lenders relaxed.",
-        "trend": "worsening \u2191"
+        "trend": "flat \u2192"
       },
       {
         "signal": "Credit speed (5-day)",
-        "value": "+10 bps",
-        "grade": "yellow",
-        "reason": "Credit is widening \u2014 watch pace.",
-        "trend": "worsening \u2191"
+        "value": "+5 bps",
+        "grade": "green",
+        "reason": "Credit is barely moving \u2014 calm.",
+        "trend": "flat \u2192"
       },
       {
         "signal": "Contagion (HY-IG)",
-        "value": "206 bps",
+        "value": "204 bps",
         "grade": "green",
         "reason": "Junk-vs-safe gap normal \u2014 not spreading.",
         "trend": "flat \u2192"
       },
       {
         "signal": "Volatility shape",
-        "value": "slope -0.8",
+        "value": "slope -2.4",
         "grade": "green",
         "reason": "Near-term fear below 3-month \u2014 calm.",
-        "trend": "worsening \u2191"
+        "trend": "flat \u2192"
       },
       {
         "signal": "Nasdaq drawdown",
-        "value": "-8.3%",
+        "value": "-7.7%",
         "grade": "yellow",
         "reason": "Pulling back.",
-        "trend": "worsening \u2191"
+        "trend": "flat \u2192"
       },
       {
         "signal": "Breadth",
         "value": "67%",
         "grade": "green",
         "reason": "67% of stocks healthy \u2014 broad.",
-        "trend": "flat \u2192"
+        "trend": "improving \u2193"
       },
       {
         "signal": "Semis vs trend",
@@ -57,10 +57,10 @@
       }
     ],
     "raw": {
-      "hy_oas": 287,
-      "hy_ig": 206,
-      "vix_slope": -0.8,
-      "qqq_dd": -0.083,
+      "hy_oas": 284,
+      "hy_ig": 204,
+      "vix_slope": -2.4,
+      "qqq_dd": -0.077,
       "breadth": 0.67,
       "smh_vs_200dma": 0.2
     },
