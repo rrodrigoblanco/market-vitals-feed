@@ -1,79 +1,88 @@
 {
-  "updatedAt": "2026-08-07T14:58:17.081503+00:00",
+  "updatedAt": "2026-08-10T14:55:08.706012+00:00",
   "rates_usd_per_hr": {
     "B200": {
       "low": 3.35,
-      "typical": 5.89,
-      "source": "B200 spot/reserved from $3.35/hr (getdeploying.com, Aug 2026); typical on-demand $4.99-$5.89/hr Lambda/RunPod (Spheron Jun 2026, jarvislabs Aug 2026); Nebius $7.15, Lambda $6.99 cited Aug 2026"
+      "typical": 5.66,
+      "source": "B200 spot from $3.35/hr (Spheron), typical on-demand $5.29-$7.05/hr (Thunder Compute Aug 2026); range $3.35-$16.11/hr across 26 providers"
     },
     "H200": {
-      "low": 1.99,
+      "low": 2.3,
       "typical": 3.99,
-      "source": "H200 spot $1.99/hr, on-demand $3.99/hr Jarvislabs (Aug 2026); GMI $2.60/hr, Lambda $4.49/hr, CoreWeave $6.31/hr, Nebius $4.50/hr, RunPod $4.39/hr cited May-Aug 2026"
+      "source": "H200 floor $2.30/hr (FluidStack), typical $2.60-$4.49/hr (GMI, Lambda, RunPod, Jarvislabs $3.99 Aug 2026); market median ~$3.95-$4.11/hr"
     },
     "H100": {
-      "low": 0.36,
-      "typical": 2.5,
-      "source": "H100 spot from $0.34-$0.36/hr Vast.ai (cloudzero.com May 2026, getdeploying Aug 2026); on-demand median $2.29-$3.66/hr; Thunder $2.19/hr, GMI $2.00/hr, typical neoclouds $2.50-$3.00/hr (Aug 2026)"
+      "low": 0.34,
+      "typical": 2.29,
+      "source": "H100 spot $0.34/hr (Vast.ai), typical on-demand $2.19-$3.37/hr (Thunder Compute, GetDeploying Aug 2026); 1-yr contract $2.35/hr (SemiAnalysis Mar 2026)"
     },
     "A100_80GB": {
       "low": 0.27,
-      "typical": 1.5,
-      "source": "A100 80GB spot floor $0.27/hr Vast.ai (gpus.io Aug 2026); on-demand from $1.09/hr Thunder, $1.35/hr Hyperstack, $1.49-$1.50/hr Jarvislabs/Spheron; median $1.52/hr (gpus.io Aug 2026)"
+      "typical": 1.29,
+      "source": "A100 80GB floor $0.27/hr (gpus.io), Vast.ai marketplace ~$0.72/hr, typical on-demand $1.09-$1.49/hr (Thunder Compute, Jarvislabs, Hyperstack); Silicon Data index $1.29/hr"
     },
     "L40S": {
       "low": 0.4,
       "typical": 0.96,
-      "source": "L40S floor $0.40/hr Vast.ai (gpus.io Jun 2026); typical on-demand $0.86-$0.96/hr Spheron/RunPod, median $1.17/hr (gpus.io Jun 2026), CloudRift $0.63/hr (Aug 2026)"
+      "source": "L40S floor $0.40/hr (Vast.ai spot), typical on-demand $0.86-$1.07/hr (RunPod, Spheron, gpus.io Aug 2026); median ~$1.07/hr across 48 configs"
     }
   },
   "ratios": {
-    "B200_A100": 3.93,
-    "H100_A100": 1.67,
-    "B200_H100": 2.36,
-    "A100_absolute": 1.5
+    "B200_A100": 4.39,
+    "H100_A100": 1.78,
+    "B200_H100": 2.47,
+    "A100_absolute": 1.29
   },
   "depreciation_notes": [
     {
-      "company": "Amazon",
-      "change": "Shortened AI server useful life from 6 years to 5 years effective Jan 2025, citing 'increased pace of technology development, particularly in AI/ML'; resulted in $700M operating income reduction in 2025 plus $920M accelerated depreciation Q4 2024",
-      "source": "Amazon 10-K Feb 2025, deepquarry.substack.com, footnotebrief.com May 2026"
+      "company": "Amazon (AMZN)",
+      "change": "Reduced server/networking useful life from 6 years to 5 years effective Jan 1, 2025; also retired equipment early ($920M accelerated depreciation Q4 2024, $0.6B impact in 2025)",
+      "source": "Amazon 10-K Feb 2025; Deep Quarry, Footnote Brief"
     },
     {
-      "company": "Meta",
-      "change": "Extended server useful life to 5.5 years in Jan 2025 (multiple successive extensions from 4.0\u21924.5\u21925.0\u21925.5 years), adding ~$2.9B to earnings; divergence from Amazon's shortening raises questions about aggressive assumptions",
-      "source": "theforwardview.com, stanleylaman.com, footnotebrief.com May-Jun 2026"
+      "company": "Meta (META)",
+      "change": "Extended useful life to 5.5 years in Jan 2025 (before announcing $115-135B 2026 AI capex); multiple successive extensions",
+      "source": "IndMoney Jun 2026, Medium Jun 2026, Footnote Brief May 2026"
     },
     {
-      "company": "Microsoft",
-      "change": "Extended computer equipment useful life from 4 to 6 years in 2022; current policy allows 2-6 year range; no recent change disclosed but Michael Burry publicly challenged hyperscaler 5-6 year schedules as overstated vs 2-3 year economic reality",
-      "source": "medium.com/all-on-the-line Jun 2026, cnbc.com Nov 2025, footnotebrief.com May 2026"
+      "company": "Microsoft (MSFT)",
+      "change": "Extended server useful life to 6 years in 2022",
+      "source": "Medium Jun 2026, Level-Headed Investing Dec 2025"
     },
     {
-      "company": "Google (Alphabet)",
-      "change": "Extended server useful life from 4 to 6 years in 2023, reducing depreciation by $3.9B that year; no reversal as of Q1 2026 10-Q filing",
-      "source": "medium.com/all-on-the-line Jun 2026, Alphabet 8-K/10-Q Q1 2026"
+      "company": "Alphabet (GOOGL)",
+      "change": "Extended useful life from 4 years to 6 years in 2023, reducing depreciation by $3.9B that year",
+      "source": "Medium Jun 2026, Level-Headed Investing Dec 2025"
     },
     {
-      "company": "Oracle",
-      "change": "Extended useful life from 4 to 5 years in 2023, then to 6 years; analysts flag Oracle's 6-year schedule as most aggressive in cohort and material earnings risk if reverted to 4 years",
-      "source": "medium.com/all-on-the-line Jun 2026, stanleylaman.com Nov 2025"
+      "company": "Oracle (ORCL)",
+      "change": "Extended useful life to 5-6 years in 2023; depreciation $6B annualized H1 FY2026 and rising; Burry sees 26.9% earnings overstatement risk by 2028",
+      "source": "IndMoney Jun 2026, Medium Jun 2026"
+    },
+    {
+      "company": "CoreWeave",
+      "change": "S-1 cites GPU useful life estimation as material risk factor; uses GPU-backed debt with ~$7.5B secured against depreciating collateral; loan covenants may trip by 2027 if chip values decline faster than assumed",
+      "source": "Sacra 2026, The Forward View Jul 2026, TechTimes Jul 2026"
     }
   ],
   "credit_notes": [
     {
-      "note": "CoreWeave closed $8.5B DDTL 4.0 GPU-backed loan facility in March 2026 rated A3/A(low) \u2014 first investment-grade GPU-backed debt; priced SOFR+2.25% floating, ~5.9% fixed, matures 2032. Total CoreWeave debt now exceeds $24.9B (up from <$8B in 2024).",
-      "source": "CoreWeave IR March 31 2026, forbes.com Jun 2026, techtimes.com Jul 2026"
+      "note": "CoreWeave CDS spread hit 855 bps in Jul 2026, implying ~50% five-year default probability; total debt exceeds $21B (up from <$8B in 2024); $7.5B secured by GPU collateral subject to accelerated depreciation",
+      "source": "TechTimes Jul 29, 2026; Quartz May 2026; Sacra 2026"
     },
     {
-      "note": "CoreWeave CDS spreads widened to imply ~50% five-year default probability as of July 29 2026; stock fell 9% same day. Q1 2026: negative $4.71B free cash flow, interest expense $536M consumed 46% of adjusted EBITDA. Moody's July 2026 warning cited AI spending threatens credit quality across MSFT/AMZN/GOOGL/META/ORCL/CoreWeave.",
-      "source": "techtimes.com Jul 30 2026, globaldatacenterhub.com Aug 2026"
+      "note": "CoreWeave March 2026 DDTL 4.0 ($3.1B) priced at SOFR+2.25% (floating) or ~5.9% (fixed), described as first investment-grade GPU-backed financing; spread dropped 175 bps vs 2025 facility",
+      "source": "Forbes Jun 2026; CoreWeave investor relations May 2026"
     },
     {
-      "note": "CoreWeave issued \u20ac2B euro junk bonds + $1.25B dollar bonds in June 2026 at 8.5%/9.625% yields (6-year), expanding GPU debt into global fixed income; total debt & equity raised YTD 2026 ~$28B. Analysts warn circular financing risk as Nvidia invests $2B equity in CoreWeave, which then buys Nvidia GPUs.",
-      "source": "bloomberg.com Jun 11 2026, CoreWeave IR May 18 2026, techtimes.com Jul 2026"
+      "note": "H100 1-year rental contract pricing rose 40% from $1.70/hr (Oct 2025) to $2.35/hr (Mar 2026) per SemiAnalysis index; capacity effectively sold out across all GPU types",
+      "source": "SemiAnalysis Apr 2026; GPUSmith Jul 2026; MEXC Apr 2026"
+    },
+    {
+      "note": "Michael Burry (Nov 2025) estimated hyperscalers understating depreciation by ~$176B (2026-2028), with Oracle and Meta earnings overstated >20% by 2028 if useful life too long",
+      "source": "IndMoney Jun 2026; Medium Jun 2026; Footnote Brief May 2026"
     }
   ],
-  "commentary": "Current rates show clear generational waterfall compression: B200 floor at $3.35/hr is only ~3.7x the A100 floor ($0.27/hr Vast.ai) vs historical 8-10x spreads, while H100 median ($2.50/hr) sits barely above twice the A100 median ($1.50/hr). The divergence in hyperscaler depreciation policy\u2014Amazon shortening to 5 years while Meta extends to 5.5 and Oracle/Google hold at 6\u2014signals deep uncertainty about GPU economic life in the Blackwell transition. CoreWeave's March 2026 investment-grade debt milestone pulled $8.5B of GPU collateral risk into pension/insurance portfolios just as CDS markets priced 50% default odds by July, creating a structural mismatch between credit ratings (A3) and market-implied survival that echoes pre-crisis CDO mispricing.",
+  "commentary": "The waterfall is under pressure from both ends. Spot rates for H100 collapsed to $0.34/hr on Vast.ai even as 1-year contracts jumped 40% to $2.35/hr (SemiAnalysis), signaling tight on-demand capacity but surplus marketplace supply. B200 on-demand ($5.66 typical) commands only 2.4\u00d7 the H100 contract rate despite 2.4\u00d7 VRAM, suggesting Blackwell's premium is narrowing faster than expected. Meanwhile, Amazon shortened server life to 5 years while Meta/MSFT/GOOGL stretched to 5.5-6 years on the same cohort\u2014a $176B accounting gap Burry flags. CoreWeave's 855-bp CDS (50% default odds) and $7.5B GPU-backed debt now price the risk that depreciation schedules assumed in loan covenants exceed economic life, especially as H100 rental rates fell 70% from 2024 peaks yet remain 'fully booked' per CoreWeave disclosures\u2014a paradox that only resolves if inference demand absorbs the cascade or if reported utilization overstates reality.",
   "alerts_enabled": false
 }
