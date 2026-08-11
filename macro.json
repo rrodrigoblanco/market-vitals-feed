@@ -1,6 +1,6 @@
 {
   "macro": {
-    "updatedAt": "2026-08-11T01:06:26.236245+00:00",
+    "updatedAt": "2026-08-11T21:43:14.244682+00:00",
     "regime": "RISK-ON",
     "risk_lr": 1.0,
     "headline": "RISK-ON \u2014 all clear",
@@ -11,14 +11,14 @@
         "value": "270 bps",
         "grade": "green",
         "reason": "Junk-bond stress is low \u2014 lenders relaxed.",
-        "trend": "improving \u2193"
+        "trend": "flat \u2192"
       },
       {
         "signal": "Credit speed (5-day)",
-        "value": "-8 bps",
+        "value": "-3 bps",
         "grade": "green",
         "reason": "Credit is barely moving \u2014 calm.",
-        "trend": "improving \u2193"
+        "trend": "worsening \u2191"
       },
       {
         "signal": "Contagion (HY-IG)",
@@ -29,17 +29,17 @@
       },
       {
         "signal": "Volatility shape",
-        "value": "slope -3.8",
+        "value": "slope -3.5",
         "grade": "green",
         "reason": "Near-term fear below 3-month \u2014 calm.",
         "trend": "improving \u2193"
       },
       {
         "signal": "Nasdaq drawdown",
-        "value": "-3.3%",
+        "value": "-3.6%",
         "grade": "green",
         "reason": "Near highs.",
-        "trend": "improving \u2193"
+        "trend": "flat \u2192"
       },
       {
         "signal": "Breadth",
@@ -53,16 +53,16 @@
         "value": "+25%",
         "grade": "green",
         "reason": "Semis above trend.",
-        "trend": "improving \u2193"
+        "trend": "flat \u2192"
       }
     ],
     "raw": {
       "hy_oas": 270,
       "hy_ig": 192,
-      "vix_slope": -3.8,
-      "qqq_dd": -0.033,
+      "vix_slope": -3.5,
+      "qqq_dd": -0.036,
       "breadth": 0.73,
-      "smh_vs_200dma": 0.246
+      "smh_vs_200dma": 0.25
     },
     "alerts": [],
     "dispersion": null
