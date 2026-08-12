@@ -1,6 +1,6 @@
 {
   "macro": {
-    "updatedAt": "2026-08-12T17:45:09.594240+00:00",
+    "updatedAt": "2026-08-12T21:42:09.576483+00:00",
     "regime": "RISK-ON",
     "risk_lr": 1.0,
     "headline": "RISK-ON \u2014 all clear",
@@ -36,21 +36,21 @@
       },
       {
         "signal": "Nasdaq drawdown",
-        "value": "-2.7%",
+        "value": "-2.9%",
         "grade": "green",
         "reason": "Near highs.",
-        "trend": "improving \u2193"
+        "trend": "flat \u2192"
       },
       {
         "signal": "Breadth",
-        "value": "76%",
+        "value": "77%",
         "grade": "green",
-        "reason": "76% of stocks healthy \u2014 broad.",
+        "reason": "77% of stocks healthy \u2014 broad.",
         "trend": "improving \u2193"
       },
       {
         "signal": "Semis vs trend",
-        "value": "+28%",
+        "value": "+27%",
         "grade": "green",
         "reason": "Semis above trend.",
         "trend": "flat \u2192"
@@ -60,9 +60,9 @@
       "hy_oas": 272,
       "hy_ig": 193,
       "vix_slope": -3.6,
-      "qqq_dd": -0.027,
-      "breadth": 0.76,
-      "smh_vs_200dma": 0.282
+      "qqq_dd": -0.029,
+      "breadth": 0.77,
+      "smh_vs_200dma": 0.273
     },
     "alerts": [],
     "dispersion": {
