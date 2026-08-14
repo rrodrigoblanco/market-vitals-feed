@@ -1,6 +1,6 @@
 {
   "macro": {
-    "updatedAt": "2026-08-14T01:15:02.416820+00:00",
+    "updatedAt": "2026-08-14T21:22:37.781829+00:00",
     "regime": "RISK-ON",
     "risk_lr": 1.0,
     "headline": "RISK-ON \u2014 all clear",
@@ -15,7 +15,7 @@
       },
       {
         "signal": "Credit speed (5-day)",
-        "value": "+0 bps",
+        "value": "+1 bps",
         "grade": "green",
         "reason": "Credit is barely moving \u2014 calm.",
         "trend": "worsening \u2191"
@@ -36,7 +36,7 @@
       },
       {
         "signal": "Nasdaq drawdown",
-        "value": "-1.8%",
+        "value": "-1.9%",
         "grade": "green",
         "reason": "Near highs.",
         "trend": "improving \u2193"
@@ -46,11 +46,11 @@
         "value": "77%",
         "grade": "green",
         "reason": "77% of stocks healthy \u2014 broad.",
-        "trend": "improving \u2193"
+        "trend": "flat \u2192"
       },
       {
         "signal": "Semis vs trend",
-        "value": "+28%",
+        "value": "+27%",
         "grade": "green",
         "reason": "Semis above trend.",
         "trend": "flat \u2192"
@@ -60,31 +60,31 @@
       "hy_oas": 271,
       "hy_ig": 192,
       "vix_slope": -4.0,
-      "qqq_dd": -0.018,
+      "qqq_dd": -0.019,
       "breadth": 0.77,
-      "smh_vs_200dma": 0.279
+      "smh_vs_200dma": 0.273
     },
     "alerts": [],
     "dispersion": {
       "available": true,
       "signal": "Credit dispersion (CCC-BB)",
-      "value": "860 bps",
+      "value": "864 bps",
       "grade": "gray",
-      "reason": "CCC-BB 860bps (100th %ile 5y, z 2.07). 20d +53. BIFURCATION.",
+      "reason": "CCC-BB 864bps (100th %ile 5y, z 2.12). 20d +55. BIFURCATION.",
       "trend": "worsening \u2191",
       "calibration": {
-        "current_bps": 860,
-        "pctile_1y": 98.8,
-        "pctile_5y": 99.6,
-        "z_252d": 2.07,
+        "current_bps": 864,
+        "pctile_1y": 100.0,
+        "pctile_5y": 100.0,
+        "z_252d": 2.12,
         "distribution_5y": {
           "min": 529,
           "p10": 569,
           "p25": 648,
           "median": 705,
           "p75": 744,
-          "p90": 778,
-          "max": 863
+          "p90": 779,
+          "max": 864
         },
         "n_days": 787
       },
@@ -94,12 +94,12 @@
       "alert": false,
       "raw": {
         "bb_oas": 160,
-        "ccc_oas": 1020,
-        "ccc_bb": 860,
-        "ccc_bb_5d": 2,
-        "ccc_bb_20d": 53,
-        "bb_20d": -2,
-        "ccc_20d": 51,
+        "ccc_oas": 1024,
+        "ccc_bb": 864,
+        "ccc_bb_5d": 8,
+        "ccc_bb_20d": 55,
+        "bb_20d": -1,
+        "ccc_20d": 54,
         "hy_20d": 0
       }
     }
