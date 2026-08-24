@@ -1,106 +1,106 @@
 {
   "macro": {
-    "updatedAt": "2026-08-22T00:45:37.305097+00:00",
+    "updatedAt": "2026-08-24T21:25:42.817408+00:00",
     "regime": "RISK-ON",
     "risk_lr": 1.0,
-    "headline": "RISK-ON \u2014 all clear",
+    "headline": "RISK-ON \u2014 0 red, 1 watch",
     "advice": "Stay invested. Add to conviction names on normal pullbacks, in thirds. Keep dry powder.",
     "signals": [
       {
         "signal": "Credit (HY OAS)",
-        "value": "275 bps",
+        "value": "270 bps",
         "grade": "green",
         "reason": "Junk-bond stress is low \u2014 lenders relaxed.",
-        "trend": "worsening \u2191"
+        "trend": "flat \u2192"
       },
       {
         "signal": "Credit speed (5-day)",
-        "value": "+8 bps",
+        "value": "+0 bps",
         "grade": "green",
         "reason": "Credit is barely moving \u2014 calm.",
-        "trend": "worsening \u2191"
+        "trend": "flat \u2192"
       },
       {
         "signal": "Contagion (HY-IG)",
-        "value": "193 bps",
+        "value": "189 bps",
         "grade": "green",
         "reason": "Junk-vs-safe gap normal \u2014 not spreading.",
         "trend": "flat \u2192"
       },
       {
         "signal": "Volatility shape",
-        "value": "slope -3.0",
+        "value": "slope -3.4",
         "grade": "green",
         "reason": "Near-term fear below 3-month \u2014 calm.",
-        "trend": "worsening \u2191"
+        "trend": "flat \u2192"
       },
       {
         "signal": "Nasdaq drawdown",
-        "value": "-4.3%",
-        "grade": "green",
-        "reason": "Near highs.",
+        "value": "-5.2%",
+        "grade": "yellow",
+        "reason": "Pulling back.",
         "trend": "worsening \u2191"
       },
       {
         "signal": "Breadth",
-        "value": "83%",
+        "value": "80%",
         "grade": "green",
-        "reason": "83% of stocks healthy \u2014 broad.",
+        "reason": "80% of stocks healthy \u2014 broad.",
         "trend": "improving \u2193"
       },
       {
         "signal": "Semis vs trend",
-        "value": "+20%",
+        "value": "+17%",
         "grade": "green",
         "reason": "Semis above trend.",
         "trend": "worsening \u2191"
       }
     ],
     "raw": {
-      "hy_oas": 275,
-      "hy_ig": 193,
-      "vix_slope": -3.0,
-      "qqq_dd": -0.043,
-      "breadth": 0.83,
-      "smh_vs_200dma": 0.2
+      "hy_oas": 270,
+      "hy_ig": 189,
+      "vix_slope": -3.4,
+      "qqq_dd": -0.052,
+      "breadth": 0.8,
+      "smh_vs_200dma": 0.169
     },
     "alerts": [],
     "dispersion": {
       "available": true,
       "signal": "Credit dispersion (CCC-BB)",
-      "value": "872 bps",
+      "value": "879 bps",
       "grade": "gray",
-      "reason": "CCC-BB 872bps (100th %ile 5y, z 2.15). 20d +47. BIFURCATION.",
+      "reason": "CCC-BB 879bps (100th %ile 5y, z 2.24). 20d +51. BIFURCATION.",
       "trend": "worsening \u2191",
       "calibration": {
-        "current_bps": 872,
+        "current_bps": 879,
         "pctile_1y": 100.0,
         "pctile_5y": 100.0,
-        "z_252d": 2.15,
+        "z_252d": 2.24,
         "distribution_5y": {
           "min": 529,
-          "p10": 569,
-          "p25": 650,
+          "p10": 568,
+          "p25": 652,
           "median": 707,
           "p75": 746,
           "p90": 781,
-          "max": 872
+          "max": 879
         },
-        "n_days": 787
+        "n_days": 785
       },
       "interpretation": "BIFURCATION \u2014 CCC widening while BB holds. System intact.",
       "divergence_condition_met": false,
       "alerts_enabled": false,
       "alert": false,
       "raw": {
-        "bb_oas": 163,
-        "ccc_oas": 1035,
-        "ccc_bb": 872,
-        "ccc_bb_5d": 8,
-        "ccc_bb_20d": 47,
-        "bb_20d": -3,
-        "ccc_20d": 44,
-        "hy_20d": -2
+        "bb_oas": 158,
+        "ccc_oas": 1037,
+        "ccc_bb": 879,
+        "ccc_bb_5d": 24,
+        "ccc_bb_20d": 51,
+        "bb_20d": -10,
+        "ccc_20d": 41,
+        "hy_20d": -9
       }
     }
   }
