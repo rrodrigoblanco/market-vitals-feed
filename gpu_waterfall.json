@@ -1,83 +1,92 @@
 {
-  "updatedAt": "2026-08-17T14:23:50.137048+00:00",
+  "updatedAt": "2026-08-24T14:38:42.502607+00:00",
   "rates_usd_per_hr": {
     "B200": {
-      "low": 3.7,
-      "typical": 5.75,
-      "source": "Spheron $3.70/hr, Lambda $4.99/hr, Nebius $7.15/hr, AWS $14.24/hr, GCP $16.11/hr; median ~$5.50-$5.80 as of Aug 2026"
+      "low": 3.35,
+      "typical": 7.0,
+      "source": "Multiple providers August 2026: Nebius $7.15, Lambda $6.99, RunPod $8.64, Vast.ai floor ~$3.35-4.63 (getdeploying.com, jarvislabs.ai, tech-insider.org)"
     },
     "H200": {
-      "low": 1.34,
-      "typical": 4.11,
-      "source": "Vast.ai floor $1.94-$3.82/hr (spot/marketplace), Jarvislabs $3.99/hr, Lambda $4.49/hr, CoreWeave $6.31/hr, Azure $13.78/hr; cohort median $4.11/hr"
+      "low": 1.45,
+      "typical": 3.99,
+      "source": "August 2026: Jarvislabs $3.99 on-demand, GMI Cloud $2.60, Hyperbolic $3.49, market floor $1.45 (gmicloud.ai May data), CoreWeave 8-GPU $6.31/GPU (spheron.network, hyperbolic.ai)"
     },
     "H100": {
-      "low": 1.05,
-      "typical": 3.15,
-      "source": "Vast.ai $1.05-$2.75/hr (marketplace floor), Lambda $3.29/hr, RunPod $1.99-$2.89/hr, CoreWeave $6.16/hr; cohort median $3.15/hr Aug 2026"
+      "low": 0.3,
+      "typical": 2.5,
+      "source": "August 2026: Vast.ai marketplace floor $1.49, RunPod $1.99-2.69, GMI Cloud $2.00, Spheron $3.38, AWS ~$5.19 Capacity Blocks, range $0.30-14.90 (getdeploying.com, intuitionlabs.ai, cloudzero.com)"
     },
     "A100_80GB": {
-      "low": 0.4,
-      "typical": 1.35,
-      "source": "Vast.ai $0.40-$0.93/hr (marketplace), Thunder Compute $1.09/hr, Spheron $1.43/hr, Hyperstack $1.35/hr, CoreWeave $2.70/hr"
+      "low": 0.39,
+      "typical": 1.47,
+      "source": "August 2026: Vast.ai floor $0.60 spot, $0.72 typical marketplace, Thunder Compute $1.09, Hyperstack $1.35, Spheron $1.43, median $1.47 across 81 configs (gpus.io, medium.com, thundercompute.com)"
     },
     "L40S": {
       "low": 0.47,
       "typical": 1.27,
-      "source": "Vast.ai $0.47/hr (marketplace floor), CloudRift $0.63/hr, Spheron $0.96/hr, RunPod $0.86/hr, CoreWeave $2.25/hr; median $1.27/hr Aug 2026"
+      "source": "August 2026: Vast.ai $0.47, CloudRift $0.63, Spheron $0.96, Fluence $0.94-2.04, market median $1.27 across 45 configs (gpus.io, cloudrift.ai, getdeploying.com)"
     }
   },
   "ratios": {
-    "B200_A100": 4.26,
-    "H100_A100": 2.33,
-    "B200_H100": 1.83,
-    "A100_absolute": 1.35
+    "B200_A100": 4.76,
+    "H100_A100": 1.7,
+    "B200_H100": 2.8,
+    "A100_absolute": 1.47
   },
   "depreciation_notes": [
     {
+      "company": "Amazon",
+      "change": "Feb 2025: shortened AI server useful life from 6 years to 5 years, citing 'increased pace of technology development in AI/ML'; reduced 2025 operating income by $0.7B plus $0.92B accelerated depreciation in Q4 2024",
+      "source": "Amazon 10-K Feb 2025, deepquarry.substack.com, cnbc.com Nov 2025"
+    },
+    {
       "company": "Microsoft",
-      "change": "Extended useful life of data centers and office buildings from 15 to 25 years effective FY27 (July 2026); previously extended server/networking equipment from 4 to 6 years in 2022",
-      "source": "Microsoft Q4 FY26 earnings call July 29, 2026; filings"
+      "change": "Extended server useful life from ~4 years to 2-6 year range (effective 6 years for most AI servers); 10-K discloses computer equipment 2-6 years as of FY2025",
+      "source": "Microsoft 10-K 2025, footnotebrief.com May 2026, theforwardview.com Jul 2026"
+    },
+    {
+      "company": "Alphabet/Google",
+      "change": "Extended server/network equipment useful life from ~4 years to 6 years between 2022-2024; maintains 6-year schedule as of 2026",
+      "source": "footnotebrief.com May 2026, theforwardview.com Jul 2026, cnbc.com Nov 2025"
     },
     {
       "company": "Meta",
-      "change": "Extended server useful life to 5.5 years in 2025 (from 4\u21924.5\u21925.0\u21925.5 over successive changes), reducing depreciation expense by $2.9B in 2025",
-      "source": "Meta 10-K filings; reported Feb 2025"
-    },
-    {
-      "company": "Amazon",
-      "change": "Shortened useful life of certain servers and networking equipment from 6 to 5 years effective Jan 1, 2025, reducing 2025 operating income by $700M",
-      "source": "Amazon 10-K Feb 7, 2025 disclosure"
-    },
-    {
-      "company": "Alphabet",
-      "change": "Fixed server depreciation at 6 years (extended from ~4 years between 2022-2024)",
-      "source": "SEC filings 2022-2024"
+      "change": "Extended server useful life from 4 years to 5.5 years through successive increases (4\u21924.5\u21925.0\u21925.5); 2025 extension added $2.9B to earnings; extension occurred just before $115-135B AI capex plan for 2026",
+      "source": "indmoney.com Jun 2026, stanleylaman.com Nov 2025, theforwardview.com Jul 2026"
     },
     {
       "company": "Oracle",
-      "change": "Extended estimate from 4 to 5 years in 2023, then to 6 years; cited as aggressive by analysts",
-      "source": "Oracle 10-K filings 2023; analyst commentary 2026"
+      "change": "Extended server depreciation from ~4 years to 6 years between 2022-2024; currently maintains 6-year schedule",
+      "source": "footnotebrief.com May 2026, stanleylaman.com Nov 2025, cnbc.com Nov 2025"
+    },
+    {
+      "company": "Industry Context",
+      "change": "Michael Burry (Nov 2025) accused hyperscalers of understating depreciation by ~$176B cumulatively 2026-2028 by extending AI server lives; actual useful life likely 2-3 years vs 5-6 year accounting schedules",
+      "source": "cnbc.com Nov 2025, indmoney.com Jun 2026, footnotebrief.com May 2026"
     }
   ],
   "credit_notes": [
     {
-      "note": "CoreWeave CDS widened to 855 bps on July 29, 2026, implying ~50% five-year default probability; stock fell 9% same day",
-      "source": "TechTimes July 30, 2026; credit markets"
+      "note": "CoreWeave closed $3.1B DDTL facility May 2026 at SOFR+450bps, Ba2/BB+; $2.6B facility Aug 2026 at SOFR+550bps; total 2026 debt/equity capital >$30B",
+      "source": "CoreWeave investor relations May/Aug 2026, yahoo finance, stocktitan.net"
     },
     {
-      "note": "CoreWeave closed $8.5B DDTL 4.0 facility March 31, 2026 at SOFR+2.25% (floating) or ~5.9% (fixed), rated A3/A(low)\u2014first investment-grade GPU-backed debt; maturity March 2032",
-      "source": "CoreWeave investor relations March 31, 2026"
+      "note": "CoreWeave achieved first investment-grade GPU-backed financing March 2026: $8.5B DDTL at A3/A(low), SOFR+225bps floating / ~5.9% fixed, 175bps tighter than 2025 facility",
+      "source": "CoreWeave IR Mar 2026, forbes.com Jun 2026, globaldatacenterhub.com Apr 2026"
     },
     {
-      "note": "CoreWeave closed additional $2.6B facility Aug 2026 at SOFR+550 bps (~9.5-10% all-in), rated Ba2/BB+; total debt >$21B, up from <$8B in 2024",
-      "source": "Yahoo Finance, Quartz Aug 2026; CoreWeave 8-K"
+      "note": "CoreWeave CDS market priced 50% five-year default probability as of July 29, 2026; stock fell 9% that day; Q1 2026 free cash flow negative $4.71B on $6.8B capex vs $2.98B operating cash",
+      "source": "techtimes.com Jul 2026, top1markets.com Aug 2026"
     },
     {
-      "note": "Michael Burry warned Nov 2025 that hyperscalers (Meta, Amazon, Microsoft, Alphabet, Oracle) will understate depreciation by ~$176B cumulatively 2026-2028 via extended useful lives",
-      "source": "Multiple financial press Nov 2025-Jul 2026"
+      "note": "Moody's July 2026 credit warning: AI spending threatens credit quality of Microsoft, Amazon, Alphabet, Meta, Oracle, CoreWeave (combined $460B direct debt + $1.2T lease commitments)",
+      "source": "techtimes.com Jul 2026"
+    },
+    {
+      "note": "CoreWeave total debt ~$35B as of Q2 2026; raised >$10B unsecured debt + convertibles in Q2 alone; debt-to-equity >14x; Q1 2026 interest expense $536M (46% of adj. EBITDA, 25.8% of revenue)",
+      "source": "top1markets.com Aug 2026, techtimes.com Jul 2026"
     }
   ],
-  "commentary": "Current spot rates show GPU rental prices rising or holding firm across all generations\u2014H100 up 40% since Oct 2025 to ~$2.85-$3.15/hr median, B200 at $5.50-$5.80/hr vs sub-$5 in Jan 2026\u2014contradicting depreciation narratives and signaling persistent demand. The divergence in hyperscaler depreciation policy (Amazon shortening to 5 years while Meta/MSFT/GOOGL/ORCL extend to 5.5-6 years on identical hardware) creates a $176B-$228B cumulative GAAP earnings tailwind through 2028 that may reverse if utilization or resale values disappoint. CoreWeave's CDS blowout to 855 bps despite investment-grade GPU debt ratings highlights refinancing risk in a $21B+ debt stack collateralized by rapidly depreciating chips, yet rising on-demand rates and tightening Blackwell supply suggest the waterfall remains steep enough to support both debt service and current rental economics\u2014at least through mid-2027.",
+  "commentary": "The GPU rental waterfall shows sharp compression: B200 at $7 typical is only ~2.8x the H100 floor ($2.50 typical), while H100-to-A100 spread has collapsed to ~1.7x, signaling oversupply in prior-gen and rational pricing discipline as Blackwell ramps. Depreciation disclosures create a $176B accounting gap through 2028\u2014Amazon's reversal to 5-year life directly contradicts the 6-year schedules at MSFT/GOOGL/ORCL/META, exposing the risk that faster GPU obsolescence forces a profit reset if the others follow. CoreWeave's credit deterioration (CDS at 50% default odds, spreads widening 325bps in four months despite investment-grade debt) signals the market is repricing GPU collateral value downward faster than the accounting, which directly pressures the entire rental-rate curve if lenders demand higher returns or tighter LTVs on future financings.",
   "alerts_enabled": false
 }
