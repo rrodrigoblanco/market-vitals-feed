@@ -1,21 +1,7 @@
 {
-  "updatedAt": "2026-09-01T02:52:04.071315+00:00",
+  "updatedAt": "2026-09-01T22:59:46.775362+00:00",
   "days": 60,
   "rows": [
-    {
-      "date": "2026-06-05",
-      "HY_OAS": 276.0,
-      "IG_OAS": 74.0,
-      "HY_IG": 202.0,
-      "dHY_5d": 4.0,
-      "VIX": 21.51,
-      "VIX3M": 21.82,
-      "VIX_slope": -0.31,
-      "QQQ_DD": -0.055,
-      "SMH_200d": 0.438,
-      "Breadth": 0.767,
-      "REGIME": "RISK-ON"
-    },
     {
       "date": "2026-06-08",
       "HY_OAS": 275.0,
@@ -824,22 +810,36 @@
       "VIX3M": 17.48,
       "VIX_slope": -3.05,
       "QQQ_DD": -0.039,
-      "SMH_200d": 0.214,
-      "Breadth": 0.789,
+      "SMH_200d": 0.172,
+      "Breadth": 0.833,
       "REGIME": "RISK-ON"
     },
     {
       "date": "2026-08-31",
-      "HY_OAS": 260.0,
-      "IG_OAS": 79.0,
-      "HY_IG": 181.0,
-      "dHY_5d": -9.0,
-      "VIX": 14.43,
-      "VIX3M": 17.48,
-      "VIX_slope": -3.05,
+      "HY_OAS": 263.0,
+      "IG_OAS": 80.0,
+      "HY_IG": 183.0,
+      "dHY_5d": -6.0,
+      "VIX": 14.92,
+      "VIX3M": 17.53,
+      "VIX_slope": -2.61,
       "QQQ_DD": -0.038,
-      "SMH_200d": 0.176,
-      "Breadth": 0.789,
+      "SMH_200d": 0.177,
+      "Breadth": 0.867,
+      "REGIME": "RISK-ON"
+    },
+    {
+      "date": "2026-09-01",
+      "HY_OAS": 263.0,
+      "IG_OAS": 80.0,
+      "HY_IG": 183.0,
+      "dHY_5d": -7.0,
+      "VIX": 14.92,
+      "VIX3M": 17.53,
+      "VIX_slope": -2.61,
+      "QQQ_DD": -0.051,
+      "SMH_200d": 0.15,
+      "Breadth": 0.833,
       "REGIME": "RISK-ON"
     }
   ]
