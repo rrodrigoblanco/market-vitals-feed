@@ -1,21 +1,7 @@
 {
-  "updatedAt": "2026-09-03T02:19:08.273547+00:00",
+  "updatedAt": "2026-09-03T22:58:03.259774+00:00",
   "days": 60,
   "rows": [
-    {
-      "date": "2026-06-09",
-      "HY_OAS": 278.0,
-      "IG_OAS": 75.0,
-      "HY_IG": 203.0,
-      "dHY_5d": 7.0,
-      "VIX": 19.87,
-      "VIX3M": 21.31,
-      "VIX_slope": -1.44,
-      "QQQ_DD": -0.051,
-      "SMH_200d": 0.48,
-      "Breadth": 0.767,
-      "REGIME": "RISK-ON"
-    },
     {
       "date": "2026-06-10",
       "HY_OAS": 280.0,
@@ -796,8 +782,8 @@
       "VIX3M": 17.48,
       "VIX_slope": -3.05,
       "QQQ_DD": -0.039,
-      "SMH_200d": 0.214,
-      "Breadth": 0.789,
+      "SMH_200d": 0.172,
+      "Breadth": 0.833,
       "REGIME": "RISK-ON"
     },
     {
@@ -810,8 +796,8 @@
       "VIX3M": 17.53,
       "VIX_slope": -2.61,
       "QQQ_DD": -0.038,
-      "SMH_200d": 0.176,
-      "Breadth": 0.789,
+      "SMH_200d": 0.177,
+      "Breadth": 0.867,
       "REGIME": "RISK-ON"
     },
     {
@@ -825,21 +811,35 @@
       "VIX_slope": -1.99,
       "QQQ_DD": -0.051,
       "SMH_200d": 0.15,
-      "Breadth": 0.789,
+      "Breadth": 0.833,
       "REGIME": "RISK-ON"
     },
     {
       "date": "2026-09-02",
-      "HY_OAS": 265.0,
+      "HY_OAS": 266.0,
       "IG_OAS": 81.0,
-      "HY_IG": 184.0,
-      "dHY_5d": -2.0,
-      "VIX": 16.34,
-      "VIX3M": 18.33,
-      "VIX_slope": -1.99,
+      "HY_IG": 185.0,
+      "dHY_5d": -1.0,
+      "VIX": 15.2,
+      "VIX3M": 17.73,
+      "VIX_slope": -2.53,
       "QQQ_DD": -0.048,
-      "SMH_200d": 0.158,
-      "Breadth": 0.737,
+      "SMH_200d": 0.159,
+      "Breadth": 0.8,
+      "REGIME": "RISK-ON"
+    },
+    {
+      "date": "2026-09-03",
+      "HY_OAS": 266.0,
+      "IG_OAS": 81.0,
+      "HY_IG": 185.0,
+      "dHY_5d": 3.0,
+      "VIX": 15.2,
+      "VIX3M": 17.73,
+      "VIX_slope": -2.53,
+      "QQQ_DD": -0.037,
+      "SMH_200d": 0.161,
+      "Breadth": 0.8,
       "REGIME": "RISK-ON"
     }
   ]
