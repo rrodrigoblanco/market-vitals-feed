@@ -1,9 +1,9 @@
 {
   "macro": {
-    "updatedAt": "2026-09-03T22:58:03.259774+00:00",
+    "updatedAt": "2026-09-04T02:14:34.691636+00:00",
     "regime": "RISK-ON",
     "risk_lr": 1.0,
-    "headline": "RISK-ON \u2014 all clear",
+    "headline": "RISK-ON \u2014 1 red, 0 watch",
     "advice": "Stay invested. Add to conviction names on normal pullbacks, in thirds. Keep dry powder.",
     "signals": [
       {
@@ -36,17 +36,17 @@
       },
       {
         "signal": "Nasdaq drawdown",
-        "value": "-3.7%",
+        "value": "-4.8%",
         "grade": "green",
         "reason": "Near highs.",
-        "trend": "flat \u2192"
+        "trend": "worsening \u2191"
       },
       {
         "signal": "Breadth",
-        "value": "80%",
-        "grade": "green",
-        "reason": "80% of stocks healthy \u2014 broad.",
-        "trend": "worsening \u2191"
+        "value": "nan%",
+        "grade": "red",
+        "reason": "nan% of stocks healthy \u2014 washed out.",
+        "trend": "improving \u2193"
       },
       {
         "signal": "Semis vs trend",
@@ -60,11 +60,13 @@
       "hy_oas": 266,
       "hy_ig": 185,
       "vix_slope": -2.5,
-      "qqq_dd": -0.037,
-      "breadth": 0.8,
-      "smh_vs_200dma": 0.161
+      "qqq_dd": -0.048,
+      "breadth": NaN,
+      "smh_vs_200dma": 0.156
     },
-    "alerts": [],
+    "alerts": [
+      "Breadth is RED"
+    ],
     "dispersion": {
       "available": true,
       "signal": "Credit dispersion (CCC-BB)",
