@@ -1,6 +1,6 @@
 {
   "macro": {
-    "updatedAt": "2026-09-24T02:28:04.266813+00:00",
+    "updatedAt": "2026-09-24T23:45:05.879891+00:00",
     "regime": "RISK-ON",
     "risk_lr": 1.0,
     "headline": "RISK-ON \u2014 all clear",
@@ -8,21 +8,21 @@
     "signals": [
       {
         "signal": "Credit (HY OAS)",
-        "value": "268 bps",
+        "value": "273 bps",
         "grade": "green",
         "reason": "Junk-bond stress is low \u2014 lenders relaxed.",
         "trend": "flat \u2192"
       },
       {
         "signal": "Credit speed (5-day)",
-        "value": "-2 bps",
+        "value": "+3 bps",
         "grade": "green",
         "reason": "Credit is barely moving \u2014 calm.",
         "trend": "flat \u2192"
       },
       {
         "signal": "Contagion (HY-IG)",
-        "value": "191 bps",
+        "value": "196 bps",
         "grade": "green",
         "reason": "Junk-vs-safe gap normal \u2014 not spreading.",
         "trend": "flat \u2192"
@@ -32,11 +32,11 @@
         "value": "slope -3.4",
         "grade": "green",
         "reason": "Near-term fear below 3-month \u2014 calm.",
-        "trend": "improving \u2193"
+        "trend": "flat \u2192"
       },
       {
         "signal": "Nasdaq drawdown",
-        "value": "-0.8%",
+        "value": "-0.9%",
         "grade": "green",
         "reason": "Near highs.",
         "trend": "improving \u2193"
@@ -50,57 +50,57 @@
       },
       {
         "signal": "Semis vs trend",
-        "value": "+23%",
+        "value": "+22%",
         "grade": "green",
         "reason": "Semis above trend.",
         "trend": "improving \u2193"
       }
     ],
     "raw": {
-      "hy_oas": 268,
-      "hy_ig": 191,
+      "hy_oas": 273,
+      "hy_ig": 196,
       "vix_slope": -3.4,
-      "qqq_dd": -0.008,
+      "qqq_dd": -0.009,
       "breadth": 0.78,
-      "smh_vs_200dma": 0.225
+      "smh_vs_200dma": 0.22
     },
     "alerts": [],
     "dispersion": {
       "available": true,
       "signal": "Credit dispersion (CCC-BB)",
-      "value": "919 bps",
+      "value": "934 bps",
       "grade": "gray",
-      "reason": "CCC-BB 919bps (99th %ile 5y, z 2.3). 20d +38. STABLE.",
+      "reason": "CCC-BB 934bps (100th %ile 5y, z 2.49). 20d +59. BIFURCATION.",
       "trend": "worsening \u2191",
       "calibration": {
-        "current_bps": 919,
-        "pctile_1y": 97.2,
-        "pctile_5y": 99.1,
-        "z_252d": 2.3,
+        "current_bps": 934,
+        "pctile_1y": 100.0,
+        "pctile_5y": 100.0,
+        "z_252d": 2.49,
         "distribution_5y": {
           "min": 529,
-          "p10": 568,
+          "p10": 569,
           "p25": 658,
           "median": 715,
           "p75": 754,
           "p90": 791,
-          "max": 928
+          "max": 934
         },
-        "n_days": 786
+        "n_days": 787
       },
-      "interpretation": "STABLE \u2014 neither BB nor CCC moving materially over 20d.",
+      "interpretation": "BIFURCATION \u2014 CCC widening while BB holds. System intact.",
       "divergence_condition_met": false,
       "alerts_enabled": false,
       "alert": false,
       "raw": {
-        "bb_oas": 156,
-        "ccc_oas": 1075,
-        "ccc_bb": 919,
-        "ccc_bb_5d": -5,
-        "ccc_bb_20d": 38,
-        "bb_20d": -2,
-        "ccc_20d": 36,
-        "hy_20d": -2
+        "bb_oas": 159,
+        "ccc_oas": 1093,
+        "ccc_bb": 934,
+        "ccc_bb_5d": 13,
+        "ccc_bb_20d": 59,
+        "bb_20d": 3,
+        "ccc_20d": 62,
+        "hy_20d": 6
       }
     }
   }
