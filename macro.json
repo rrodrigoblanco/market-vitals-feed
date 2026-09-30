@@ -1,38 +1,38 @@
 {
   "macro": {
-    "updatedAt": "2026-09-29T03:30:58.710248+00:00",
+    "updatedAt": "2026-09-30T00:03:47.803503+00:00",
     "regime": "RISK-ON",
     "risk_lr": 1.0,
-    "headline": "RISK-ON \u2014 1 red, 0 watch",
+    "headline": "RISK-ON \u2014 2 red, 0 watch",
     "advice": "Stay invested. Add to conviction names on normal pullbacks, in thirds. Keep dry powder.",
     "signals": [
       {
         "signal": "Credit (HY OAS)",
-        "value": "293 bps",
+        "value": "302 bps",
         "grade": "green",
         "reason": "Junk-bond stress is low \u2014 lenders relaxed.",
         "trend": "worsening \u2191"
       },
       {
         "signal": "Credit speed (5-day)",
-        "value": "+27 bps",
+        "value": "+34 bps",
         "grade": "red",
         "reason": "Credit is widening \u2014 watch pace.",
         "trend": "worsening \u2191"
       },
       {
         "signal": "Contagion (HY-IG)",
-        "value": "212 bps",
+        "value": "219 bps",
         "grade": "green",
         "reason": "Junk-vs-safe gap normal \u2014 not spreading.",
         "trend": "worsening \u2191"
       },
       {
         "signal": "Volatility shape",
-        "value": "slope -3.4",
+        "value": "slope -2.2",
         "grade": "green",
         "reason": "Near-term fear below 3-month \u2014 calm.",
-        "trend": "flat \u2192"
+        "trend": "worsening \u2191"
       },
       {
         "signal": "Nasdaq drawdown",
@@ -43,10 +43,10 @@
       },
       {
         "signal": "Breadth",
-        "value": "80%",
-        "grade": "green",
-        "reason": "80% of stocks healthy \u2014 broad.",
-        "trend": "flat \u2192"
+        "value": "nan%",
+        "grade": "red",
+        "reason": "nan% of stocks healthy \u2014 washed out.",
+        "trend": "improving \u2193"
       },
       {
         "signal": "Semis vs trend",
@@ -57,52 +57,53 @@
       }
     ],
     "raw": {
-      "hy_oas": 293,
-      "hy_ig": 212,
-      "vix_slope": -3.4,
+      "hy_oas": 302,
+      "hy_ig": 219,
+      "vix_slope": -2.2,
       "qqq_dd": -0.015,
-      "breadth": 0.8,
-      "smh_vs_200dma": 0.214
+      "breadth": NaN,
+      "smh_vs_200dma": 0.211
     },
     "alerts": [
-      "Credit speed (5-day) is RED"
+      "Credit speed (5-day) is RED",
+      "Breadth is RED"
     ],
     "dispersion": {
       "available": true,
       "signal": "Credit dispersion (CCC-BB)",
-      "value": "952 bps",
+      "value": "963 bps",
       "grade": "gray",
-      "reason": "CCC-BB 952bps (100th %ile 5y, z 2.67). 20d +76. STABLE.",
+      "reason": "CCC-BB 963bps (100th %ile 5y, z 2.78). 20d +73. SYSTEMIC.",
       "trend": "worsening \u2191",
       "calibration": {
-        "current_bps": 952,
+        "current_bps": 963,
         "pctile_1y": 100.0,
         "pctile_5y": 100.0,
-        "z_252d": 2.67,
+        "z_252d": 2.78,
         "distribution_5y": {
           "min": 529,
           "p10": 568,
-          "p25": 659,
-          "median": 715,
+          "p25": 660,
+          "median": 716,
           "p75": 755,
-          "p90": 794,
-          "max": 952
+          "p90": 795,
+          "max": 963
         },
         "n_days": 785
       },
-      "interpretation": "STABLE \u2014 neither BB nor CCC moving materially over 20d.",
+      "interpretation": "SYSTEMIC \u2014 BB widening alongside CCC. Stress reaching good junk.",
       "divergence_condition_met": false,
       "alerts_enabled": false,
       "alert": false,
       "raw": {
-        "bb_oas": 176,
-        "ccc_oas": 1128,
-        "ccc_bb": 952,
-        "ccc_bb_5d": 24,
-        "ccc_bb_20d": 76,
-        "bb_20d": 26,
-        "ccc_20d": 102,
-        "hy_20d": 33
+        "bb_oas": 183,
+        "ccc_oas": 1146,
+        "ccc_bb": 963,
+        "ccc_bb_5d": 39,
+        "ccc_bb_20d": 73,
+        "bb_20d": 31,
+        "ccc_20d": 104,
+        "hy_20d": 39
       }
     }
   }
