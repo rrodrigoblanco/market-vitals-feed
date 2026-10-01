@@ -60,6 +60,8 @@ Changes step back through real prints:
 
 The percentile is the share of days in the window that were at or below today's reading. The window is whatever FRED currently returns. For the ICE bond spreads that is about three years, not five. The file says `window_label`, `window_start`, `window_end`, and `n_days`. There is also a separate block labeled `trailing_1y` for the past year. Neither one is a 5-year score.
 
+Treasury yields use their full FRED history, which goes back to the 1960s or 1970s. A yield that is the high of the past year can still sit near the middle of that long sample. Read `percentile_1y` when you want the past year, and read `percentile_available` when you want the whole file.
+
 ### Regime label
 
 The label answers a specific question: is stress stuck in the weakest bonds, is it climbing into better junk, or has it reached investment grade while BB itself is expensive?
