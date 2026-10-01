@@ -1,13 +1,22 @@
 name: Update credit and oil feeds
 
-# FRED usually posts the previous day's ICE BofA spreads around 10:00 a.m.
-# New York time. 15:15 UTC is 11:15 a.m. Eastern during daylight time and
-# 10:15 a.m. Eastern in the winter, so the winter morning run can be early.
-# The 22:30 UTC run is evening in New York and picks up anything the morning missed.
+# FRED posts the previous business day's bond spreads once, usually late
+# morning New York time, and the oil spot series lags by a few days. GitHub
+# often starts a scheduled run late or skips one. Running every 3 hours,
+# including weekends, means a missed slot is caught by the next one.
+#
+# A run commits only when an official observation date is newer than the date
+# already in the file. A late second run sees the same date and commits nothing,
+# so it cannot duplicate a row or invent a print.
+#
+# GitHub disables a scheduled workflow after 60 days with no repository
+# activity. A weekday when FRED has a new date commits credit.json or oil.json,
+# and that commit keeps the schedule alive. A long stretch with no new date
+# and no other commit can turn the schedule off. Re-enable it from the Actions
+# tab and click Run workflow once. There is no separate keepalive commit.
 on:
   schedule:
-    - cron: "15 15 * * 1-5"
-    - cron: "30 22 * * 1-5"
+    - cron: "0 */3 * * *"
   workflow_dispatch:
 
 permissions:
@@ -20,25 +29,17 @@ concurrency:
 jobs:
   update:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 10
     steps:
       - name: Check out the repository
         uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-
-      - name: Build credit.json and oil.json
+      - name: Check for a newer observation and update the feeds
         id: build
-        env:
-          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
-          EIA_API_KEY: ${{ secrets.EIA_API_KEY }}
-        run: python scripts/update_feeds.py
+        run: python3 scripts/update_feeds.py
         continue-on-error: true
 
-      - name: Commit the new files if they changed
+      - name: Commit the new files if an observation date moved
         if: always()
         run: |
           git config user.name "github-actions[bot]"

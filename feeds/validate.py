@@ -4,6 +4,27 @@ from __future__ import annotations
 
 REGIME_LABELS = {"SYSTEMIC", "BROADENING", "CONCENTRATED", "CALM", "UNKNOWN"}
 CURVE_SHAPES = {"backwardation", "contango", "flat"}
+# These words are fine inside the regime block. They are not fine as the
+# only explanation a non-expert would see in the summary sentences.
+PLAIN_SHORTHAND = ("SYSTEMIC", "BROADENING", "CONCENTRATED", "CALM", "UNKNOWN")
+
+
+def _require_plain_english(feed: dict, name: str) -> None:
+    summary = feed.get("summary")
+    change = feed.get("what_would_change_this")
+    if not isinstance(summary, str) or not summary.endswith(".") or len(summary) < 80:
+        raise ValueError(f"{name} summary must be a full plain-English paragraph")
+    if not isinstance(change, str) or not change.endswith(".") or len(change) < 40:
+        raise ValueError(f"{name} what_would_change_this must be one full sentence")
+    for word in PLAIN_SHORTHAND:
+        if word in summary or word in change:
+            raise ValueError(f"{name} plain-English text uses the shorthand {word}")
+    official = feed.get("official_as_of")
+    if not isinstance(official, dict) or not official:
+        raise ValueError(f"{name} official_as_of is missing")
+    for key, day in official.items():
+        if not isinstance(key, str) or not isinstance(day, str) or len(day) < 10:
+            raise ValueError(f"{name} official_as_of has a bad entry")
 
 
 def _walk_measures(obj: object, path: str = "") -> None:
@@ -52,6 +73,7 @@ def _history_matches(feed: dict, column: str) -> None:
 def validate_credit(feed: dict) -> None:
     if feed.get("feed") != "credit":
         raise ValueError("credit feed name missing")
+    _require_plain_english(feed, "credit")
     if feed.get("methodology", {}).get("no_forward_fill") is not True:
         raise ValueError("credit feed must set no_forward_fill")
     label = feed.get("regime", {}).get("label")
@@ -78,6 +100,7 @@ def validate_credit(feed: dict) -> None:
 def validate_oil(feed: dict) -> None:
     if feed.get("feed") != "oil":
         raise ValueError("oil feed name missing")
+    _require_plain_english(feed, "oil")
     _walk_measures(feed)
     for name in ("brent", "wti"):
         block = feed.get(name) or {}

@@ -1,7 +1,19 @@
 {
   "feed": "credit",
   "schema_version": 1,
-  "generated_at": "2026-10-01T23:09:10Z",
+  "summary": "As of September 30, 2026, junk-bond spreads widened by 0.39 percentage points over the previous five trading days, led by the riskiest bonds, called CCC, which widened by 0.86 percentage points. Better-quality junk bonds, called BB, are at 1.94 percentage points after widening by 0.35 percentage points, which is still below the March 2026 high of 2.22 percentage points and the April 2025 peak of 3.06 percentage points. Safer corporate bonds, called investment grade, widened by 0.07 percentage points over five trading days, so this is stress climbing through the junk market, not a market-wide credit problem.",
+  "what_would_change_this": "This would become a market-wide credit problem if BB bonds reached 2.22 percentage points, or the top 10 percent of the days still on file, and investment-grade bonds widened by at least 0.10 percentage points over five trading days or 0.15 percentage points over twenty trading days.",
+  "official_as_of": {
+    "BAMLH0A0HYM2": "2026-09-30",
+    "BAMLH0A1HYBB": "2026-09-30",
+    "BAMLH0A3HYC": "2026-09-30",
+    "BAMLC0A0CM": "2026-09-30",
+    "BAMLH0A0HYM2EY": "2026-09-30",
+    "DGS10": "2026-09-30",
+    "DGS30": "2026-09-30",
+    "DGS5": "2026-09-30"
+  },
+  "generated_at": "2026-10-01T23:35:04Z",
   "run_date": "2026-10-01",
   "run_timezone": "America/New_York",
   "description": "Credit monitor rebuilt from FRED. Each value keeps the observation date FRED published. Nothing is copied forward onto a newer date.",
@@ -62,7 +74,8 @@
       "bp": "Basis points. 100 bp = 1 percentage point. Spread levels and all spread and yield changes use bp.",
       "percent": "Percent, already in percentage points. 8.16 means 8.16 percent, not 816 bp.",
       "percentile": "A number from 0 to 100. 100 means the latest value is the high of the window."
-    }
+    },
+    "publish_rule": "A run commits this file only when official_as_of contains a date newer than the copy already stored, or when the plain-English summary is missing. The same observation date never produces a second commit, and rows are never duplicated."
   },
   "frontend_notes": [
     "Every measurement has a numeric value and a separate unit field. Display the number once and the unit once. Do not append 'bp' or 'bps' if you already included the unit.",

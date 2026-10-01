@@ -72,26 +72,36 @@ def parse_api(payload: dict, series_id: str) -> list[tuple[date, Decimal]]:
     return sorted(rows.items())
 
 
-def load_series(series_id: str, api_key: str | None = None) -> tuple[list[tuple[date, Decimal]], str]:
+def load_series(
+    series_id: str,
+    api_key: str | None = None,
+    observation_start: date | None = None,
+) -> tuple[list[tuple[date, Decimal]], str]:
     """Return (observations, source_label).
 
     A bad or rate-limited API key falls back to the public CSV so one secret
-    cannot blank the feed.
+    cannot blank the feed. ``observation_start`` limits the download to a
+    recent window, which is how a scheduled run checks the latest date
+    without pulling the whole history.
     """
     if api_key:
         url = API_URL.format(series_id=series_id, api_key=api_key)
+        if observation_start is not None:
+            url += "&observation_start=" + observation_start.isoformat()
         try:
             body = fetch_bytes(url, redact=api_key)
             payload = json.loads(body.decode("utf-8"))
             return parse_api(payload, series_id), "fred_api"
         except (FetchError, ValueError, json.JSONDecodeError, KeyError, OSError):
-            rows = _load_csv(series_id)
+            rows = _load_csv(series_id, observation_start)
             return rows, "fred_csv_fallback"
-    return _load_csv(series_id), "fred_csv"
+    return _load_csv(series_id, observation_start), "fred_csv"
 
 
-def _load_csv(series_id: str) -> list[tuple[date, Decimal]]:
+def _load_csv(series_id: str, observation_start: date | None = None) -> list[tuple[date, Decimal]]:
     url = CSV_URL.format(series_id=series_id)
+    if observation_start is not None:
+        url += "&cosd=" + observation_start.isoformat()
     body = fetch_bytes(url)
     text = body.decode("utf-8", errors="replace")
     rows = parse_csv(text, series_id)

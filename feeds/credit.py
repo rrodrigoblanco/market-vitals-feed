@@ -24,6 +24,7 @@ from zoneinfo import ZoneInfo
 
 from feeds.calendar import business_days_between, is_stale
 from feeds.fred import load_series
+from feeds.plain import credit_sentences
 from feeds.serialize import json_number, measure, round_half_up
 from feeds.stats import (
     align_difference,
@@ -798,9 +799,18 @@ def build_credit_feed(
         )
 
     now = generated_at or datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
+    summary, what_would_change = credit_sentences(series_out, regime_public["label"])
+    official_as_of = {
+        spec["fred_id"]: series_out[spec["id"]]["as_of"]
+        for spec in SERIES_SPEC
+        if series_out.get(spec["id"], {}).get("as_of") and spec.get("fred_id")
+    }
     return {
         "feed": "credit",
         "schema_version": 1,
+        "summary": summary,
+        "what_would_change_this": what_would_change,
+        "official_as_of": official_as_of,
         "generated_at": now,
         "run_date": today.isoformat(),
         "run_timezone": "America/New_York",
@@ -839,6 +849,11 @@ def build_credit_feed(
                 "percent": "Percent, already in percentage points. 8.16 means 8.16 percent, not 816 bp.",
                 "percentile": "A number from 0 to 100. 100 means the latest value is the high of the window.",
             },
+            "publish_rule": (
+                "A run commits this file only when official_as_of contains a date newer than "
+                "the copy already stored, or when the plain-English summary is missing. "
+                "The same observation date never produces a second commit, and rows are never duplicated."
+            ),
         },
         "frontend_notes": [
             "Every measurement has a numeric value and a separate unit field. Display the number once and the unit once. Do not append 'bp' or 'bps' if you already included the unit.",

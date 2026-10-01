@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import re
 import subprocess
 import sys
 import unittest
@@ -22,11 +23,32 @@ from feeds.credit import (
 )
 from feeds.eia import parse_eia_api, parse_wpsr_table1
 from feeds.fred import parse_csv
+from feeds.freshness import publish_reason, should_publish
 from feeds.oil import _crack, build_alert, build_oil_feed, curve_shape
+from feeds.plain import credit_sentences
 from feeds.serialize import measure, write_if_changed
 from feeds.stats import empirical_percentile
 from feeds.validate import validate_credit, validate_oil
 from feeds.yahoo import contract_symbol, parse_contract_name, session_complete
+
+
+SHORTHAND = re.compile(r"\b(SYSTEMIC|BROADENING|CONCENTRATED|CALM|UNKNOWN|OAS)\b")
+
+
+def sentence_count(text: str) -> int:
+    body = text.strip()
+    if body.endswith("."):
+        body = body[:-1]
+    return len([part for part in body.split(". ") if part.strip()])
+
+
+def assert_plain(test: unittest.TestCase, feed: dict, *, sentences: int) -> None:
+    test.assertEqual(sentence_count(feed["summary"]), sentences)
+    test.assertEqual(sentence_count(feed["what_would_change_this"]), 1)
+    test.assertIsNone(SHORTHAND.search(feed["summary"]))
+    test.assertIsNone(SHORTHAND.search(feed["what_would_change_this"]))
+    test.assertNotIn(" bp", feed["summary"])
+    test.assertTrue(feed["official_as_of"])
 
 
 def weekdays_ending(end: date, count: int) -> list[date]:
@@ -201,6 +223,8 @@ class CreditBuildTests(unittest.TestCase):
     def test_build_does_not_forward_fill_and_labels_the_real_window(self):
         feed = self._feed()
         validate_credit(feed)
+        assert_plain(self, feed, sentences=3)
+        self.assertIn("not a market-wide credit problem", feed["summary"])
         self.assertEqual(feed["regime"]["label"], "BROADENING")
         self.assertFalse(feed["regime"]["flags"]["bb_elevated"])
         self.assertTrue(feed["regime"]["flags"]["ig_calm"])
@@ -263,6 +287,22 @@ class CreditBuildTests(unittest.TestCase):
         bb_window = feed["series"]["bb_oas"]["percentile_available"]
         self.assertEqual(bb_window["window_start"], "2025-04-01")
         self.assertLess(bb_window["value"], 90)
+
+    def test_broadening_summary_uses_percentage_points_and_no_code(self):
+        series = {
+            "hy_oas": {"as_of": "2026-09-30", "value": 312, "change_5d": {"value": 39}},
+            "ccc_oas": {"value": 968, "change_5d": {"value": 86}},
+            "bb_oas": {"value": 194, "change_5d": {"value": 35}},
+            "ig_oas": {"value": 87, "change_5d": {"value": 7}},
+        }
+        summary, change = credit_sentences(series, "BROADENING")
+        self.assertEqual(sentence_count(summary), 3)
+        self.assertEqual(sentence_count(change), 1)
+        self.assertIn("widened by 0.39 percentage points", summary)
+        self.assertIn("led by the riskiest bonds, called CCC, which widened by 0.86 percentage points", summary)
+        self.assertIn("not a market-wide credit problem", summary)
+        self.assertIsNone(SHORTHAND.search(summary))
+        self.assertIsNone(SHORTHAND.search(change))
 
     def test_percentile_definition_matches_the_share_at_or_below(self):
         self.assertEqual(empirical_percentile([1, 2, 3, 4], 3), 75.0)
@@ -400,6 +440,8 @@ class OilTests(unittest.TestCase):
             inventories=inventories,
         )
         validate_oil(feed)
+        assert_plain(self, feed, sentences=3)
+        self.assertIn("alert is on", feed["summary"])
         self.assertEqual(feed["brent"]["headline"], "futures")
         self.assertEqual(feed["brent"]["value"], 106.0)
         self.assertEqual(feed["brent"]["unit"], "usd_per_bbl")
@@ -436,6 +478,9 @@ class OilTests(unittest.TestCase):
             extra_notes=["Yahoo Finance did not answer."],
         )
         validate_oil(feed)
+        assert_plain(self, feed, sentences=3)
+        self.assertIn("alert is off", feed["summary"])
+        self.assertIn("free source", feed["summary"])
         self.assertEqual(feed["brent"]["headline"], "spot")
         self.assertFalse(feed["curve"]["available"])
         self.assertFalse(feed["diesel"]["futures_crack"]["available"])
@@ -451,6 +496,35 @@ class OilTests(unittest.TestCase):
         after = datetime(2026, 10, 2, 4, 0, tzinfo=timezone.utc)
         self.assertFalse(session_complete(chart, midday, date(2026, 10, 1)))
         self.assertTrue(session_complete(chart, after, date(2026, 10, 2)))
+
+
+class FreshnessTests(unittest.TestCase):
+    def _existing(self, dates: dict[str, str]) -> dict:
+        return {
+            "summary": "Junk-bond spreads widened. Safer bonds did not.",
+            "what_would_change_this": "This would change if safer bonds widened too.",
+            "official_as_of": dates,
+        }
+
+    def test_same_dates_do_not_publish(self):
+        dates = {"BAMLH0A0HYM2": "2026-09-30", "DGS30": "2026-09-30"}
+        self.assertFalse(should_publish(self._existing(dates), dates))
+        self.assertIsNone(publish_reason(self._existing(dates), dates))
+        self.assertIn("newer observation", publish_reason(self._existing(dates), {"BAMLH0A0HYM2": "2026-10-01"}))
+
+    def test_a_newer_date_publishes_and_an_older_one_does_not(self):
+        existing = self._existing({"BAMLH0A0HYM2": "2026-09-30"})
+        self.assertTrue(should_publish(existing, {"BAMLH0A0HYM2": "2026-10-01"}))
+        self.assertFalse(should_publish(existing, {"BAMLH0A0HYM2": "2026-09-29"}))
+
+    def test_a_new_series_date_publishes(self):
+        existing = self._existing({"BAMLH0A0HYM2": "2026-09-30"})
+        self.assertTrue(should_publish(existing, {"BAMLH0A0HYM2": "2026-09-30", "DGS30": "2026-09-30"}))
+
+    def test_missing_summary_publishes_even_when_the_date_is_unchanged(self):
+        existing = {"official_as_of": {"BAMLH0A0HYM2": "2026-09-30"}}
+        self.assertTrue(should_publish(existing, {"BAMLH0A0HYM2": "2026-09-30"}))
+        self.assertTrue(should_publish(None, {}))
 
 
 class SerializeTests(unittest.TestCase):

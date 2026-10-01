@@ -21,6 +21,7 @@ from zoneinfo import ZoneInfo
 from feeds.calendar import business_days_between, is_stale
 from feeds.eia import load_inventories
 from feeds.fred import load_series
+from feeds.plain import oil_sentences
 from feeds.serialize import measure, round_half_up
 from feeds.stats import change_n, dedupe, shared_level, value_on
 from feeds.yahoo import (
@@ -592,9 +593,20 @@ def build_oil_feed(
     )
 
     now_stamp = generated_at or datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
+    summary, what_would_change = oil_sentences(brent, wti, curve, bool(alert["flag"]))
+    official_as_of: dict[str, str] = {}
+    for key, spec in FRED_OIL.items():
+        rows = fred.get(key) or []
+        if rows:
+            official_as_of[spec["fred_id"]] = rows[-1][0].isoformat()
+    if inventories.get("available") and inventories.get("as_of"):
+        official_as_of["EIA_COMMERCIAL_CRUDE"] = inventories["as_of"]
     return {
         "feed": "oil",
         "schema_version": 1,
+        "summary": summary,
+        "what_would_change_this": what_would_change,
+        "official_as_of": official_as_of,
         "generated_at": now_stamp,
         "run_date": today.isoformat(),
         "run_timezone": "America/New_York",
@@ -630,6 +642,11 @@ def build_oil_feed(
                 ),
             },
             "stale_after_business_days": STALE_AFTER,
+            "publish_rule": (
+                "A run commits this file only when official_as_of contains a date newer than "
+                "the copy already stored, or when the plain-English summary is missing. "
+                "A Yahoo price that changes on an unchanged FRED or EIA date does not commit."
+            ),
             "sources_not_used": [
                 "CME Group settlement pages block scripted downloads, so official settlements are not in this file.",
                 "FRED does not currently serve the weekly commercial-crude stock series on the public CSV endpoint, so inventories are read from EIA directly.",
@@ -685,6 +702,9 @@ def collect_oil(
     eia_api_key: str | None,
     today: date | None = None,
     now: datetime | None = None,
+    preloaded_fred: dict[str, list[tuple[date, Decimal]]] | None = None,
+    preloaded_inventories: dict | None = None,
+    inventory_notes: list[str] | None = None,
 ) -> dict:
     ny = ZoneInfo("America/New_York")
     if now is None:
@@ -723,14 +743,21 @@ def collect_oil(
     fred_rows: dict[str, list[tuple[date, float]]] = {}
     for key, spec in FRED_OIL.items():
         try:
-            rows, _source = load_series(spec["fred_id"], fred_api_key)
+            if preloaded_fred is not None and spec["fred_id"] in preloaded_fred:
+                rows = preloaded_fred[spec["fred_id"]]
+            else:
+                rows, _source = load_series(spec["fred_id"], fred_api_key)
             fred_rows[key] = _fred_float(rows, spec["places"])
         except Exception as exc:  # noqa: BLE001
             notes.append(f"FRED {spec['fred_id']} could not be read: {exc}")
             fred_rows[key] = []
 
-    inventories, inventory_notes = load_inventories(eia_api_key)
-    notes.extend(inventory_notes)
+    if preloaded_inventories is not None:
+        inventories = preloaded_inventories
+        notes.extend(inventory_notes or [])
+    else:
+        inventories, inventory_notes = load_inventories(eia_api_key)
+        notes.extend(inventory_notes)
 
     return build_oil_feed(
         today=today,

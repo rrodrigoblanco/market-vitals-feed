@@ -13,8 +13,10 @@ Leave those four files alone. The new GitHub Action does not write them.
 
 Two new files are produced here, on a schedule:
 
-- `credit.json` — credit spreads, all-in yield, and a regime label
-- `oil.json` — oil prices, the curve, a diesel proxy, inventories, and an alert
+- `credit.json` — credit spreads, all-in yield, a regime label, and a plain-English summary
+- `oil.json` — oil prices, the curve, a diesel proxy, inventories, an alert, and a plain-English summary
+
+Open either file and read `summary` first. It is two or three full sentences. `what_would_change_this` is the next sentence: what would have to happen for that reading to change. The short labels (`BROADENING`, and so on) are still in the file for the dashboard, and the summary explains them in ordinary words.
 
 ## What credit.json contains
 
@@ -26,6 +28,9 @@ A basis point (bp) is 0.01 percentage points. 100 bp = 1 percent. A high-yield s
 
 The useful blocks are:
 
+- `summary` — two or three sentences in ordinary language. Start here.
+- `what_would_change_this` — one sentence on what would change the reading.
+- `official_as_of` — the FRED observation dates. A run commits a new file only when one of these dates is newer than the copy already stored.
 - `series` — one block per series, with the latest value, the real observation date (`as_of`), a `stale` flag, 1-day / 5-day / 20-day / 3-month changes, and percentiles.
 - `regime` — the label (`SYSTEMIC`, `BROADENING`, `CONCENTRATED`, `CALM`, or `UNKNOWN`) and a sentence that explains it.
 - `credit_speed` — the 5-day change in the high-yield spread, plus acceleration.
@@ -130,6 +135,8 @@ The check uses the highest BB print inside that month. `verified` is true when F
 
 ## What oil.json contains
 
+`summary` and `what_would_change_this` are the same kind of plain sentences as in the credit file. `official_as_of` lists the FRED dates plus the EIA weekly stock date. A Yahoo price that moves during the day does not, by itself, cause a new commit.
+
 - **Brent and WTI.** The headline is the front-month future from Yahoo Finance (`BZ=F` and `CL=F`) when Yahoo answers. It is the latest trade on that day's bar, not an exchange settlement. Crude trades most of the day, so a bar dated today can still move until the session ends (`session_complete` tells you which). Beside it, `spot` is the EIA daily price from FRED (`DCOILBRENTEU` and `DCOILWTICO`). The spot lags by a few days and it is a different instrument, so the two levels will not match.
 - **Changes.** 1-day, 5-day, and 20-day changes, in dollars per barrel and in percent, using real observation dates.
 - **Brent minus WTI.** Computed only on a date where both prices exist.
@@ -150,23 +157,17 @@ You do not need to install anything.
 3. Click **Update credit and oil feeds**.
 4. Click **Run workflow**.
 5. Choose the branch (use `main` once this is merged) and click the green **Run workflow** button.
-6. Wait until the run is green. If the numbers changed, the action commits `credit.json` and `oil.json`. If nothing changed, it commits nothing.
+6. Wait until the run is green. The action commits `credit.json` or `oil.json` only when FRED, or the weekly EIA stock date, has a **newer observation date** than the file already has. If the date is the same, the run stops and commits nothing.
 
-The action also runs by itself on weekdays:
+The action also runs by itself every 3 hours, seven days a week (midnight, 3 a.m., 6 a.m., 9 a.m., noon, 3 p.m., 6 p.m., and 9 p.m. UTC). GitHub often starts a scheduled run late, and it sometimes skips one. The extra runs are there so a missed slot is caught by the next one.
 
-- 15:15 UTC, late morning in New York (11:15 a.m. during daylight time, 10:15 a.m. in the winter)
-- 22:30 UTC, evening in New York
+FRED posts bond spreads once a day, and the number is the previous business day. That lag is normal. A run that arrives after the post, even hours late, writes the new day once. A second run the same day sees the same date and does not write again, so it cannot duplicate a row or copy an old print onto a new date. Oil futures prices move all day, but those ticks are not saved until a FRED or EIA date actually moves. Most weekend runs find nothing new and commit nothing.
 
-FRED usually posts the previous day's bond spreads around 10 a.m. New York time. The winter morning run can be a little early. The evening run picks up anything the morning run missed. GitHub sometimes starts a scheduled run a few minutes late. That is normal.
+The run does not install Python. It uses the copy already on GitHub's free runner, checks a short recent window of FRED, and downloads the long history only when a date is newer. No API key and no paid source are used.
 
-If a run fails, the previous `credit.json` or `oil.json` stays as it was. Open the red run and read the log. Do not edit the JSON files by hand. The next successful run overwrites them.
+GitHub turns a scheduled workflow off after 60 days with no activity in the repository. A weekday with a new FRED date commits a file, and that commit counts as activity, so the schedule stays on. If both feeds go 60 days with no new date and nobody else commits, GitHub will email that the workflow was disabled. Open the Actions tab, turn the workflow back on, and click **Run workflow** once. There is no extra keepalive commit.
 
-### Optional keys
-
-The feeds run with no keys. If you want them, add repository secrets (Settings → Secrets and variables → Actions):
-
-- `FRED_API_KEY` — optional. If it is set, FRED's API is tried first. If the key fails, the public CSV is used.
-- `EIA_API_KEY` — optional. If it is set, EIA's API is tried for inventories. If it fails or is older than the public weekly file, the public file is used.
+If a run fails, the previous `credit.json` or `oil.json` stays as it was. Open the red run and read the log. Do not edit the JSON files by hand. The next successful run overwrites a file only when its observation date is newer.
 
 ## How the website can fetch the files
 
@@ -215,7 +216,7 @@ Two display bugs on the current site, for whoever edits the frontend:
 
 ## Preview page
 
-`preview/index.html` draws `credit.json` and `oil.json` so you can read them without changing the live site.
+`preview/index.html` draws `credit.json` and `oil.json` so you can read them without changing the live site. The same plain-English summaries are at the top of the page.
 
 To publish it with GitHub Pages:
 
