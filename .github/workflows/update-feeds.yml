@@ -1,0 +1,52 @@
+name: Update credit and oil feeds
+
+# FRED usually posts the previous day's ICE BofA spreads around 10:00 a.m.
+# New York time. 15:15 UTC is 11:15 a.m. Eastern during daylight time and
+# 10:15 a.m. Eastern in the winter, so the winter morning run can be early.
+# The 22:30 UTC run is evening in New York and picks up anything the morning missed.
+on:
+  schedule:
+    - cron: "15 15 * * 1-5"
+    - cron: "30 22 * * 1-5"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: market-vitals-feeds
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Build credit.json and oil.json
+        id: build
+        env:
+          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
+          EIA_API_KEY: ${{ secrets.EIA_API_KEY }}
+        run: python scripts/update_feeds.py
+        continue-on-error: true
+
+      - name: Commit the new files if they changed
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          bash scripts/commit_feeds.sh
+
+      - name: Fail the job if a feed failed
+        if: steps.build.outcome == 'failure'
+        run: |
+          echo "A feed failed. The commit step does not publish a broken file, and the previous JSON stays in place."
+          exit 1

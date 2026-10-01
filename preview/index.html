@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Credit and oil preview</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #0b1020;
+      --card: #12182b;
+      --line: #243049;
+      --text: #e7ecf5;
+      --muted: #93a0b8;
+      --blue: #38bdf8;
+      --green: #4ade80;
+      --amber: #fbbf24;
+      --red: #f87171;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font: 16px/1.45 ui-sans-serif, system-ui, sans-serif;
+    }
+    main { max-width: 1100px; margin: 0 auto; padding: 24px 16px 64px; }
+    h1 { font-size: 28px; margin: 0 0 6px; }
+    h2 { font-size: 18px; margin: 28px 0 10px; }
+    p { margin: 0 0 10px; }
+    .sub { color: var(--muted); }
+    .banner {
+      margin: 16px 0;
+      padding: 14px 16px;
+      border-radius: 10px;
+      border: 1px solid var(--line);
+      background: #182033;
+    }
+    .banner strong { display: block; font-size: 22px; letter-spacing: 0.04em; }
+    .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 12px;
+    }
+    .label { color: var(--muted); font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; }
+    .value { font: 600 22px/1.2 ui-monospace, monospace; margin: 6px 0 2px; }
+    .meta { color: var(--muted); font-size: 12px; }
+    .stale { color: var(--amber); }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    th, td { text-align: right; padding: 6px 8px; border-bottom: 1px solid var(--line); }
+    th:first-child, td:first-child { text-align: left; }
+    th { color: var(--muted); font-weight: 600; }
+    .bar-wrap { position: relative; height: 10px; background: #1e293b; border-radius: 99px; margin: 22px 8px 8px; }
+    .tick { position: absolute; top: -3px; width: 1px; height: 16px; background: #64748b; }
+    .dot {
+      position: absolute; top: -5px; width: 16px; height: 16px; margin-left: -8px;
+      border-radius: 50%; background: var(--blue); border: 2px solid #e7ecf5;
+    }
+    .scale { display: flex; justify-content: space-between; color: var(--muted); font-size: 12px; font-family: ui-monospace, monospace; }
+    .alert-on { border-color: var(--red); background: #3b1218; }
+    .ok { color: var(--green); }
+    .warn { color: var(--amber); }
+    .bad { color: var(--red); }
+    svg.chart { width: 100%; height: 160px; background: #0e1528; border-radius: 10px; }
+    .notes { color: var(--muted); font-size: 14px; }
+    .notes li { margin: 4px 0; }
+    @media (max-width: 800px) {
+      .grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 520px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Credit and oil preview</h1>
+    <p class="sub">Reads <code>credit.json</code> and <code>oil.json</code>. This page does not change the trading site.</p>
+    <p id="status" class="sub">Loading…</p>
+    <p id="marker-check" class="sub"></p>
+
+    <section id="credit" hidden>
+      <div id="regime" class="banner"></div>
+      <div id="credit-cards" class="grid"></div>
+      <h2>Credit speed</h2>
+      <div id="speed" class="card"></div>
+      <h2>Yield split</h2>
+      <p class="sub">All-in high-yield yield change, split into the spread part and the Treasury-rate part. Numbers are basis points.</p>
+      <div class="card" style="overflow-x:auto"><table id="decomp"></table></div>
+      <h2>Where the spreads sit</h2>
+      <div id="dists"></div>
+      <h2>BB versus the landmarks</h2>
+      <div id="refs" class="card"></div>
+      <h2>High-yield spread, recent history</h2>
+      <svg id="chart" class="chart" viewBox="0 0 800 160" role="img" aria-label="High-yield spread chart"></svg>
+    </section>
+
+    <section id="oil" hidden>
+      <h2>Oil</h2>
+      <div id="oil-alert" class="banner"></div>
+      <div id="oil-cards" class="grid"></div>
+      <h2>Curve, diesel, inventories, rates</h2>
+      <div id="oil-extra" class="grid"></div>
+      <p id="oil-note" class="notes"></p>
+    </section>
+
+    <h2>Notes from the files</h2>
+    <ul id="notes" class="notes"></ul>
+  </main>
+  <script>
+    const UNIT = {
+      bp: "bp",
+      percent: "%",
+      percentile: "percentile",
+      usd_per_bbl: "$/bbl",
+      usd_per_gal: "$/gal",
+      million_barrels: "million barrels",
+      percentage_points: "percentage points",
+    };
+
+    function show(measure) {
+      if (!measure || typeof measure.value !== "number") return "—";
+      const unit = UNIT[measure.unit] || measure.unit || "";
+      return `${measure.value} ${unit}`.trim();
+    }
+
+    function signed(measure) {
+      if (!measure || typeof measure.value !== "number") return "—";
+      const sign = measure.value > 0 ? "+" : "";
+      return sign + show(measure);
+    }
+
+    function markerPercent(min, max, value) {
+      if (typeof value !== "number" || typeof min !== "number" || typeof max !== "number") return null;
+      if (!(max > min)) return null;
+      return Math.max(0, Math.min(100, ((value - min) / (max - min)) * 100));
+    }
+
+    function regimeColor(label) {
+      if (label === "SYSTEMIC") return "var(--red)";
+      if (label === "BROADENING" || label === "CONCENTRATED") return "var(--amber)";
+      if (label === "CALM") return "var(--green)";
+      return "var(--muted)";
+    }
+
+    function card(title, measure, extra) {
+      const stale = extra && extra.stale ? `<div class="meta stale">stale · as of ${extra.as_of || "—"}</div>` : `<div class="meta">as of ${extra && extra.as_of ? extra.as_of : "—"}</div>`;
+      const changeLabel = (extra && extra.changeLabel) || "5-day";
+      const change = extra && extra.change ? `<div class="meta">${changeLabel} ${signed(extra.change)}</div>` : "";
+      return `<article class="card"><div class="label">${title}</div><div class="value">${show(measure)}</div>${stale}${change}</article>`;
+    }
+
+    function distribution(title, dist, current) {
+      if (!dist || typeof current !== "number") {
+        return `<p class="sub">${title}: no distribution.</p>`;
+      }
+      const left = markerPercent(dist.min, dist.max, current);
+      const ticks = ["p10", "p25", "median", "p75", "p90"].map((key) => {
+        const pos = markerPercent(dist.min, dist.max, dist[key]);
+        return pos == null ? "" : `<span class="tick" style="left:${pos}%"></span>`;
+      }).join("");
+      const dot = left == null ? "" : `<span class="dot" style="left:${left}%" title="current ${current}"></span>`;
+      const place = left == null ? "marker hidden" : `marker at ${left.toFixed(1)}% of the range`;
+      return `<div class="card" style="margin-bottom:10px">
+        <div class="label">${title}</div>
+        <div class="bar-wrap">${ticks}${dot}</div>
+        <div class="scale"><span>min ${dist.min}</span><span>median ${dist.median}</span><span>max ${dist.max}</span></div>
+        <p class="meta">${place}. Window ${dist.window_start} to ${dist.window_end}, ${dist.n_days} days. Current ${current} ${dist.unit}.</p>
+      </div>`;
+    }
+
+    function chart(rows) {
+      const points = rows.filter((row) => typeof row.hy_oas === "number").slice(-60);
+      const svg = document.querySelector("#chart");
+      if (points.length < 2) {
+        svg.innerHTML = "";
+        return;
+      }
+      const values = points.map((row) => row.hy_oas);
+      const min = Math.min(...values);
+      const max = Math.max(...values);
+      const span = max - min || 1;
+      const coords = points.map((row, index) => {
+        const x = 40 + (index / (points.length - 1)) * 740;
+        const y = 20 + (1 - (row.hy_oas - min) / span) * 110;
+        return `${x.toFixed(1)},${y.toFixed(1)}`;
+      }).join(" ");
+      const last = points[points.length - 1];
+      const end = coords.split(" ").pop().split(",");
+      svg.innerHTML = `
+        <polyline points="${coords}" fill="none" stroke="#38bdf8" stroke-width="2"></polyline>
+        <circle cx="${end[0]}" cy="${end[1]}" r="4" fill="#38bdf8"></circle>
+        <text x="40" y="152" fill="#93a0b8" font-size="12" font-family="ui-monospace,monospace">${points[0].date}</text>
+        <text x="760" y="152" fill="#93a0b8" font-size="12" font-family="ui-monospace,monospace" text-anchor="end">${last.date}</text>
+        <text x="8" y="24" fill="#93a0b8" font-size="12" font-family="ui-monospace,monospace">${max}</text>
+        <text x="8" y="136" fill="#93a0b8" font-size="12" font-family="ui-monospace,monospace">${min}</text>`;
+    }
+
+    function renderCredit(credit) {
+      const regime = credit.regime || {};
+      document.querySelector("#regime").innerHTML = `
+        <strong style="color:${regimeColor(regime.label)}">${regime.label || "—"}</strong>
+        <span>${regime.plain_english || ""}</span>
+        <div class="meta">Regime date ${regime.as_of || "—"} · file built ${credit.generated_at || "—"} · run date ${credit.run_date || "—"}</div>`;
+      const series = credit.series || {};
+      const order = [
+        ["hy_oas", "High-yield spread"],
+        ["bb_oas", "BB spread"],
+        ["ccc_oas", "CCC spread"],
+        ["ig_oas", "Investment grade"],
+        ["ccc_bb", "CCC minus BB"],
+        ["hy_ig", "HY minus IG"],
+        ["hy_yield", "HY all-in yield"],
+        ["dgs30", "30-year yield"],
+      ];
+      document.querySelector("#credit-cards").innerHTML = order.map(([id, title]) => {
+        const block = series[id] || {};
+        return card(title, block, { as_of: block.as_of, stale: block.stale, change: block.change_5d });
+      }).join("");
+
+      const speed = credit.credit_speed || {};
+      document.querySelector("#speed").innerHTML = `
+        <div class="value">${show(speed)} · ${speed.acceleration ? speed.acceleration.direction || "—" : "—"}</div>
+        <p>${speed.plain_english || ""}</p>
+        <p class="meta">From ${speed.from_date || "—"} to ${speed.to_date || "—"}.
+        Prior 5-day ${show(speed.prior_5d)}. Acceleration ${show(speed.acceleration)}.
+        One-day tick in the 5-day number ${show(speed.change_in_speed_1d)}.</p>`;
+
+      const windows = (credit.yield_decomposition || {}).windows || {};
+      const head = `<tr><th>Window</th><th>Yield change</th><th>Spread part</th><th>Treasury part</th><th>Dates</th></tr>`;
+      const body = ["5d", "20d", "3m"].map((key) => {
+        const row = windows[key] || {};
+        return `<tr><td>${row.label || key}</td><td>${show(row.yield_change)}</td><td>${show(row.spread_part)}</td><td>${show(row.treasury_part)}</td><td>${row.from_date || "—"} → ${row.to_date || "—"}</td></tr>`;
+      }).join("");
+      document.querySelector("#decomp").innerHTML = head + body;
+
+      document.querySelector("#dists").innerHTML = [
+        distribution("CCC minus BB", series.ccc_bb && series.ccc_bb.distribution_available, series.ccc_bb && series.ccc_bb.value),
+        distribution("BB spread", series.bb_oas && series.bb_oas.distribution_available, series.bb_oas && series.bb_oas.value),
+      ].join("");
+
+      const refs = ((credit.references || {}).bb_oas || []).map((item) => {
+        const mark = item.verified ? "checked against FRED" : "not confirmed";
+        return `<p><strong>${item.name}.</strong> Supplied ${item.provided_value} bp. FRED high ${item.fred_value == null ? "—" : item.fred_value} bp on ${item.fred_date || "—"}. ${mark}. Today versus that landmark: ${item.current_minus_provided_bp} bp.</p>`;
+      }).join("");
+      document.querySelector("#refs").innerHTML = refs || "<p>No reference checks.</p>";
+      chart(credit.history || []);
+      document.querySelector("#credit").hidden = false;
+    }
+
+    function legText(leg) {
+      if (!leg) return "—";
+      if (!leg.available) return leg.reason || "Not available.";
+      return `${leg.shape}. Front ${leg.front.value} on ${leg.front.as_of}. Later month ${leg.deferred.contract_month} at ${leg.deferred.value}. Gap ${show(leg.front_minus_deferred)}.`;
+    }
+
+    function renderOil(oil) {
+      const alert = oil.alert || {};
+      const banner = document.querySelector("#oil-alert");
+      banner.className = "banner" + (alert.flag ? " alert-on" : "");
+      banner.innerHTML = `<strong class="${alert.flag ? "bad" : "ok"}">${alert.flag ? "OIL ALERT" : "No oil alert"}</strong><span>${alert.plain_english || ""}</span>`;
+      const brent = oil.brent || {};
+      const wti = oil.wti || {};
+      document.querySelector("#oil-cards").innerHTML = [
+        card("Brent", brent, { as_of: brent.as_of, stale: brent.stale, change: brent.change_5d }),
+        card("WTI", wti, { as_of: wti.as_of, stale: wti.stale, change: wti.change_5d }),
+        card("Brent minus WTI", oil.brent_wti_spread, { as_of: (oil.brent_wti_spread || {}).as_of, change: (oil.brent_wti_spread || {}).change_5d }),
+        card("Brent 5-day percent", alert.brent_5d_pct, { as_of: (alert.brent_5d_pct || {}).to_date }),
+      ].join("");
+
+      const crack = (oil.diesel || {}).futures_crack || {};
+      const spotCrack = (oil.diesel || {}).spot_crack || {};
+      const stocks = oil.inventories || {};
+      const dgs = (oil.spillover || {}).dgs30 || {};
+      const bei = (oil.spillover || {}).t5yie || {};
+      const curve = oil.curve || {};
+      document.querySelector("#oil-extra").innerHTML = [
+        `<article class="card"><div class="label">WTI curve</div><p>${legText(curve.wti)}</p></article>`,
+        `<article class="card"><div class="label">Brent curve</div><p>${legText(curve.brent)}</p></article>`,
+        card("Diesel crack (futures)", crack.available ? crack : null, { as_of: crack.as_of, change: crack.change_5d }),
+        card("Diesel crack (EIA spot)", spotCrack.available ? spotCrack : null, { as_of: spotCrack.as_of }),
+        card("US crude stocks", stocks.available ? stocks : null, { as_of: stocks.as_of, change: stocks.change_1w, changeLabel: "1-week" }),
+        card("30-year yield", dgs, { as_of: dgs.as_of, stale: dgs.stale, change: dgs.change_5d }),
+        card("5-year breakeven", bei, { as_of: bei.as_of, stale: bei.stale, change: bei.change_5d }),
+      ].join("");
+      const session = brent.futures && brent.futures.session_complete === false
+        ? "The Brent headline is still today's trading bar, not a settlement."
+        : "";
+      document.querySelector("#oil-note").textContent = [brent.note, curve.note, session].filter(Boolean).join(" ");
+      document.querySelector("#oil").hidden = false;
+    }
+
+    function addNotes(items) {
+      const list = document.querySelector("#notes");
+      (items || []).forEach((text) => {
+        const item = document.createElement("li");
+        item.textContent = text;
+        list.appendChild(item);
+      });
+    }
+
+    async function load(path) {
+      const response = await fetch(`${path}?t=${Date.now()}`, { cache: "no-store" });
+      if (!response.ok) throw new Error(`${path} HTTP ${response.status}`);
+      return response.json();
+    }
+
+    function markerSelfCheck() {
+      const atMax = markerPercent(529, 968, 968);
+      const atMin = markerPercent(529, 968, 529);
+      const refused = markerPercent(529, 968, "968 bps");
+      const passed = atMax === 100 && atMin === 0 && refused === null;
+      const node = document.querySelector("#marker-check");
+      node.textContent = passed
+        ? "Marker check passed: a reading at the maximum sits at the right end, and a text value is refused."
+        : "Marker check failed.";
+      node.className = passed ? "sub ok" : "sub bad";
+    }
+
+    async function main() {
+      markerSelfCheck();
+      try {
+        const [credit, oil] = await Promise.all([load("../credit.json"), load("../oil.json")]);
+        renderCredit(credit);
+        renderOil(oil);
+        addNotes(credit.frontend_notes);
+        addNotes(credit.notes);
+        addNotes(oil.notes);
+        document.querySelector("#status").textContent = "Loaded credit.json and oil.json.";
+      } catch (error) {
+        document.querySelector("#status").textContent =
+          "Could not load the JSON files (" + error.message + "). Open this page from the repository root, for example with GitHub Pages at /preview/, or run a local server in the repo folder.";
+      }
+    }
+
+    main();
+  </script>
+</body>
+</html>
