@@ -1,0 +1,57 @@
+name: Update credit and oil feeds
+
+# FRED posts the previous business day's bond spreads once, usually late
+# morning New York time, and the oil spot series lags by a few days. GitHub
+# often starts a scheduled run late or skips one. Running every 3 hours,
+# including weekends, means a missed slot is caught by the next one.
+#
+# A run commits only when an official observation date is newer than the date
+# already in the file. A late second run sees the same date and commits nothing,
+# so it cannot duplicate a row or invent a print.
+#
+# GitHub disables a scheduled workflow after 60 days with no repository
+# activity. A weekday when FRED has a new date commits a feed, and that commit
+# keeps the schedule alive. A long stretch with no new date and no other commit
+# can turn the schedule off. Re-enable it from the Actions tab and click Run
+# workflow once. There is no separate keepalive commit.
+#
+# status.json records the last attempt, the last success, and each series date.
+# The job turns red in the Actions tab when a feed errors or a core daily series
+# is more than 3 business days old. The latest good JSON is still committed.
+on:
+  schedule:
+    - cron: "0 */3 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: market-vitals-feeds
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Check for a newer observation and update the feeds
+        id: build
+        run: python3 scripts/update_feeds.py
+        continue-on-error: true
+
+      - name: Commit the new files if an observation date moved
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          bash scripts/commit_feeds.sh
+
+      - name: Fail the job if a feed failed or data is stale
+        if: steps.build.outcome == 'failure'
+        run: |
+          echo "A feed failed, or a core series is more than 3 business days old. status.json has the dates and the error. The previous good copy of a failed file stays in place."
+          exit 1
