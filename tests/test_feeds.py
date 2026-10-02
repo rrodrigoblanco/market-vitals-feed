@@ -23,7 +23,17 @@ from feeds.credit import (
 )
 from feeds.eia import parse_eia_api, parse_wpsr_table1
 from feeds.fred import parse_csv
-from feeds.freshness import publish_reason, should_publish
+from feeds.freshness import STORY_VERSION, publish_reason, should_publish
+from feeds.health import build_status
+from feeds.legacy import (
+    build_macro_document,
+    build_yield_rows,
+    dispersion_block,
+    market_regime,
+    yields_document,
+)
+from feeds.tape import what_the_tape_is_saying
+from feeds.validate import validate_macro, validate_status, validate_yields
 from feeds.oil import _crack, build_alert, build_oil_feed, curve_shape
 from feeds.plain import credit_sentences
 from feeds.serialize import measure, write_if_changed
@@ -543,7 +553,236 @@ class SerializeTests(unittest.TestCase):
             self.assertFalse(write_if_changed(path, second))
             self.assertIn("2026-10-01T00:00:00Z", path.read_text(encoding="utf-8"))
             with self.assertRaises(RuntimeError):
-                write_if_changed(Path(tmp) / "yields.json", {"value": 1})
+                write_if_changed(Path(tmp) / "durability.json", {"value": 1})
+
+
+class LegacyFeedTests(unittest.TestCase):
+    def _prices(self, start: date, count: int, first: float) -> list[tuple[date, float]]:
+        days = weekdays_ending(start, count)
+        return [(day, first + index) for index, day in enumerate(days)]
+
+    def test_rows_use_only_dates_where_every_series_printed(self):
+        days = weekdays_ending(date(2026, 9, 30), 12)
+        hy = [(day, 300 + index) for index, day in enumerate(days)]
+        ig = [(day, 80) for day in days]
+        vix = [(day, 16.0) for day in days[:-1]]
+        vix3m = [(day, 18.0) for day in days]
+        qqq = self._prices(days[-1], 12, 400)
+        smh = self._prices(days[-1], 12, 200)
+        breadth = {day: 0.8 for day in days}
+        rows = build_yield_rows(
+            hy_bp=hy,
+            ig_bp=ig,
+            vix=vix,
+            vix3m=vix3m,
+            qqq=qqq,
+            smh=smh,
+            breadth=breadth,
+            drawdown_window=5,
+            sma_window=5,
+        )
+        self.assertNotIn(days[-1].isoformat(), [row["date"] for row in rows])
+        self.assertTrue(rows)
+        self.assertEqual(rows[-1]["HY_IG"], rows[-1]["HY_OAS"] - rows[-1]["IG_OAS"])
+        self.assertEqual(rows[-1]["VIX_slope"], -2.0)
+
+    def test_growth_scare_matches_the_drawdown_day_and_keeps_the_site_fields(self):
+        self.assertEqual(
+            market_regime(hy=287, qqq_dd=-0.112, vix=20.66, slope=-0.84, breadth=0.567),
+            "GROWTH SCARE",
+        )
+        self.assertEqual(
+            market_regime(hy=312, qqq_dd=-0.01, vix=16.0, slope=-2.0, breadth=0.8),
+            "RISK-ON",
+        )
+        days = weekdays_ending(date(2026, 9, 30), 12)
+        hy = [(day, 300) for day in days]
+        ig = [(day, 80) for day in days]
+        vix = [(day, 16.0) for day in days]
+        vix3m = [(day, 18.0) for day in days]
+        qqq = [(day, 100.0) for day in days]
+        qqq[-1] = (days[-1], 80.0)
+        smh = self._prices(days[-1], 12, 50)
+        breadth = {day: 0.8 for day in days}
+        rows = build_yield_rows(
+            hy_bp=hy,
+            ig_bp=ig,
+            vix=vix,
+            vix3m=vix3m,
+            qqq=qqq,
+            smh=smh,
+            breadth=breadth,
+            drawdown_window=5,
+            sma_window=5,
+        )
+        self.assertEqual(rows[-1]["REGIME"], "GROWTH SCARE")
+        document = {
+            "updatedAt": "2026-10-01T00:00:00+00:00",
+            "days": len(rows),
+            "summary": "Junk spreads are unchanged in this fixture, and that is the whole credit move. VIX is calm. Breadth is broad.",
+            "what_would_change_this": "This would change if junk spreads reached 6 percentage points.",
+            "official_as_of": {"HY_OAS": rows[-1]["date"]},
+            "rows": rows,
+        }
+        validate_yields(document)
+        dispersion = dispersion_block(
+            bb=[(day, 190) for day in days],
+            ccc=[(day, 900 + index) for index, day in enumerate(days)],
+            hy=hy,
+            interpretation="BROADENING. Stress is climbing through junk, not a market-wide credit problem.",
+        )
+        macro = build_macro_document(
+            rows,
+            dispersion,
+            updated_at=document["updatedAt"],
+            tape="Credit, rates, oil, and liquidity are described with the dates above.",
+            summary=document["summary"],
+        )
+        validate_macro(macro)
+        self.assertEqual(
+            [item["signal"] for item in macro["macro"]["signals"]],
+            [
+                "Credit (HY OAS)",
+                "Credit speed (5-day)",
+                "Contagion (HY-IG)",
+                "Volatility shape",
+                "Nasdaq drawdown",
+                "Breadth",
+                "Semis vs trend",
+            ],
+        )
+        self.assertIsInstance(macro["macro"]["dispersion"]["value"], str)
+        self.assertIn("window_start", macro["macro"]["dispersion"]["calibration"])
+
+    def test_legacy_dates_use_the_same_ids_as_the_publish_gate(self):
+        rows = [{"date": "2026-09-30"}]
+        series_dates = {
+            "BAMLH0A0HYM2": "2026-09-30",
+            "BAMLC0A0CM": "2026-09-30",
+            "VIXCLS": "2026-09-30",
+            "VXVCLS": "2026-09-30",
+        }
+        document = yields_document(
+            rows,
+            updated_at="2026-10-01T00:00:00+00:00",
+            summary="Junk spreads and volatility are unchanged on the latest shared print.",
+            official_as_of=series_dates,
+        )
+        self.assertEqual(document["official_as_of"]["HY_OAS"], "2026-09-30")
+        self.assertEqual(document["official_as_of"]["BAMLH0A0HYM2"], "2026-09-30")
+        self.assertFalse(
+            should_publish(document, series_dates, story_version=STORY_VERSION)
+        )
+        self.assertTrue(
+            should_publish(
+                document,
+                {**series_dates, "BAMLH0A0HYM2": "2026-10-01"},
+                story_version=STORY_VERSION,
+            )
+        )
+
+    def test_status_fails_loudly_after_three_business_days(self):
+        fresh = {series: "2026-09-30" for series in (
+            "BAMLH0A0HYM2", "BAMLC0A0CM", "BAMLH0A1HYBB", "BAMLH0A3HYC", "VIXCLS", "DGS10", "T5YIE",
+        )}
+        ok = build_status(
+            today=date(2026, 10, 5),
+            daily_as_of=fresh,
+            weekly_as_of={"WALCL": "2026-10-01", "WRESBAL": "2026-10-01"},
+            feed_errors=[],
+        )
+        # Sep 30 to Oct 5 is Thu->Mon: Oct 1, 2, 5 = 3 business days. Not stale yet.
+        self.assertEqual(ok["status"], "ok")
+        self.assertFalse(ok["fail_job"])
+        stale = build_status(
+            today=date(2026, 10, 6),
+            daily_as_of=fresh,
+            weekly_as_of={"WALCL": "2026-10-01", "WRESBAL": "2026-10-01"},
+            feed_errors=[],
+        )
+        self.assertEqual(stale["status"], "stale")
+        self.assertTrue(stale["fail_job"])
+        self.assertIn("BAMLH0A0HYM2", stale["stale_series"])
+        broken = build_status(
+            today=date(2026, 10, 1),
+            daily_as_of=fresh,
+            weekly_as_of={"WALCL": "2026-10-01", "WRESBAL": "2026-10-01"},
+            feed_errors=["oil: down"],
+        )
+        self.assertEqual(broken["status"], "error")
+        validate_status(ok)
+
+    def test_tape_does_not_invent_a_missing_series(self):
+        text = what_the_tape_is_saying(
+            hy_bp=312,
+            hy_as_of="2026-09-30",
+            hy_5d_bp=39,
+            ig_5d_bp=7,
+            ccc_bb_bp=985,
+            yield_5d_bp=48,
+            spread_5d_bp=39,
+            treasury_5d_bp=9,
+            dgs10=[(date(2026, 9, 30), 4.2)],
+            dgs30=[(date(2026, 9, 30), 4.8)],
+            real_yield=None,
+            breakeven=[(date(2026, 9, 30), 2.3)],
+            dollar=None,
+            vix=[(date(2026, 9, 30), 16.0)],
+            balance_sheet=[(date(2026, 9, 24), 6_500_000)],
+            reserves=None,
+            rrp=[(date(2026, 9, 30), 200)],
+            brent=102.4,
+            brent_as_of="2026-10-01",
+            brent_5d_pct=-3.9,
+            curve="backwardation",
+        )
+        self.assertIn("3.12 percentage points", text)
+        self.assertIn("was not published", text)
+        self.assertIn("6.50 trillion dollars", text)
+        self.assertNotIn("SYSTEMIC", text)
+        drained = what_the_tape_is_saying(
+            hy_bp=None,
+            hy_as_of=None,
+            hy_5d_bp=None,
+            ig_5d_bp=None,
+            ccc_bb_bp=None,
+            yield_5d_bp=None,
+            spread_5d_bp=None,
+            treasury_5d_bp=None,
+            dgs10=None,
+            dgs30=None,
+            real_yield=None,
+            breakeven=None,
+            dollar=None,
+            vix=None,
+            balance_sheet=None,
+            reserves=None,
+            rrp=[(date(2026, 9, 25), 0.576), (date(2026, 10, 1), 0.350)],
+            brent=None,
+            brent_as_of=None,
+            brent_5d_pct=None,
+            curve=None,
+        )
+        self.assertIn("0.35 billion dollars", drained)
+        self.assertNotIn("0.0 billion", drained)
+
+    def test_story_version_publishes_once(self):
+        existing = {
+            "summary": "One sentence here. Another sentence here.",
+            "what_would_change_this": "Something would have to move.",
+            "official_as_of": {"BAMLH0A0HYM2": "2026-09-30"},
+        }
+        self.assertTrue(
+            should_publish(existing, {"BAMLH0A0HYM2": "2026-09-30"}, story_version=STORY_VERSION)
+        )
+        existing["story_version"] = STORY_VERSION
+        self.assertFalse(
+            should_publish(existing, {"BAMLH0A0HYM2": "2026-09-30"}, story_version=STORY_VERSION)
+        )
+        self.assertIn(
+            "newer observation",
+            publish_reason(existing, {"BAMLH0A0HYM2": "2026-10-01"}, story_version=STORY_VERSION) or "",
+        )
 
 
 class RepoSafetyTests(unittest.TestCase):
@@ -554,8 +793,6 @@ class RepoSafetyTests(unittest.TestCase):
                 "diff",
                 "--exit-code",
                 "--",
-                "macro.json",
-                "yields.json",
                 "durability.json",
                 "gpu_waterfall.json",
             ],

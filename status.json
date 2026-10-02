@@ -1,0 +1,71 @@
+{
+  "status": "ok",
+  "fail_job": false,
+  "last_attempt": "2026-10-01T23:59:14Z",
+  "last_success": "2026-10-01T23:59:14Z",
+  "run_date": "2026-10-01",
+  "run_timezone": "America/New_York",
+  "stale_after_business_days": 3,
+  "weekly_stale_after_calendar_days": 12,
+  "daily": {
+    "BAMLH0A0HYM2": {
+      "as_of": "2026-09-30",
+      "business_days_old": 1,
+      "stale": false,
+      "reason": null
+    },
+    "BAMLC0A0CM": {
+      "as_of": "2026-09-30",
+      "business_days_old": 1,
+      "stale": false,
+      "reason": null
+    },
+    "BAMLH0A1HYBB": {
+      "as_of": "2026-09-30",
+      "business_days_old": 1,
+      "stale": false,
+      "reason": null
+    },
+    "BAMLH0A3HYC": {
+      "as_of": "2026-09-30",
+      "business_days_old": 1,
+      "stale": false,
+      "reason": null
+    },
+    "VIXCLS": {
+      "as_of": "2026-09-30",
+      "business_days_old": 1,
+      "stale": false,
+      "reason": null
+    },
+    "DGS10": {
+      "as_of": "2026-09-30",
+      "business_days_old": 1,
+      "stale": false,
+      "reason": null
+    },
+    "T5YIE": {
+      "as_of": "2026-10-01",
+      "business_days_old": 0,
+      "stale": false,
+      "reason": null
+    }
+  },
+  "weekly": {
+    "WALCL": {
+      "as_of": "2026-09-30",
+      "calendar_days_old": 1,
+      "stale": false,
+      "reason": null
+    },
+    "WRESBAL": {
+      "as_of": "2026-09-30",
+      "calendar_days_old": 1,
+      "stale": false,
+      "reason": null
+    }
+  },
+  "stale_series": [],
+  "errors": [],
+  "note": "This file is the heartbeat. status ok means every core daily series is at most 3 business days old and no feed raised an error. A stale or error state fails the GitHub Actions job after the latest good files have been written."
+}

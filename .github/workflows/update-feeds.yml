@@ -10,10 +10,14 @@ name: Update credit and oil feeds
 # so it cannot duplicate a row or invent a print.
 #
 # GitHub disables a scheduled workflow after 60 days with no repository
-# activity. A weekday when FRED has a new date commits credit.json or oil.json,
-# and that commit keeps the schedule alive. A long stretch with no new date
-# and no other commit can turn the schedule off. Re-enable it from the Actions
-# tab and click Run workflow once. There is no separate keepalive commit.
+# activity. A weekday when FRED has a new date commits a feed, and that commit
+# keeps the schedule alive. A long stretch with no new date and no other commit
+# can turn the schedule off. Re-enable it from the Actions tab and click Run
+# workflow once. There is no separate keepalive commit.
+#
+# status.json records the last attempt, the last success, and each series date.
+# The job turns red in the Actions tab when a feed errors or a core daily series
+# is more than 3 business days old. The latest good JSON is still committed.
 on:
   schedule:
     - cron: "0 */3 * * *"
@@ -29,7 +33,7 @@ concurrency:
 jobs:
   update:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
     steps:
       - name: Check out the repository
         uses: actions/checkout@v4
@@ -46,8 +50,8 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           bash scripts/commit_feeds.sh
 
-      - name: Fail the job if a feed failed
+      - name: Fail the job if a feed failed or data is stale
         if: steps.build.outcome == 'failure'
         run: |
-          echo "A feed failed. The commit step does not publish a broken file, and the previous JSON stays in place."
+          echo "A feed failed, or a core series is more than 3 business days old. status.json has the dates and the error. The previous good copy of a failed file stays in place."
           exit 1

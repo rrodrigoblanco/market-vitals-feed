@@ -1,7 +1,8 @@
 {
   "feed": "credit",
   "schema_version": 1,
-  "summary": "As of September 30, 2026, junk-bond spreads widened by 0.39 percentage points over the previous five trading days, led by the riskiest bonds, called CCC, which widened by 0.86 percentage points. Better-quality junk bonds, called BB, are at 1.94 percentage points after widening by 0.35 percentage points, which is still below the March 2026 high of 2.22 percentage points and the April 2025 peak of 3.06 percentage points. Safer corporate bonds, called investment grade, widened by 0.07 percentage points over five trading days, so this is stress climbing through the junk market, not a market-wide credit problem.",
+  "story_version": 3,
+  "summary": "As of September 30, 2026, junk-bond spreads widened by 0.39 percentage points over the previous five trading days, led by the riskiest bonds, called CCC, which widened by 0.86 percentage points. High-yield spreads are 3.12 percentage points, the 59th percentile of the 786 days still on file since October 2, 2023, investment-grade spreads are 0.84 percentage points, the 50th percentile of the 785 days still on file since October 2, 2023, and BB spreads are 1.94 percentage points, the 72nd percentile of the 786 days still on file since October 2, 2023. The five-day pace is a move of 0.39 percentage points, versus 0.03 percentage points over the five days before that, so the pace is speeding up by 0.36 percentage points, and the gap between CCC and BB bonds is 9.85 percentage points, and the all-in junk yield moved 0.48 percentage points over five days, of which 0.39 was the credit spread and 0.09 was Treasury rates, so this is stress climbing through the junk market, not a market-wide credit problem.",
   "what_would_change_this": "This would become a market-wide credit problem if BB bonds reached 2.22 percentage points, or the top 10 percent of the days still on file, and investment-grade bonds widened by at least 0.10 percentage points over five trading days or 0.15 percentage points over twenty trading days.",
   "official_as_of": {
     "BAMLH0A0HYM2": "2026-09-30",
@@ -13,7 +14,7 @@
     "DGS30": "2026-09-30",
     "DGS5": "2026-09-30"
   },
-  "generated_at": "2026-10-01T23:35:04Z",
+  "generated_at": "2026-10-02T00:02:00Z",
   "run_date": "2026-10-01",
   "run_timezone": "America/New_York",
   "description": "Credit monitor rebuilt from FRED. Each value keeps the observation date FRED published. Nothing is copied forward onto a newer date.",

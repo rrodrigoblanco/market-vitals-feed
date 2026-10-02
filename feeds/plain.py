@@ -145,7 +145,36 @@ def _what_would_change(label: str) -> str:
     )
 
 
-def credit_sentences(series: dict, label: str) -> tuple[str, str]:
+def _ordinal(value: float) -> str:
+    number = int(round(value))
+    if 10 <= number % 100 <= 20:
+        suffix = "th"
+    else:
+        suffix = {1: "st", 2: "nd", 3: "rd"}.get(number % 10, "th")
+    return f"{number}{suffix}"
+
+
+def _history_clause(block: dict, name: str) -> str:
+    level = block.get("value")
+    if not isinstance(level, (int, float)):
+        return f"{name} does not have a published level"
+    text = f"{name} {_points(level)} percentage points"
+    window = block.get("percentile_available") or {}
+    if isinstance(window.get("value"), (int, float)) and window.get("n_days") and window.get("window_start"):
+        text += (
+            f", the {_ordinal(window['value'])} percentile of the {window['n_days']} days "
+            f"still on file since {long_date(window['window_start'])}"
+        )
+    return text
+
+
+def credit_sentences(
+    series: dict,
+    label: str,
+    *,
+    speed: dict | None = None,
+    decomposition: dict | None = None,
+) -> tuple[str, str]:
     """Two or three sentences, then one sentence on what would change the reading."""
     hy = series.get("hy_oas") or {}
     ccc_move = _change_value(series.get("ccc_oas"))
@@ -176,12 +205,55 @@ def credit_sentences(series: dict, label: str) -> tuple[str, str]:
             f"five trading days, and {ccc_part}."
         )
 
-    ig_move = _change_value(series.get("ig_oas"))
-    ig_text = _spread_move(ig_move, "Safer corporate bonds, called investment grade,")
-    if ig_move:
-        ig_text += " over five trading days"
-    third = f"{ig_text}, {_closer(label)}"
-    summary = " ".join((first, _bb_sentence(series), third))
+    second = (
+        f"{_history_clause(hy, 'High-yield spreads are')}, "
+        f"{_history_clause(series.get('ig_oas') or {}, 'investment-grade spreads are')}, and "
+        f"{_history_clause(series.get('bb_oas') or {}, 'BB spreads are')}."
+    )
+    accel = ((speed or {}).get("acceleration") or {})
+    prior = (speed or {}).get("prior_5d") or {}
+    if speed and speed.get("value") is not None and prior.get("value") is not None and accel.get("value") is not None:
+        if accel.get("direction") == "steady":
+            pace = (
+                f"The five-day pace is a move of {_points(speed['value'])} percentage points, "
+                f"versus {_points(prior['value'])} percentage points over the five days before that, so the pace is about the same."
+            )
+        else:
+            word = "speeding up" if accel.get("direction") == "increasing" else "slowing down"
+            pace = (
+                f"The five-day pace is a move of {_points(speed['value'])} percentage points, "
+                f"versus {_points(prior['value'])} percentage points over the five days before that, "
+                f"so the pace is {word} by {_points(accel['value'])} percentage points."
+            )
+    elif hy_move is not None:
+        pace = (
+            f"The five-day pace is a move of {_points(hy_move)} percentage points, "
+            "and there is not yet an earlier five-day pace to measure acceleration."
+        )
+    else:
+        pace = "The five-day pace is not available yet."
+
+    gap = series.get("ccc_bb") or {}
+    window = (((decomposition or {}).get("windows") or {}).get("5d") or {})
+    spread_part = window.get("spread_part") if isinstance(window.get("spread_part"), dict) else {}
+    treasury_part = window.get("treasury_part") if isinstance(window.get("treasury_part"), dict) else {}
+    yield_change = window.get("yield_change") if isinstance(window.get("yield_change"), dict) else {}
+    gap_text = (
+        f"The gap between CCC and BB bonds is {_points(gap['value'])} percentage points"
+        if isinstance(gap.get("value"), (int, float))
+        else "The CCC-minus-BB gap is not available"
+    )
+    if all(isinstance(part.get("value"), (int, float)) for part in (spread_part, treasury_part, yield_change)):
+        split = (
+            f"the all-in junk yield moved {_points(yield_change['value'])} percentage points over five days, "
+            f"of which {_points(spread_part['value'])} was the credit spread and "
+            f"{_points(treasury_part['value'])} was Treasury rates"
+        )
+    else:
+        split = "the split of the all-in yield between credit and Treasury rates is not available for this window"
+    gap_clause = gap_text[0].lower() + gap_text[1:] if gap_text else gap_text
+    third = f"{pace.rstrip('.')}, and {gap_clause}, and {split}, {_closer(label)}"
+    summary = " ".join((first, second, third))
     return summary, _what_would_change(label)
 
 
@@ -225,7 +297,15 @@ def _curve_sentence(curve: dict | None) -> str:
     )
 
 
-def oil_sentences(brent: dict, wti: dict, curve: dict | None, alert_on: bool) -> tuple[str, str]:
+def oil_sentences(
+    brent: dict,
+    wti: dict,
+    curve: dict | None,
+    alert_on: bool,
+    diesel: dict | None = None,
+    inventories: dict | None = None,
+    spillover: dict | None = None,
+) -> tuple[str, str]:
     """Three sentences, then one sentence on what would turn the alert on or off."""
     headline = brent.get("headline")
     if headline == "futures":
@@ -257,4 +337,37 @@ def oil_sentences(brent: dict, wti: dict, curve: dict | None, alert_on: bool) ->
             "The alert would turn on if Brent rose by more than 5 percent over five trading days "
             "and the 30-year Treasury yield was higher than it was five trading days earlier."
         )
-    return " ".join((first, _curve_sentence(curve), alert)), change
+    curve_body = _curve_sentence(curve).rstrip(".")
+    crack = (diesel or {}).get("futures_crack") or {}
+    spot_crack = (diesel or {}).get("spot_crack") or {}
+    if crack.get("available") and isinstance(crack.get("value"), (int, float)):
+        second = f"{curve_body}, and the heating-oil crack versus Brent is {float(crack['value']):.2f} dollars a barrel."
+    elif spot_crack.get("available") and isinstance(spot_crack.get("value"), (int, float)):
+        second = (
+            f"{curve_body}, and the EIA diesel crack versus Brent spot is "
+            f"{float(spot_crack['value']):.2f} dollars a barrel as of {long_date(spot_crack.get('as_of'))}."
+        )
+    else:
+        second = curve_body + "."
+    stocks = inventories or {}
+    dgs = (spillover or {}).get("dgs30") or {}
+    bei = (spillover or {}).get("t5yie") or {}
+    extras: list[str] = []
+    if stocks.get("available") and isinstance(stocks.get("value"), (int, float)):
+        extras.append(
+            f"US commercial crude stocks were {float(stocks['value']):.2f} million barrels "
+            f"in the week of {long_date(stocks.get('as_of'))}"
+        )
+    if isinstance(dgs.get("value"), (int, float)):
+        extras.append(
+            f"the 30-year yield is {float(dgs['value']):.2f} percent as of {long_date(dgs.get('as_of'))}"
+        )
+    if isinstance(bei.get("value"), (int, float)):
+        extras.append(
+            f"the 5-year breakeven is {float(bei['value']):.2f} percent as of {long_date(bei.get('as_of'))}"
+        )
+    if extras:
+        third = ", ".join(extras) + ", and " + alert[0].lower() + alert[1:]
+    else:
+        third = alert
+    return " ".join((first, second, third)), change

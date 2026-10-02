@@ -9,7 +9,9 @@ Four files are already updated by an existing program that runs outside GitHub:
 - `durability.json`
 - `gpu_waterfall.json`
 
-Leave those four files alone. The new GitHub Action does not write them.
+`durability.json` and `gpu_waterfall.json` are still written by that other program. This action does not touch them.
+
+This action does rebuild `yields.json` and `macro.json`. Every key the live site already reads is still there, with the same type. New sentences and dates are added beside those keys. `yields.json` is what https://wolverine-matrix.aalejandroblanco.workers.dev/ loads from GitHub Pages. A row is included only when junk spreads, investment-grade spreads, VIX, the Nasdaq-100, semiconductors, and breadth all have a real print that day. Yesterday's number is never copied onto today.
 
 Two new files are produced here, on a schedule:
 
@@ -227,6 +229,12 @@ To publish it with GitHub Pages:
 
 Until Pages is on, you can still read the numbers by opening `credit.json` and `oil.json` in the repository.
 
+## Health
+
+`status.json` records the last attempt, the last success, and the observation date of each core series. If a feed errors, or if junk spreads, investment-grade spreads, VIX, the 10-year yield, or the 5-year breakeven are more than 3 business days behind the New York run date, the GitHub Actions job turns red. The newest good JSON is still kept. Weekly Fed series (the balance sheet and reserve balances) are allowed 12 calendar days because they print once a week.
+
+`tape.json` is the cross-asset paragraph: credit, the 10-year and 30-year, the 5-year breakeven, the 10-year real yield, the dollar, VIX, oil, and the Fed balance sheet, reserves, and reverse repo. Each number names its date. A series that did not publish is described as missing.
+
 ## What the action will not do
 
-It will not edit `macro.json`, `yields.json`, `durability.json`, or `gpu_waterfall.json`. The commit step stops if any of those files changed.
+It will not edit `durability.json` or `gpu_waterfall.json`. The commit step stops if either file changed.

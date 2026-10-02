@@ -7,16 +7,16 @@ import os
 from decimal import Decimal, ROUND_HALF_UP
 from pathlib import Path
 
+# durability.json and gpu_waterfall.json are still owned by the other program.
+# yields.json and macro.json are regenerated here, with their old keys kept.
 FORBIDDEN_OUTPUTS = frozenset(
     {
-        "macro.json",
-        "yields.json",
         "durability.json",
         "gpu_waterfall.json",
     }
 )
 
-VOLATILE_KEYS = frozenset({"generated_at", "quoted_at"})
+VOLATILE_KEYS = frozenset({"generated_at", "quoted_at", "updatedAt", "last_attempt", "last_success"})
 
 
 def round_half_up(value: Decimal | str | int | float, places: int) -> Decimal:

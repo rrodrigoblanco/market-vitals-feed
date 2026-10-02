@@ -91,6 +91,7 @@
     <h1>Credit and oil preview</h1>
     <p class="sub">Reads <code>credit.json</code> and <code>oil.json</code>. This page does not change the trading site. Bond spreads are usually one business day behind, and that is expected.</p>
     <section id="plain" hidden>
+      <article class="plain" id="tape-plain"></article>
       <article class="plain" id="credit-plain"></article>
       <article class="plain" id="oil-plain"></article>
     </section>
@@ -351,10 +352,27 @@
     async function main() {
       markerSelfCheck();
       try {
-        const [credit, oil] = await Promise.all([load("../credit.json"), load("../oil.json")]);
+        const [credit, oil, tape, health] = await Promise.all([
+          load("../credit.json"),
+          load("../oil.json"),
+          load("../tape.json").catch(() => null),
+          load("../status.json").catch(() => null),
+        ]);
+        if (tape) {
+          fillPlain(
+            document.querySelector("#tape-plain"),
+            "What the tape is saying",
+            tape.what_the_tape_is_saying,
+            tape.what_would_change_this
+          );
+        }
         fillPlain(document.querySelector("#credit-plain"), "Credit", credit.summary, credit.what_would_change_this);
         fillPlain(document.querySelector("#oil-plain"), "Oil", oil.summary, oil.what_would_change_this);
         document.querySelector("#plain").hidden = false;
+        if (health && health.status && health.status !== "ok") {
+          document.querySelector("#status").textContent =
+            "Feed status is " + health.status + ". Stale series: " + (health.stale_series || []).join(", ");
+        }
         renderCredit(credit);
         renderOil(oil);
         addNotes(credit.frontend_notes);

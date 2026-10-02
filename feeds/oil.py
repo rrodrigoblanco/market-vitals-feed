@@ -21,6 +21,7 @@ from zoneinfo import ZoneInfo
 from feeds.calendar import business_days_between, is_stale
 from feeds.eia import load_inventories
 from feeds.fred import load_series
+from feeds.freshness import STORY_VERSION
 from feeds.plain import oil_sentences
 from feeds.serialize import measure, round_half_up
 from feeds.stats import change_n, dedupe, shared_level, value_on
@@ -593,7 +594,15 @@ def build_oil_feed(
     )
 
     now_stamp = generated_at or datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
-    summary, what_would_change = oil_sentences(brent, wti, curve, bool(alert["flag"]))
+    summary, what_would_change = oil_sentences(
+        brent,
+        wti,
+        curve,
+        bool(alert["flag"]),
+        diesel=diesel,
+        inventories=inventories,
+        spillover=spillover,
+    )
     official_as_of: dict[str, str] = {}
     for key, spec in FRED_OIL.items():
         rows = fred.get(key) or []
@@ -604,6 +613,7 @@ def build_oil_feed(
     return {
         "feed": "oil",
         "schema_version": 1,
+        "story_version": STORY_VERSION,
         "summary": summary,
         "what_would_change_this": what_would_change,
         "official_as_of": official_as_of,

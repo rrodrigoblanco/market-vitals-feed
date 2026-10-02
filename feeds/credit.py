@@ -24,6 +24,7 @@ from zoneinfo import ZoneInfo
 
 from feeds.calendar import business_days_between, is_stale
 from feeds.fred import load_series
+from feeds.freshness import STORY_VERSION
 from feeds.plain import credit_sentences
 from feeds.serialize import json_number, measure, round_half_up
 from feeds.stats import (
@@ -799,7 +800,12 @@ def build_credit_feed(
         )
 
     now = generated_at or datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
-    summary, what_would_change = credit_sentences(series_out, regime_public["label"])
+    summary, what_would_change = credit_sentences(
+        series_out,
+        regime_public["label"],
+        speed=credit_speed,
+        decomposition=decomposition,
+    )
     official_as_of = {
         spec["fred_id"]: series_out[spec["id"]]["as_of"]
         for spec in SERIES_SPEC
@@ -808,6 +814,7 @@ def build_credit_feed(
     return {
         "feed": "credit",
         "schema_version": 1,
+        "story_version": STORY_VERSION,
         "summary": summary,
         "what_would_change_this": what_would_change,
         "official_as_of": official_as_of,
