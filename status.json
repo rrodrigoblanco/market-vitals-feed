@@ -1,8 +1,8 @@
 {
   "status": "ok",
   "fail_job": false,
-  "last_attempt": "2026-10-09T17:44:25Z",
-  "last_success": "2026-10-09T17:44:25Z",
+  "last_attempt": "2026-10-09T22:01:20Z",
+  "last_success": "2026-10-09T22:01:20Z",
   "run_date": "2026-10-09",
   "run_timezone": "America/New_York",
   "stale_after_business_days": 3,
@@ -39,14 +39,14 @@
       "reason": null
     },
     "DGS10": {
-      "as_of": "2026-10-07",
-      "business_days_old": 2,
+      "as_of": "2026-10-08",
+      "business_days_old": 1,
       "stale": false,
       "reason": null
     },
     "T5YIE": {
-      "as_of": "2026-10-08",
-      "business_days_old": 1,
+      "as_of": "2026-10-09",
+      "business_days_old": 0,
       "stale": false,
       "reason": null
     }
