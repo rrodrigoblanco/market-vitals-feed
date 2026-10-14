@@ -1,36 +1,22 @@
 {
-  "updatedAt": "2026-10-14T14:11:58.809224+00:00",
+  "updatedAt": "2026-10-14T19:03:59.005185+00:00",
   "days": 60,
   "story_version": 3,
-  "summary": "As of October 12, 2026, junk-bond spreads are 3.11 percentage points, -0.01 percentage points over five trading days, and the junk-versus-safe gap is 2.28 percentage points. VIX is 15.21 and the 3-month VIX is 17.93, so near-term fear is below the 3-month reading. The Nasdaq-100 is -1.8 percent from its trailing high, semiconductors are +16.5 percent versus their 200-day average, and 70 percent of the 30-name list is above its own 200-day average.",
+  "summary": "As of October 13, 2026, junk-bond spreads are 3.16 percentage points, +0.13 percentage points over five trading days, and the junk-versus-safe gap is 2.33 percentage points. VIX is 15.27 and the 3-month VIX is 17.96, so near-term fear is below the 3-month reading. The Nasdaq-100 is -2.1 percent from its trailing high, semiconductors are +15.7 percent versus their 200-day average, and 70 percent of the 30-name list is above its own 200-day average.",
   "what_would_change_this": "The latest row would turn to GROWTH SCARE if the Nasdaq-100 closed more than 10 percent below its trailing high while junk spreads stayed under 6 percentage points, and it would turn to RISK-OFF if junk spreads reached 6 percentage points or VIX reached 35.",
   "official_as_of": {
-    "HY_OAS": "2026-10-12",
-    "VIX": "2026-10-12",
-    "QQQ": "2026-10-12",
-    "BAMLH0A0HYM2": "2026-10-12",
-    "BAMLC0A0CM": "2026-10-12",
-    "BAMLH0A1HYBB": "2026-10-12",
-    "BAMLH0A3HYC": "2026-10-12",
+    "HY_OAS": "2026-10-13",
+    "VIX": "2026-10-13",
+    "QQQ": "2026-10-13",
+    "BAMLH0A0HYM2": "2026-10-13",
+    "BAMLC0A0CM": "2026-10-13",
+    "BAMLH0A1HYBB": "2026-10-13",
+    "BAMLH0A3HYC": "2026-10-13",
     "VIXCLS": "2026-10-13",
     "VXVCLS": "2026-10-13"
   },
   "breadth_note": "Breadth is the share of a fixed 30-name large-cap list whose close that day is above its own 200-day average. A name with no print that day is left out. The number is not copied forward onto a later date.",
   "rows": [
-    {
-      "date": "2026-07-20",
-      "HY_OAS": 269,
-      "IG_OAS": 78,
-      "HY_IG": 191,
-      "dHY_5d": 0,
-      "VIX": 18.65,
-      "VIX3M": 20.4,
-      "VIX_slope": -1.75,
-      "QQQ_DD": -0.067,
-      "SMH_200d": 0.268,
-      "Breadth": 0.667,
-      "REGIME": "RISK-ON"
-    },
     {
       "date": "2026-07-21",
       "HY_OAS": 269,
@@ -854,6 +840,20 @@
       "VIX_slope": -2.72,
       "QQQ_DD": -0.018,
       "SMH_200d": 0.165,
+      "Breadth": 0.7,
+      "REGIME": "RISK-ON"
+    },
+    {
+      "date": "2026-10-13",
+      "HY_OAS": 316,
+      "IG_OAS": 83,
+      "HY_IG": 233,
+      "dHY_5d": 13,
+      "VIX": 15.27,
+      "VIX3M": 17.96,
+      "VIX_slope": -2.69,
+      "QQQ_DD": -0.021,
+      "SMH_200d": 0.157,
       "Breadth": 0.7,
       "REGIME": "RISK-ON"
     }
