@@ -2,7 +2,7 @@
   "feed": "oil",
   "schema_version": 1,
   "story_version": 3,
-  "summary": "As of October 14, 2026, Brent crude, the main global oil benchmark, is 105.64 dollars a barrel on the latest daily futures price, up 5.43 percent over five trading days, and US WTI crude is 94.83 dollars a barrel, up 7.42 percent over five trading days. Near-term Brent costs more than Brent for delivery about a year later, so buyers are paying up for barrels today, and the heating-oil crack versus Brent is 101.03 dollars a barrel. US commercial crude stocks were 424.13 million barrels in the week of October 2, 2026, the 30-year yield is 5.56 percent as of October 13, 2026, the 5-year breakeven is 2.36 percent as of October 14, 2026, and the alert is off, because it turns on only when Brent is up more than 5 percent over five trading days and the 30-year Treasury yield is also higher than it was five trading days earlier.",
+  "summary": "As of October 15, 2026, Brent crude, the main global oil benchmark, is 105.90 dollars a barrel on the latest daily futures price, up 1.55 percent over five trading days, and US WTI crude is 96.47 dollars a barrel, up 5.44 percent over five trading days. Near-term Brent costs more than Brent for delivery about a year later, so buyers are paying up for barrels today, and the heating-oil crack versus Brent is 89.31 dollars a barrel. US commercial crude stocks were 415.58 million barrels in the week of October 9, 2026, the 30-year yield is 5.56 percent as of October 13, 2026, the 5-year breakeven is 2.36 percent as of October 14, 2026, and the alert is off, because it turns on only when Brent is up more than 5 percent over five trading days and the 30-year Treasury yield is also higher than it was five trading days earlier.",
   "what_would_change_this": "The alert would turn on if Brent rose by more than 5 percent over five trading days and the 30-year Treasury yield was higher than it was five trading days earlier.",
   "official_as_of": {
     "DCOILBRENTEU": "2026-10-06",
@@ -10,10 +10,10 @@
     "DHOILNYH": "2026-10-06",
     "DGS30": "2026-10-13",
     "T5YIE": "2026-10-14",
-    "EIA_COMMERCIAL_CRUDE": "2026-10-02"
+    "EIA_COMMERCIAL_CRUDE": "2026-10-09"
   },
-  "generated_at": "2026-10-14T23:32:52Z",
-  "run_date": "2026-10-14",
+  "generated_at": "2026-10-15T18:46:28Z",
+  "run_date": "2026-10-15",
   "run_timezone": "America/New_York",
   "description": "Oil tracker. Front-month futures come from Yahoo when available. EIA spot prices come from FRED and lag. Inventories come from EIA.",
   "methodology": {
@@ -43,10 +43,10 @@
     "name": "Brent",
     "headline": "futures",
     "futures": {
-      "value": 105.64,
+      "value": 105.9,
       "unit": "usd_per_bbl",
-      "as_of": "2026-10-14",
-      "quoted_at": "2026-10-14T23:14:31Z",
+      "as_of": "2026-10-15",
+      "quoted_at": "2026-10-15T18:35:31Z",
       "symbol": "BZ=F",
       "contract_name": "Brent Crude Oil Last Day Financ",
       "price_type": "latest_daily_bar",
@@ -56,36 +56,36 @@
       "source": "Yahoo Finance daily bar",
       "note": "Latest trade on Yahoo's daily bar for the front-month future. This is newer than the FRED spot, and it is not an exchange settlement. Crude trades most of the day, so a bar dated today can still change until the session ends.",
       "change_1d": {
-        "value": -0.05,
+        "value": -0.16,
         "unit": "usd_per_bbl",
-        "pct": -0.05,
+        "pct": -0.15,
         "pct_unit": "percent",
-        "from_date": "2026-10-13",
-        "to_date": "2026-10-14",
-        "from_value": 105.69,
-        "to_value": 105.64,
+        "from_date": "2026-10-14",
+        "to_date": "2026-10-15",
+        "from_value": 106.06,
+        "to_value": 105.9,
         "observations_back": 1
       },
       "change_5d": {
-        "value": 5.44,
+        "value": 1.62,
         "unit": "usd_per_bbl",
-        "pct": 5.43,
+        "pct": 1.55,
         "pct_unit": "percent",
-        "from_date": "2026-10-07",
-        "to_date": "2026-10-14",
-        "from_value": 100.2,
-        "to_value": 105.64,
+        "from_date": "2026-10-08",
+        "to_date": "2026-10-15",
+        "from_value": 104.28,
+        "to_value": 105.9,
         "observations_back": 5
       },
       "change_20d": {
-        "value": -0.19,
+        "value": 1.08,
         "unit": "usd_per_bbl",
-        "pct": -0.18,
+        "pct": 1.03,
         "pct_unit": "percent",
-        "from_date": "2026-09-16",
-        "to_date": "2026-10-14",
-        "from_value": 105.83,
-        "to_value": 105.64,
+        "from_date": "2026-09-17",
+        "to_date": "2026-10-15",
+        "from_value": 104.82,
+        "to_value": 105.9,
         "observations_back": 20
       }
     },
@@ -96,7 +96,7 @@
       "unit": "usd_per_bbl",
       "as_of": "2026-10-06",
       "stale": true,
-      "business_days_old": 6,
+      "business_days_old": 7,
       "source": "FRED DCOILBRENTEU (EIA spot, usually a few days behind the futures market)",
       "change_1d": {
         "value": -0.07,
@@ -132,42 +132,42 @@
         "observations_back": 20
       }
     },
-    "value": 105.64,
+    "value": 105.9,
     "unit": "usd_per_bbl",
-    "as_of": "2026-10-14",
+    "as_of": "2026-10-15",
     "stale": false,
     "source": "Yahoo Finance daily bar",
     "change_1d": {
-      "value": -0.05,
+      "value": -0.16,
       "unit": "usd_per_bbl",
-      "pct": -0.05,
+      "pct": -0.15,
       "pct_unit": "percent",
-      "from_date": "2026-10-13",
-      "to_date": "2026-10-14",
-      "from_value": 105.69,
-      "to_value": 105.64,
+      "from_date": "2026-10-14",
+      "to_date": "2026-10-15",
+      "from_value": 106.06,
+      "to_value": 105.9,
       "observations_back": 1
     },
     "change_5d": {
-      "value": 5.44,
+      "value": 1.62,
       "unit": "usd_per_bbl",
-      "pct": 5.43,
+      "pct": 1.55,
       "pct_unit": "percent",
-      "from_date": "2026-10-07",
-      "to_date": "2026-10-14",
-      "from_value": 100.2,
-      "to_value": 105.64,
+      "from_date": "2026-10-08",
+      "to_date": "2026-10-15",
+      "from_value": 104.28,
+      "to_value": 105.9,
       "observations_back": 5
     },
     "change_20d": {
-      "value": -0.19,
+      "value": 1.08,
       "unit": "usd_per_bbl",
-      "pct": -0.18,
+      "pct": 1.03,
       "pct_unit": "percent",
-      "from_date": "2026-09-16",
-      "to_date": "2026-10-14",
-      "from_value": 105.83,
-      "to_value": 105.64,
+      "from_date": "2026-09-17",
+      "to_date": "2026-10-15",
+      "from_value": 104.82,
+      "to_value": 105.9,
       "observations_back": 20
     },
     "note": "The headline is the front-month future when Yahoo answers, because it is fresher. The spot beside it is the EIA daily price from FRED. They are different instruments, so the levels will not match."
@@ -176,10 +176,10 @@
     "name": "WTI",
     "headline": "futures",
     "futures": {
-      "value": 94.83,
+      "value": 96.47,
       "unit": "usd_per_bbl",
-      "as_of": "2026-10-14",
-      "quoted_at": "2026-10-14T23:22:39Z",
+      "as_of": "2026-10-15",
+      "quoted_at": "2026-10-15T18:36:21Z",
       "symbol": "CL=F",
       "contract_name": "Crude Oil Nov 26",
       "price_type": "latest_daily_bar",
@@ -189,36 +189,36 @@
       "source": "Yahoo Finance daily bar",
       "note": "Latest trade on Yahoo's daily bar for the front-month future. This is newer than the FRED spot, and it is not an exchange settlement. Crude trades most of the day, so a bar dated today can still change until the session ends.",
       "change_1d": {
-        "value": 0.69,
+        "value": 1.38,
         "unit": "usd_per_bbl",
-        "pct": 0.73,
+        "pct": 1.45,
         "pct_unit": "percent",
-        "from_date": "2026-10-13",
-        "to_date": "2026-10-14",
-        "from_value": 94.14,
-        "to_value": 94.83,
+        "from_date": "2026-10-14",
+        "to_date": "2026-10-15",
+        "from_value": 95.09,
+        "to_value": 96.47,
         "observations_back": 1
       },
       "change_5d": {
-        "value": 6.55,
+        "value": 4.98,
         "unit": "usd_per_bbl",
-        "pct": 7.42,
+        "pct": 5.44,
         "pct_unit": "percent",
-        "from_date": "2026-10-07",
-        "to_date": "2026-10-14",
-        "from_value": 88.28,
-        "to_value": 94.83,
+        "from_date": "2026-10-08",
+        "to_date": "2026-10-15",
+        "from_value": 91.49,
+        "to_value": 96.47,
         "observations_back": 5
       },
       "change_20d": {
-        "value": -7.6,
+        "value": -5.44,
         "unit": "usd_per_bbl",
-        "pct": -7.42,
+        "pct": -5.34,
         "pct_unit": "percent",
-        "from_date": "2026-09-16",
-        "to_date": "2026-10-14",
-        "from_value": 102.43,
-        "to_value": 94.83,
+        "from_date": "2026-09-17",
+        "to_date": "2026-10-15",
+        "from_value": 101.91,
+        "to_value": 96.47,
         "observations_back": 20
       }
     },
@@ -229,7 +229,7 @@
       "unit": "usd_per_bbl",
       "as_of": "2026-10-06",
       "stale": true,
-      "business_days_old": 6,
+      "business_days_old": 7,
       "source": "FRED DCOILWTICO (EIA spot, usually a few days behind the futures market)",
       "change_1d": {
         "value": 0.11,
@@ -265,82 +265,82 @@
         "observations_back": 20
       }
     },
-    "value": 94.83,
+    "value": 96.47,
     "unit": "usd_per_bbl",
-    "as_of": "2026-10-14",
+    "as_of": "2026-10-15",
     "stale": false,
     "source": "Yahoo Finance daily bar",
     "change_1d": {
-      "value": 0.69,
+      "value": 1.38,
       "unit": "usd_per_bbl",
-      "pct": 0.73,
+      "pct": 1.45,
       "pct_unit": "percent",
-      "from_date": "2026-10-13",
-      "to_date": "2026-10-14",
-      "from_value": 94.14,
-      "to_value": 94.83,
+      "from_date": "2026-10-14",
+      "to_date": "2026-10-15",
+      "from_value": 95.09,
+      "to_value": 96.47,
       "observations_back": 1
     },
     "change_5d": {
-      "value": 6.55,
+      "value": 4.98,
       "unit": "usd_per_bbl",
-      "pct": 7.42,
+      "pct": 5.44,
       "pct_unit": "percent",
-      "from_date": "2026-10-07",
-      "to_date": "2026-10-14",
-      "from_value": 88.28,
-      "to_value": 94.83,
+      "from_date": "2026-10-08",
+      "to_date": "2026-10-15",
+      "from_value": 91.49,
+      "to_value": 96.47,
       "observations_back": 5
     },
     "change_20d": {
-      "value": -7.6,
+      "value": -5.44,
       "unit": "usd_per_bbl",
-      "pct": -7.42,
+      "pct": -5.34,
       "pct_unit": "percent",
-      "from_date": "2026-09-16",
-      "to_date": "2026-10-14",
-      "from_value": 102.43,
-      "to_value": 94.83,
+      "from_date": "2026-09-17",
+      "to_date": "2026-10-15",
+      "from_value": 101.91,
+      "to_value": 96.47,
       "observations_back": 20
     },
     "note": "The headline is the front-month future when Yahoo answers, because it is fresher. The spot beside it is the EIA daily price from FRED. They are different instruments, so the levels will not match."
   },
   "brent_wti_spread": {
-    "value": 10.81,
+    "value": 9.43,
     "unit": "usd_per_bbl",
-    "as_of": "2026-10-14",
+    "as_of": "2026-10-15",
     "definition": "Brent minus WTI on the latest date where both have a real print. The two prices are not mixed across days.",
     "change_1d": {
-      "value": -0.74,
+      "value": -1.54,
       "unit": "usd_per_bbl",
-      "pct": -6.41,
+      "pct": -14.04,
       "pct_unit": "percent",
-      "from_date": "2026-10-13",
-      "to_date": "2026-10-14",
-      "from_value": 11.55,
-      "to_value": 10.81,
+      "from_date": "2026-10-14",
+      "to_date": "2026-10-15",
+      "from_value": 10.97,
+      "to_value": 9.43,
       "observations_back": 1
     },
     "change_5d": {
-      "value": -1.11,
+      "value": -3.36,
       "unit": "usd_per_bbl",
-      "pct": -9.31,
+      "pct": -26.27,
       "pct_unit": "percent",
-      "from_date": "2026-10-07",
-      "to_date": "2026-10-14",
-      "from_value": 11.92,
-      "to_value": 10.81,
+      "from_date": "2026-10-08",
+      "to_date": "2026-10-15",
+      "from_value": 12.79,
+      "to_value": 9.43,
       "observations_back": 5
     },
     "change_20d": {
-      "value": 7.41,
+      "value": 6.52,
       "unit": "usd_per_bbl",
-      "pct": 217.94,
+      "pct": 224.05,
       "pct_unit": "percent",
-      "from_date": "2026-09-16",
-      "to_date": "2026-10-14",
-      "from_value": 3.4,
-      "to_value": 10.81,
+      "from_date": "2026-09-17",
+      "to_date": "2026-10-15",
+      "from_value": 2.91,
+      "to_value": 9.43,
       "observations_back": 20
     },
     "source": "Yahoo Finance front-month futures"
@@ -394,22 +394,22 @@
       "name": "WTI",
       "front": {
         "symbol": "CL=F",
-        "contract": "CLX26.NYM",
-        "contract_month": "2026-11",
-        "value": 94.83,
+        "contract": "CLZ26.NYM",
+        "contract_month": "2026-12",
+        "value": 96.47,
         "unit": "usd_per_bbl",
-        "as_of": "2026-10-14"
+        "as_of": "2026-10-15"
       },
       "deferred": {
-        "symbol": "CLX27.NYM",
-        "contract_month": "2027-11",
+        "symbol": "CLZ27.NYM",
+        "contract_month": "2027-12",
         "tenor_months": 12,
-        "value": 81.18,
+        "value": 79.08,
         "unit": "usd_per_bbl",
-        "as_of": "2026-10-14"
+        "as_of": "2026-10-15"
       },
       "front_minus_deferred": {
-        "value": 13.65,
+        "value": 17.39,
         "unit": "usd_per_bbl"
       },
       "shape": "backwardation",
@@ -424,20 +424,20 @@
         "symbol": "BZ=F",
         "contract": "BZZ26.NYM",
         "contract_month": "2026-12",
-        "value": 105.64,
+        "value": 105.9,
         "unit": "usd_per_bbl",
-        "as_of": "2026-10-14"
+        "as_of": "2026-10-15"
       },
       "deferred": {
         "symbol": "BZZ27.NYM",
         "contract_month": "2027-12",
         "tenor_months": 12,
-        "value": 86.35,
+        "value": 84.98,
         "unit": "usd_per_bbl",
-        "as_of": "2026-10-14"
+        "as_of": "2026-10-15"
       },
       "front_minus_deferred": {
-        "value": 19.29,
+        "value": 20.92,
         "unit": "usd_per_bbl"
       },
       "shape": "backwardation",
@@ -452,24 +452,24 @@
       "available": true,
       "label": "NYMEX heating oil front month minus Brent front month",
       "plain_english": "A diesel proxy. NYMEX heating oil (HO) is the NY Harbor ultra-low-sulfur diesel future, quoted in dollars per gallon. Multiply by 42 to get dollars per barrel, then subtract Brent.",
-      "value": 101.03,
+      "value": 89.31,
       "unit": "usd_per_bbl",
-      "as_of": "2026-10-14",
-      "heating_oil_usd_per_gal": 4.9207,
-      "brent_usd_per_bbl": 105.64,
+      "as_of": "2026-10-15",
+      "heating_oil_usd_per_gal": 4.6479,
+      "brent_usd_per_bbl": 105.9,
       "formula": "heating_oil_usd_per_gal * 42 - brent_usd_per_bbl",
       "source": "Yahoo Finance HO=F and BZ=F",
       "price_type": "latest_daily_bar",
       "symbol_heating_oil": "HO=F",
       "change_5d": {
-        "value": 7.08,
+        "value": -4.64,
         "unit": "usd_per_bbl",
-        "pct": 7.54,
+        "pct": -4.94,
         "pct_unit": "percent",
         "from_date": "2026-10-07",
-        "to_date": "2026-10-14",
+        "to_date": "2026-10-15",
         "from_value": 93.95,
-        "to_value": 101.03,
+        "to_value": 89.31,
         "observations_back": 5
       }
     },
@@ -505,16 +505,16 @@
     "available": true,
     "name": "US commercial crude inventories",
     "plain_english": "Crude oil held by companies in the United States, not counting the Strategic Petroleum Reserve. This is the weekly number traders watch.",
-    "value": 424.134,
+    "value": 415.577,
     "unit": "million_barrels",
-    "as_of": "2026-10-02",
-    "previous_value": 427.32,
-    "previous_as_of": "2026-09-25",
+    "as_of": "2026-10-09",
+    "previous_value": 424.134,
+    "previous_as_of": "2026-10-02",
     "change_1w": {
-      "value": -3.186,
+      "value": -8.557,
       "unit": "million_barrels",
-      "from_date": "2026-09-25",
-      "to_date": "2026-10-02"
+      "from_date": "2026-10-02",
+      "to_date": "2026-10-09"
     },
     "source": "EIA Weekly Petroleum Status Report table 1 (public file, no key)",
     "source_url": "https://ir.eia.gov/wpsr/table1.csv",
@@ -522,7 +522,7 @@
     "spr": {
       "value": 282.983,
       "unit": "million_barrels",
-      "as_of": "2026-10-02",
+      "as_of": "2026-10-09",
       "plain_english": "Strategic Petroleum Reserve. Kept separate from the commercial number."
     }
   },
@@ -535,7 +535,7 @@
       "unit": "percent",
       "as_of": "2026-10-13",
       "stale": false,
-      "business_days_old": 1,
+      "business_days_old": 2,
       "change_5d": {
         "value": -0.1,
         "unit": "percentage_points",
@@ -572,7 +572,7 @@
       "unit": "percent",
       "as_of": "2026-10-14",
       "stale": false,
-      "business_days_old": 0,
+      "business_days_old": 1,
       "change_5d": {
         "value": -0.01,
         "unit": "percentage_points",
@@ -605,17 +605,17 @@
   },
   "alert": {
     "flag": false,
-    "plain_english": "No alert. Brent's 5-day move is 5.43 percent and the 30-year yield's 5-day move is -0.1 percentage points. Both legs have to clear the rule.",
+    "plain_english": "No alert. Brent's 5-day move is 1.55 percent and the 30-year yield's 5-day move is -0.1 percentage points. Both legs have to clear the rule.",
     "rule": "Alert when Brent is up more than 5 percent over 5 trading observations and the 30-year Treasury yield is higher over its own 5 trading observations. The two windows can end on different days. Each date is printed below.",
     "thresholds": {
       "brent_5d_percent_greater_than": 5.0,
       "dgs30_5d_change_percentage_points_greater_than": 0.0
     },
     "brent_5d_pct": {
-      "value": 5.43,
+      "value": 1.55,
       "unit": "percent",
-      "from_date": "2026-10-07",
-      "to_date": "2026-10-14"
+      "from_date": "2026-10-08",
+      "to_date": "2026-10-15"
     },
     "dgs30_5d_change": {
       "value": -0.1,
@@ -630,16 +630,10 @@
       "to_value": 5.56,
       "observations_back": 5
     },
-    "brent_leg": true,
+    "brent_leg": false,
     "rates_leg": false
   },
   "history": [
-    {
-      "date": "2026-03-26",
-      "brent": 108.01,
-      "wti": 94.48,
-      "brent_wti": 13.53
-    },
     {
       "date": "2026-03-27",
       "brent": 112.57,
@@ -1470,9 +1464,15 @@
     },
     {
       "date": "2026-10-14",
-      "brent": 105.64,
-      "wti": 94.83,
-      "brent_wti": 10.81
+      "brent": 106.06,
+      "wti": 95.09,
+      "brent_wti": 10.97
+    },
+    {
+      "date": "2026-10-15",
+      "brent": 105.9,
+      "wti": 96.47,
+      "brent_wti": 9.43
     }
   ],
   "history_source": "yahoo_front_month",
