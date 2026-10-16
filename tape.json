@@ -1,7 +1,7 @@
 {
   "feed": "tape",
   "story_version": 3,
-  "generated_at": "2026-10-15T23:26:13.613865+00:00",
+  "generated_at": "2026-10-16T13:38:14.565648+00:00",
   "summary": "As of October 14, 2026, junk-bond spreads are 3.25 percentage points and are up 0.16 percentage points over five trading days. Investment-grade spreads are up 0.02 percentage points over those same five trading days. The CCC-minus-BB gap is 10.83 percentage points. Of the 0.12 percentage-point move in the all-in junk yield, 0.16 was the credit spread and 0.04 was Treasury rates. The 10-year yield is 5.19 percent as of October 14, 2026 and the 30-year is 5.52 percent as of October 14, 2026, a gap of 0.33 percentage points. Brent is 105.62 dollars a barrel as of October 15, 2026 (+1.29 percent over five trading days), and the curve is backwardation. The 5-year inflation breakeven is 2.33 percent as of October 15, 2026, down 0.04 percentage points over five observations. The 10-year real yield is 2.84 percent as of October 14, 2026. The broad dollar index is 121.60 as of October 9, 2026, +3.39 index points over 20 observations. VIX is 16.87 as of October 14, 2026. The Fed balance sheet is 6.76 trillion dollars as of October 14, 2026, up 9 billion dollars over the latest four weekly observations. Reserve balances are 3.02 trillion dollars as of October 14, 2026, up 8 billion dollars over the latest four weekly observations. Overnight reverse repo is 1.2 billion dollars as of October 15, 2026, up 0.866 billion over the latest four observations.",
   "what_the_tape_is_saying": "As of October 14, 2026, junk-bond spreads are 3.25 percentage points and are up 0.16 percentage points over five trading days. Investment-grade spreads are up 0.02 percentage points over those same five trading days. The CCC-minus-BB gap is 10.83 percentage points. Of the 0.12 percentage-point move in the all-in junk yield, 0.16 was the credit spread and 0.04 was Treasury rates. The 10-year yield is 5.19 percent as of October 14, 2026 and the 30-year is 5.52 percent as of October 14, 2026, a gap of 0.33 percentage points. Brent is 105.62 dollars a barrel as of October 15, 2026 (+1.29 percent over five trading days), and the curve is backwardation. The 5-year inflation breakeven is 2.33 percent as of October 15, 2026, down 0.04 percentage points over five observations. The 10-year real yield is 2.84 percent as of October 14, 2026. The broad dollar index is 121.60 as of October 9, 2026, +3.39 index points over 20 observations. VIX is 16.87 as of October 14, 2026. The Fed balance sheet is 6.76 trillion dollars as of October 14, 2026, up 9 billion dollars over the latest four weekly observations. Reserve balances are 3.02 trillion dollars as of October 14, 2026, up 8 billion dollars over the latest four weekly observations. Overnight reverse repo is 1.2 billion dollars as of October 15, 2026, up 0.866 billion over the latest four observations.",
   "what_would_change_this": "This read would turn into a market-wide stress story if junk spreads kept widening and investment-grade spreads widened with them, or if oil rose more than 5 percent in five trading days while the 30-year yield and the 5-year breakeven rose too.",
@@ -11,7 +11,7 @@
     "T5YIE": "2026-10-15",
     "DFII10": "2026-10-14",
     "DTWEXBGS": "2026-10-09",
-    "VIXCLS": "2026-10-14",
+    "VIXCLS": "2026-10-15",
     "WALCL": "2026-10-14",
     "WRESBAL": "2026-10-14",
     "RRPONTSYD": "2026-10-15"
