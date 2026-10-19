@@ -1,358 +1,1678 @@
 {
-  "updatedAt": "2026-10-12T21:47:43.142425+00:00",
+  "updatedAt": "2026-10-19T19:39:34.106724+00:00",
   "count": 44,
   "names": [
     {
       "ticker": "NVDA",
-      "error": "failed",
-      "flag": "",
-      "durability_total": 0,
-      "scores": {},
-      "one_line": "scan failed"
+      "scores": {
+        "self_funding": {
+          "score": 5,
+          "reason": "NVIDIA generated $64.09B operating cash flow in fiscal 2025 (Jan 2025) and $28.09B in fiscal 2024. Q3 FY25 alone delivered $19.3B net income. Company holds net cash position with $7.3B cash vs $8.5B total debt (Q4 FY24). No new debt issuance; repaid $1.25B debt. Strong positive free cash flow throughout period.",
+          "source": "NVIDIA Q4 FY25 8-K filing (Feb 2025), Yahoo Finance cash flow statement showing FY25 operating cash flow $64.09B",
+          "confidence": "high"
+        },
+        "real_vs_circular_demand": {
+          "score": 3,
+          "reason": "Mixed picture. Major customers include profitable hyperscalers (Microsoft, Amazon, Google) who are also developing competing custom chips and investing heavily in AI infrastructure. However, significant concentration raises concerns about sustainability. No direct evidence of cash-burning AI labs dominating backlog, but customer concentration at 44% (top 3 customers in H1 FY27 per recent disclosures) and potential for circular dynamics exists.",
+          "source": "NVIDIA 10-K FY24 showing Customer A at 13% and indirect customer at 19%; Motley Fool analysis showing 46% of Q2 FY25 revenue from 4 customers; BigGo Finance reporting 44% concentration in top 3 customers H1 FY27",
+          "confidence": "medium"
+        },
+        "customer_concentration": {
+          "score": 2,
+          "reason": "High concentration risk. In Q2 FY25, four customers represented 46% of $30B revenue (Customer A 14%, B 11%, C 11%, D 10%). By H1 FY27, top three customers represented 44% (16%, 15%, 13%). In FY24, one customer was 13% and one indirect customer 19%. Concentration increasing over time, not diversifying.",
+          "source": "NVIDIA 10-Q filings Q2 FY25; BigGo Finance report on FY27 H1 concentration; NVIDIA 10-K FY24",
+          "confidence": "high"
+        },
+        "moat": {
+          "score": 4,
+          "reason": "Strong but eroding moat. CUDA software ecosystem remains dominant barrier with 80-87% market share. However, competition from AMD (5-7% and growing), Intel, and custom hyperscaler chips (Google TPU, Amazon, Microsoft) intensifying. CNBC analysis notes CUDA creates 'almost unthinkable' switching costs. SemiAnalysis gave AMD '0% chance of breaking CUDA moat' but AMD winning specific workloads. Real chokepoint exists but under pressure.",
+          "source": "CNBC June 2024 analysis on CUDA moat; SemiAnalysis Dec 2024 benchmark; Silicon Analysts showing NVIDIA 80% vs AMD 5-7% market share 2026E; Sundeep Teki analysis noting competitors fielding viable alternatives",
+          "confidence": "high"
+        },
+        "management_candor": {
+          "score": 4,
+          "reason": "Management openly discusses material risks in earnings calls and filings. Q3 FY24 call acknowledged China export controls would cause 'substantial decrease' and 'we do not have good visibility into magnitude even over long term.' Q4 FY25 acknowledged margin pressure from Blackwell ramp complexity. CFO transparent about customer concentration in required disclosures. However, somewhat promotional tone on AI dominance narrative.",
+          "source": "NVIDIA Q3 FY24 earnings call transcript (Nov 2023) on China risks; Q3 FY25 earnings call transcript (Nov 2024) on margin pressures; SEC 10-K and 10-Q filings with risk factor disclosures",
+          "confidence": "high"
+        }
+      },
+      "durability_total": 18,
+      "flag": "SOLID",
+      "one_line": "Self-funding AI infrastructure leader with strong moat but rising customer concentration (44% in top 3) and emerging competitive threats from hyperscaler custom chips limit durability despite fortress balance sheet."
     },
     {
       "ticker": "AVGO",
-      "error": "failed",
-      "flag": "",
-      "durability_total": 0,
-      "scores": {},
-      "one_line": "scan failed"
+      "scores": {
+        "self_funding": {
+          "score": 4,
+          "reason": "FY2024 generated $21.9B free cash flow (39% of revenue) excluding restructuring, with strong operational cash generation. However, carries $69.8B debt from VMware acquisition, though actively paying down ($3B in early 2024). FCF robust but debt load prevents perfect score.",
+          "source": "SEC Form 10-K FY2024 (Nov 3, 2024); Q4 FY2024 8-K earnings release (Dec 12, 2024)",
+          "confidence": "high"
+        },
+        "real_vs_circular_demand": {
+          "score": 4,
+          "reason": "Primary AI customers are profitable hyperscalers (Google, Meta, Microsoft, Amazon) with real revenue-generating operations, not cash-burning AI labs. However, recent additions include OpenAI and Anthropic which are less proven commercially. Mix tilts toward blue-chip but not exclusively.",
+          "source": "Multiple sources: Fool.com (Sep 28, 2026) identifies Google, Meta, OpenAI, Anthropic as six core customers; Simply Wall St reports $73B AI backlog with Meta and OpenAI design wins",
+          "confidence": "high"
+        },
+        "customer_concentration": {
+          "score": 2,
+          "reason": "Top 5 end customers account for ~40% of revenue (FY2024); single distributor represents 29% of Q2 FY2024 revenue; Apple disclosed at 17% in Q1. Management states 'significant customer concentration' and warns loss of top customers would have 'material adverse effect.' Six hyperscalers drive AI segment.",
+          "source": "SEC Form 10-K FY2024 (Nov 3, 2024) and Form 10-Q Q2 FY2024 (May 5, 2024)",
+          "confidence": "high"
+        },
+        "moat": {
+          "score": 4,
+          "reason": "Strong defensibility in custom AI accelerators (XPUs) and Ethernet networking through multi-year co-design partnerships and switching costs. Advanced packaging (3.5D XDSiP), Tomahawk networking chips create technical lead. However, faces competition from Marvell, risk of customer in-sourcing, and dependency on TSMC capacity allocation.",
+          "source": "FindMyMoat.com moat analysis (82/100 score); CyborgSignal research on custom XPU hegemony; SEC filings note design-in cycles create switching friction",
+          "confidence": "medium-high"
+        },
+        "management_candor": {
+          "score": 4,
+          "reason": "Q4 FY2024 transcript shows CEO Hock Tan directly addresses risks: deployment constraints (land, power, datacenter timing), customer concentration with six hyperscalers, non-linear AI revenue ramps, non-AI semiconductor decline (-23% YoY). CFO flags margin compression and debt. However, massive AI SAM projections ($60-90B by FY2027) lack detailed support.",
+          "source": "Q4 FY2024 earnings call transcript (Dec 12, 2024); 24/7 Wall St coverage noting management flagged deployment risk beyond chip shipment",
+          "confidence": "high"
+        }
+      },
+      "durability_total": 18,
+      "flag": "SOLID",
+      "one_line": "Broadcom is a cash-generative hyperscaler chip partner with strong moat but concentrated customer risk and heavy acquisition debt."
     },
     {
       "ticker": "AMD",
-      "error": "failed",
-      "flag": "",
-      "durability_total": 0,
-      "scores": {},
-      "one_line": "scan failed"
+      "scores": {
+        "self_funding": {
+          "score": 5,
+          "reason": "Strong FCF generation of $8.4B TTM (as of Jun 2026), net cash position of $8.84B ($13.1B cash vs $4.28B debt), operating cash flow of $10.08B TTM. Company funding growth internally without dilution or heavy debt.",
+          "source": "Stock Analysis balance sheet data (Oct 2026) and AMD 10-Q filing Q2 2026",
+          "confidence": "high"
+        },
+        "real_vs_circular_demand": {
+          "score": 2,
+          "reason": "Data center segment (58% of revenue) increasingly reliant on AI labs OpenAI, Anthropic, Meta - customers that are loss-making and funded by outside capital. OpenAI/Anthropic have $1.3T in compute commitments but unclear path to profitability. Some blue-chip hyperscaler demand (Microsoft Azure, Oracle) but significant exposure to circular AI funding.",
+          "source": "AMD Q2 2026 transcript naming Anthropic/OpenAI/Meta as key customers; Where's Your Ed At article on concentration risk (Sep 2026); BloFin analysis (Oct 2026)",
+          "confidence": "medium-high"
+        },
+        "customer_concentration": {
+          "score": 3,
+          "reason": "10-K states no single customer exceeded 10% of revenue in FY2025/FY2024, but data center business (58% of total revenue) concentrated among small number of AI labs and hyperscalers. Meta 6GW deal, OpenAI/Anthropic multi-GW commitments suggest emerging concentration risk despite formal disclosure threshold not breached.",
+          "source": "AMD 10-K disclosure via SEC-API analysis (Oct 2026); AMD Q2 2026 earnings materials listing key customers",
+          "confidence": "medium"
+        },
+        "moat": {
+          "score": 4,
+          "reason": "Strong technology position with EPYC CPUs gaining x86 server share and MI300/MI350 Instinct GPUs as credible #2 to Nvidia. ROCm software ecosystem maturing (700k models tested per Hugging Face). However, still dependent on TSMC manufacturing and faces intense competition from entrenched Nvidia. Not a monopoly but defensible technical differentiation.",
+          "source": "AMD Q2 2026 transcript discussing 70%+ EPYC growth, MI300 adoption, ROCm 6 software; AMD investor presentation materials",
+          "confidence": "medium-high"
+        },
+        "management_candor": {
+          "score": 4,
+          "reason": "Management acknowledged risks including: component cost pressures (memory), product ramp challenges (Helios yield issues in early quarters), softer PC market outlook, 40% opex increase. Raised long-term targets but provided specific guidance. Some promotional language around AI opportunity but disclosed material headwinds.",
+          "source": "AMD Q2 2026 earnings call transcript (Aug 2026) - CFO and CEO prepared remarks and Q&A",
+          "confidence": "high"
+        }
+      },
+      "durability_total": 18,
+      "flag": "SOLID",
+      "one_line": "Technically strong #2 in AI chips with robust cash generation, but growing revenue dependence on loss-making AI labs funded by circular venture/debt capital creates durability questions."
     },
     {
       "ticker": "MRVL",
-      "error": "failed",
-      "flag": "",
-      "durability_total": 0,
-      "scores": {},
-      "one_line": "scan failed"
+      "scores": {
+        "self_funding": {
+          "score": 4,
+          "reason": "Strong operating cash flow of $536M in Q3 FY2025 (Nov 2024) and $1.2B for 9 months ended Nov 2024. Free cash flow positive at ~$1.7B TTM. Cash position of $3.74B vs total debt of $5.29B (net debt $1.55B). Paid down debt and refinanced with favorable terms in FY2024. However, still carries meaningful net debt and issued $1.3B in new debt during FY2024.",
+          "source": "SEC Form 10-Q Nov 2, 2024; Fool.com financials Oct 2024; SEC Form 10-K FY2024",
+          "confidence": "high"
+        },
+        "real_vs_circular_demand": {
+          "score": 3,
+          "reason": "Mixed picture. Major customers include blue-chip hyperscalers (Amazon, Microsoft, Alphabet) for custom AI silicon, plus NVIDIA partnership for interconnect. However, 75%+ revenue from data centers concentrated in AI infrastructure buildout. Custom AI silicon business growing rapidly but represents bet on hyperscaler AI capex sustainability. Distributor A accounts for 33-38% of revenue, making ultimate end-demand visibility limited.",
+          "source": "SEC Form 10-Q Nov 2, 2024; Yahoo Finance articles on custom silicon customers (Jan 2026); SEC Form 10-K FY2024",
+          "confidence": "medium"
+        },
+        "customer_concentration": {
+          "score": 2,
+          "reason": "Highly concentrated. Q3 FY2025: Distributor A = 33% of revenue, Customer A = 14%, Customer B = 13%. Top 10 customers represented 72% of net revenue in FY2024. 67% of accounts receivable concentrated in 4 customers as of Nov 2024. Three-quarters of sales from data centers with top 4 hyperscalers dictating bulk of spending.",
+          "source": "SEC Form 10-Q Nov 2, 2024; SEC Form 10-Q May 4, 2024; Stockanalysisdaily.substack article",
+          "confidence": "high"
+        },
+        "moat": {
+          "score": 4,
+          "reason": "Strong positioning in custom AI silicon (XPUs, ASICs) using advanced 5nm/3nm processes and proprietary 2.5D packaging. Deep NVIDIA partnership for NVLink platform. Market-leading PAM4 optical interconnect technology (800G/1.6T DSPs) that's becoming industry standard. 18 XPU design wins in production. However, faces competition from Broadcom and AMD in custom silicon; hyperscalers can in-source design work.",
+          "source": "Yahoo Finance articles on custom silicon (May 2025, Jan 2026); Simply Wall St narrative analysis; Q3 FY2025 earnings call Dec 2024",
+          "confidence": "medium-high"
+        },
+        "management_candor": {
+          "score": 4,
+          "reason": "Management acknowledges key risks explicitly: customer concentration concerns raised in filings; cautious guidance on carrier/enterprise recovery ('staying pretty cautious...got hit pretty hard'); discusses risks of hyperscaler pullback and in-sourcing. Beaten guidance consistently (Q3 $66M above midpoint). However, very promotional on AI growth ($16.5B FY2028 target) and may underweight digestion/timing risks given concentration.",
+          "source": "SEC Form 10-Q May 4, 2024 risk factors; Q3 FY2024 earnings transcript Nov 2023; Q3 FY2025 earnings call Dec 2024",
+          "confidence": "medium-high"
+        }
+      },
+      "durability_total": 17,
+      "flag": "SOLID",
+      "one_line": "Cash-generative AI infrastructure play with strong tech moat but concentrated in hyperscaler custom silicon bet\u2014durable if AI capex sustains, fragile if spending pauses."
     },
     {
       "ticker": "INTC",
-      "error": "failed",
-      "flag": "",
-      "durability_total": 0,
-      "scores": {},
-      "one_line": "scan failed"
+      "scores": {
+        "self_funding": {
+          "score": 1,
+          "reason": "Intel is burning substantial cash with negative free cash flow of -$15.66B for 2024, operating cash flow of $4.1B in Q3 2024 but capex of $6.5B. Total debt of $50.2B vs cash of $24.1B. Suspended dividend Q4 2024, issued $2.6B in new debt 2024, prohibited from paying dividends for 2 years under CHIPS Act. Heavy debt-funded buildout of foundry business.",
+          "source": "Intel Q3 2024 10-Q, Q3 2024 Earnings Release, 10-K 2024",
+          "confidence": "high"
+        },
+        "real_vs_circular_demand": {
+          "score": 3,
+          "reason": "Mixed demand profile. Client Computing Group ($30.3B, 57% of revenue) serves established PC OEMs with real end-user demand. Data Center revenue ($12.8B) includes hyperscale customers with genuine workloads. However, Intel Foundry external revenue collapsed 74-79% YoY, with only ~$100M/quarter in real external foundry revenue. Foundry customer pipeline includes AWS multi-billion deal on Intel 18A and Microsoft commitments, but these are future promises with Intel 18A not yet in production until 2025.",
+          "source": "Intel 10-Q Q3 2024, 10-K 2024, Q3 2024 Earnings Release",
+          "confidence": "medium"
+        },
+        "customer_concentration": {
+          "score": 3,
+          "reason": "Revenue fairly diversified across Client Computing (57%), Data Center (24%), NEX (11%), Foundry external (minimal), and other segments. However, within DCAI, Q3 2024 revenue increase was 'primarily due to increased hyperscale customer-related demand,' suggesting concentration risk. No single customer disclosure above 10% in available filings, but hyperscale concentration is material.",
+          "source": "Intel 10-Q Q3 2024, 10-K 2024",
+          "confidence": "medium"
+        },
+        "moat": {
+          "score": 2,
+          "reason": "Eroding moat. x86 architecture historically was a strong moat, but Intel's server CPU market share fell to 54.9% (down from 64.4% YoY), with AMD taking 27.4% and ARM 17.7%. AMD now has ~40% of x86 datacenter and is projected to become largest x86 datacenter supplier by 2026. Lost process leadership ~decade ago to TSMC. Intel 18A aims to restore leadership but not production-ready until 2025. Client business facing ARM competition from Apple Silicon. Foundry business has minimal track record with external customers.",
+          "source": "Intel 10-Q filings, UBS research cited in Barchart article, semiconductor industry analysis",
+          "confidence": "high"
+        },
+        "management_candor": {
+          "score": 3,
+          "reason": "Mixed candor. CEO acknowledged in Q3 2024 'aggressive actions to lower cost, improve efficiency' and took $18.7B in charges ($15.9B impairments + $2.8B restructuring). CFO disclosed $10B deferred tax asset impairment 'triggered by cumulative GAAP-based losses over last three years.' Transparent about >15% workforce reduction and dividend suspension. However, guidance has been promotional on foundry prospects with '$15B lifetime deal value' claims while actual external foundry revenue is only ~$100M/quarter. Intel 18A repeatedly described as 'on track' but production keeps getting pushed.",
+          "source": "Intel Q3 2024 Earnings Transcript, Q3 2024 Earnings Release, Q2 2024 8-K",
+          "confidence": "medium"
+        }
+      },
+      "durability_total": 12,
+      "flag": "FRAGILE",
+      "one_line": "Legacy PC/server chipmaker losing share to AMD/ARM, burning $15B+ cash annually funding unproven foundry pivot, heavy debt load, suspended dividend, minimal real external foundry revenue despite promotional claims."
     },
     {
       "ticker": "ARM",
-      "error": "failed",
-      "flag": "",
-      "durability_total": 0,
-      "scores": {},
-      "one_line": "scan failed"
+      "scores": {
+        "self_funding": {
+          "score": 5,
+          "reason": "Strong FCF generator with net cash position. Q2 FY2025 (Sept 2024) showed $1.09B operating cash flow for fiscal 2024, minimal debt ($5M-$457M depending on source), and cash/investments of $2.9B+ at March 2024. No debt-funded buildout, funds growth internally.",
+          "source": "SEC Form 20-F FY2024; Arm Annual Report FY2024 showing $1,090M operating cash flow, $2,925M total cash/deposits, no external debt",
+          "confidence": "high"
+        },
+        "real_vs_circular_demand": {
+          "score": 4,
+          "reason": "Predominantly blue-chip customers (Apple, Amazon, Google, Microsoft, Nvidia, AMD) shipping real products. Royalty revenue up 23% YoY driven by smartphone (40% growth) and doubling data center royalties. However, some exposure to AI buildout via cloud customers and Nvidia Grace-Blackwell systems.",
+          "source": "Q2 FY2025 transcript Nov 2024 noting royalties from Microsoft Azure Cobalt, Google Axion, Nvidia Grace Blackwell shipments; smartphone royalties 40% YoY growth",
+          "confidence": "high"
+        },
+        "customer_concentration": {
+          "score": 2,
+          "reason": "High concentration: top 5 customers = 57% of FY2026 revenue (56% FY2025, 54% FY2024). Largest single customer (Arm China) = 16% FY2026 (17% FY2025, 21% FY2024). SEC filings explicitly warn of concentration risk.",
+          "source": "SEC Form 20-F FY2026 stating top 5 customers collectively 57% of revenue, Arm China 16% individually; management acknowledges concentration as material risk",
+          "confidence": "high"
+        },
+        "moat": {
+          "score": 4,
+          "reason": "Strong ecosystem moat with 20M+ developers, dominant mobile position (99% smartphones), growing data center share. Sticky licensing model with multi-year royalty streams. However, faces RISC-V open-source threat (customers announced joint venture Aug 2023) and x86 in servers. Management explicitly cites competitive risks in filings.",
+          "source": "Q1 FY2025 transcript noting 20M developers; SEC Form 20-F FY2024 disclosing RISC-V joint venture by customers Aug 2023 and competitive threats from x86 and open-source alternatives",
+          "confidence": "high"
+        },
+        "management_candor": {
+          "score": 4,
+          "reason": "Management transparently discloses major risks: customer concentration (names %, bargaining power impact), RISC-V competitive threat (names Aug 2023 customer joint venture), licensing volatility, Arm China exposure. Provided credible guidance (beat Q2 high-end, reiterated FY25 at $3.8-4.1B). However, some promotional tone around AI opportunity.",
+          "source": "SEC Form 20-F FY2024/2025/2026 risk factors detailing customer concentration, competitive threats, Arm China; Q2 FY2025 transcript exceeding guidance range",
+          "confidence": "high"
+        }
+      },
+      "durability_total": 19,
+      "flag": "SOLID",
+      "one_line": "Capital-light IP licensing model with strong FCF and real customer demand, but meaningful customer concentration (57% from top 5) and emerging open-source architectural threat limit durability."
     },
     {
       "ticker": "CRWV",
-      "error": "failed",
-      "flag": "",
-      "durability_total": 0,
-      "scores": {},
-      "one_line": "scan failed"
+      "scores": {
+        "self_funding": {
+          "score": 1,
+          "reason": "Heavy debt-funded buildout with negative free cash flow of -$13.66B TTM. Operating cash flow of $6.91B TTM is dwarfed by capex of $20.57B. Total debt $51.61B vs $5.54B cash. Net debt -$46B. Interest expense now $640M/quarter (Q2 2026), absorbing ~25% of revenue. Company raised $18B in Q2 2026 alone to fund growth. Not self-funding\u2014entirely dependent on external debt/equity markets.",
+          "source": "Yahoo Finance financials TTM Jun'26; Q2 2026 earnings call transcript (interest $640M); stockanalysis.com showing FCF -$13.66B",
+          "confidence": "high"
+        },
+        "real_vs_circular_demand": {
+          "score": 2,
+          "reason": "Mixed. 67% of FY2025 revenue from Microsoft (up from 62% in 2024). Recent large contracts with Meta ($14.2B-$21B), OpenAI ($6.5B+), Anthropic are all loss-making AI labs burning external capital. 60%+ of backlog now 'investment-grade customers' per CFO, but concentration in speculative AI model builders remains high. Some genuine end-demand (enterprise AI) but heavily weighted to cash-burning labs.",
+          "source": "FY2025 10-K (67% Microsoft); Q3 2025 earnings (Meta $14.2B, OpenAI deals); datacenterdynamics.com Q3 coverage; SEC Form ARS FY2025",
+          "confidence": "high"
+        },
+        "customer_concentration": {
+          "score": 1,
+          "reason": "Extreme concentration. Microsoft was 67% of FY2025 revenue (up from 62% in 2024, 77% from top 2 customers in 2024). Q2 2026 still showed one customer at ~45% of revenue per recent analysis. CFO stated Q3 2025 'no single customer more than ~35% of backlog' but that's future backlog, not current revenue. Historical and current revenue massively concentrated in 1-2 customers.",
+          "source": "SEC Form ARS FY2025 (67% Microsoft); S-1 filing (77% top 2 in 2024); Q3 2025 earnings call CFO statement on backlog diversification; tikr.com analysis showing 45% concentration persists",
+          "confidence": "high"
+        },
+        "moat": {
+          "score": 2,
+          "reason": "Limited moat. CoreWeave is a GPU assembler/lessor using Nvidia hardware in leased data centers. 'First to deploy GB300' and Blackwell are timing advantages, not structural moats. Microsoft is both largest customer AND competitor (Azure). Hyperscalers can and are building own capacity. CoreWeave's edge is speed-to-market and specialized AI stack, but hardware is commoditized and customers could internalize. Multi-year contracts provide temporary lock-in, not defensibility.",
+          "source": "S-1 filing (Microsoft listed as competitor); Medium analysis of IPO; Wikipedia (uses Nvidia GPUs as collateral); Q2 2026 earnings showing continued rapid capacity adds but no unique IP",
+          "confidence": "medium-high"
+        },
+        "management_candor": {
+          "score": 3,
+          "reason": "Reasonably candid on risks. S-1 and 10-Ks prominently disclose customer concentration (67% Microsoft), debt risks, supply chain challenges, 'material weaknesses in financial controls.' Q2 2026 call acknowledged 'complex supply chain,' margin pressure, and interest burden. Guidance repeatedly raised but also flagged deployment delays. Not promotional hype, but not deeply conservative either. Decent disclosure of structural vulnerabilities.",
+          "source": "S-1 filing (material weaknesses disclosed per Fortune); SEC 10-Q Q2 2026 (risks section on indebtedness); Q2/Q3 2026 earnings calls (supply chain challenges, margin pressure mentioned by CFO); Form ARS FY2025 risk factors",
+          "confidence": "medium-high"
+        }
+      },
+      "durability_total": 9,
+      "flag": "PROPPED-UP",
+      "one_line": "Debt-fueled GPU assembler serving cash-burning AI labs, 67% dependent on Microsoft, burning $13B+ FCF annually\u2014not built to last without continuous external financing."
     },
     {
       "ticker": "NBIS",
-      "error": "failed",
-      "flag": "",
-      "durability_total": 0,
-      "scores": {},
-      "one_line": "scan failed"
+      "scores": {
+        "self_funding": {
+          "score": 1,
+          "reason": "Heavy cash burn and debt-funded buildout. Q3 2024 cash outflow from operations $255M YTD. Q2 2026 FCF -$3.41B. Total debt jumped from $30M (Sep 2024) to $10.06B (Jun 2026), plus $5.75B convertible notes in Aug 2026. CapEx guidance $20-25B for 2026 vs ~$530M FY2025 revenue. Company raised $700M equity Dec 2024 and relies on customer prepayments and ongoing debt issuance.",
+          "source": "SEC Form 20-F FY2024, SEC 6-K Oct 2024, TIKR analysis Oct 2026, Motley Fool Oct 2026",
+          "confidence": "high"
+        },
+        "real_vs_circular_demand": {
+          "score": 2,
+          "reason": "Two investment-grade customers (Microsoft and Meta) account for most of $40B+ contracted backlog. Microsoft signed $17.4B deal, Meta signed multi-billion dollar deals. However, three customers represented 59% of Q2 2026 revenue (24%, 21%, 14%). Both Microsoft and Meta are cash-generative enterprises, not speculative AI labs, providing some demand quality.",
+          "source": "Motley Fool Oct 2026, Yahoo Finance Sep 2026, SEC Form 20-F FY2025, Seeking Alpha analysis",
+          "confidence": "high"
+        },
+        "customer_concentration": {
+          "score": 1,
+          "reason": "Extreme concentration. Three customers made up 59% of Q2 2026 revenue. FY2024: Customer A 27%, FY2025: Customer A 25%, Customer B 15%. Most of $40B backlog attributed to two customers (Microsoft and Meta). One customer accounted for 83% of accounts receivable Dec 2025.",
+          "source": "SEC Form 20-F FY2025, Motley Fool Oct 2026, Yahoo Finance Sep 2026, 247 Wall St Oct 2026",
+          "confidence": "high"
+        },
+        "moat": {
+          "score": 2,
+          "reason": "Building full-stack AI cloud infrastructure with GPU clusters and proprietary software stack. Has secured contracts with Microsoft/Meta and raised $2B from NVIDIA. However, operates in commoditized GPU cloud market competing against hyperscalers (AWS, Azure, GCP) who can build own capacity. Customer prepayments and secured power (3.5GW+) provide some near-term defensibility but long-term moat unclear as hyperscalers scale internal AI infrastructure.",
+          "source": "Q2 2026 earnings call transcript, SEC filings, Seeking Alpha analysis May-Aug 2026",
+          "confidence": "medium"
+        },
+        "management_candor": {
+          "score": 3,
+          "reason": "Management has provided detailed guidance ($3-3.4B FY2026 revenue, 40% adj EBITDA margin, $20-25B CapEx) and disclosed major risks including customer concentration, heavy CapEx needs, and execution challenges. Q1 2026 call acknowledged data center construction risks and political resistance. However, promotional tone emphasizing 'explosive growth' and 'enormous demand' alongside 454% YoY revenue growth claims while burning billions suggests some hype. Reaffirmed guidance multiple times despite high execution risk.",
+          "source": "Q1/Q2 2026 earnings transcripts, TipRanks May 2026, Seeking Alpha analysis, SEC filings",
+          "confidence": "medium"
+        }
+      },
+      "durability_total": 9,
+      "flag": "PROPPED-UP",
+      "one_line": "AI cloud buildout funded by $15B+ debt, customer prepayments, and dilution; 59% revenue from 3 customers; burning $3B+/quarter FCF with unproven moat against hyperscalers."
     },
     {
       "ticker": "ASML",
-      "error": "failed",
-      "flag": "",
-      "durability_total": 0,
-      "scores": {},
-      "one_line": "scan failed"
+      "scores": {
+        "self_funding": {
+          "score": 5,
+          "reason": "Strong FCF generation of \u20ac9.1B in 2024, \u20ac534M in Q3 2024. Net cash position of \u20ac7.7B (\u20ac12.7B cash vs \u20ac5.0B total debt) at year-end 2024. Company funds growth organically and returns cash via dividends and buybacks.",
+          "source": "ASML Q3 2024 10-Q/6-K SEC filing, Q4 2024 earnings presentation (Jan 29, 2025)",
+          "confidence": "high"
+        },
+        "real_vs_circular_demand": {
+          "score": 4,
+          "reason": "End customers are profitable foundries (TSMC, Samsung, Intel) producing chips for real end-use. However, 36-41% of 2024 revenue came from China pre-stockpiling ahead of export restrictions, creating some circularity concerns. Management expects China to normalize to 'low 20%' in 2025.",
+          "source": "ASML Q4 2024 presentation, Counterpoint Research analysis (Jan 2025), Q3 2024 earnings call",
+          "confidence": "medium-high"
+        },
+        "customer_concentration": {
+          "score": 2,
+          "reason": "High customer concentration: 2021 20-F filing disclosed 66.3% of total sales to two customers, with largest customer at 37% of revenue. 2024 geographic data shows Taiwan (25.5%), South Korea (25%), China (29-41%) dominate, indicating concentration among TSMC, Samsung, and Chinese fabs.",
+          "source": "ASML 2021 Form 20-F SEC filing, Q4 2024 presentation geographic breakdown",
+          "confidence": "high"
+        },
+        "moat": {
+          "score": 5,
+          "reason": "100% monopoly in EUV lithography with no commercial competitors. 30+ years and $20B+ collective industry investment created insurmountable barriers. Nikon and Canon exited advanced lithography. ASML holds 94% overall lithography market share. Critical chokepoint for all advanced chip manufacturing.",
+          "source": "Multiple sources including TechMarketBriefs, Works in Progress article, Motley Fool analysis (Dec 2024-Oct 2024)",
+          "confidence": "high"
+        },
+        "management_candor": {
+          "score": 4,
+          "reason": "Management acknowledged 2025 guidance at 'lower half' of prior range, cited 'customer cautiousness' and 'more gradual recovery than expected.' Transparent about China revenue decline risk and export control impacts. However, maintained relatively wide 2025 guidance range (\u20ac30-35B) suggesting some uncertainty.",
+          "source": "ASML Q3 2024 press release, Q4 2024 earnings call transcript (Jan 29, 2025)",
+          "confidence": "high"
+        }
+      },
+      "durability_total": 20,
+      "flag": "SOLID",
+      "one_line": "Unassailable EUV monopoly with strong self-funding, but concentrated customer base and China revenue volatility create medium-term headwinds despite durable competitive position."
     },
     {
       "ticker": "LRCX",
-      "error": "failed",
-      "flag": "",
-      "durability_total": 0,
-      "scores": {},
-      "one_line": "scan failed"
+      "scores": {
+        "self_funding": {
+          "score": 5,
+          "reason": "Strong free cash flow generation ($1.46B in Sept 2024 quarter = 35% of revenue). FY2024 generated $4.3B FCF. Net cash position of $1.46B. Returns cash via buybacks ($373M-$1B/quarter) and dividends ($261M/quarter). Zero reliance on debt/dilution for growth.",
+          "source": "SEC Form 10-K FY2024 (Jun 30, 2024); SEC 8-K Sept 2024 quarter; YCharts Q3 2024 FCF data",
+          "confidence": "high"
+        },
+        "real_vs_circular_demand": {
+          "score": 4,
+          "reason": "Customers are profitable blue-chip semiconductor manufacturers (TSMC, Samsung, SK Hynix, Micron - per 10-K FY2026). These are equipment buyers serving real end-demand (phones, PCs, data centers). AI driving leading-edge logic and HBM investment, but customers are established fabs, not cash-burning startups. Minor deduction for AI-driven spending concentration.",
+          "source": "SEC Form 10-K FY2026 (Jun 28, 2026) customer disclosure; Q1 FY2025 earnings call Oct 2024",
+          "confidence": "high"
+        },
+        "customer_concentration": {
+          "score": 3,
+          "reason": "Four customers represent 55% of FY2026 revenue: Micron (16%), Samsung (15%), SK Hynix (12%), TSMC (12%). Moderate concentration risk. Diversified across memory (39%), foundry (54%), logic/IDM (7%) end markets, but top 4 customers dominate.",
+          "source": "Technosight analysis (Oct 2024) citing Lam 10-K FY2026; SEC Form 10-K FY2026",
+          "confidence": "high"
+        },
+        "moat": {
+          "score": 5,
+          "reason": "Market leader in etch equipment (largest WFE segment), clear #2 in deposition. High switching costs - once qualified, customers rarely switch suppliers (per 10-K). ROE of 65% confirms pricing power. Rising chip complexity (3D NAND, GAA) expands TAM per wafer. Process knowledge and integration moat.",
+          "source": "SEC Form 10-K FY2010 competitive discussion; Yahoo Finance moat analysis (Oct 2024) ROE data; TradingView GuruFocus analysis",
+          "confidence": "high"
+        },
+        "management_candor": {
+          "score": 4,
+          "reason": "Management consistently discloses risks (China export controls, customer concentration, cyclicality) in 10-K/10-Q filings. Guidance has been conservative - beat midpoint on revenue, GM, OP, EPS for 4+ consecutive quarters (Q3-Q4 FY2024, Q1 FY2025). Acknowledged China headwinds, geopolitical risks, and cycle uncertainty. Minor deduction for promotional tone on AI tailwinds.",
+          "source": "SEC Forms 10-Q/10-K FY2024-2025 risk factors; Earnings call transcripts Q3-Q4 FY2024, Q1 FY2025",
+          "confidence": "medium-high"
+        }
+      },
+      "durability_total": 21,
+      "flag": "SURVIVOR",
+      "one_line": "Self-funding etch/deposition monopolist serving blue-chip chipmakers; high moat, moderate customer concentration, credible management."
     },
     {
       "ticker": "AMAT",
-      "error": "failed",
-      "flag": "",
-      "durability_total": 0,
-      "scores": {},
-      "one_line": "scan failed"
+      "scores": {
+        "self_funding": {
+          "score": 5,
+          "reason": "Strong FCF generation: $7.5B FCF in FY2024 on $27.2B revenue (28% FCF margin). Generated $8.7B operating cash flow. Net cash position: $8.0B cash vs $6.3B debt = $1.7B net cash. Zero reliance on debt or dilution for growth.",
+          "source": "AMAT Q4 FY2024 10-K (Nov 2024): Cash $8.0B, Debt $6.3B, Operating CF $8.7B, Free CF $7.5B",
+          "confidence": "high"
+        },
+        "real_vs_circular_demand": {
+          "score": 4,
+          "reason": "Top customers are blue-chip profitable chipmakers: TSMC (11%), Samsung (12%), formerly Intel (10%). These are profitable end-demand producers selling to real markets (phones, PCs, data centers). Not concentrated in cash-burning AI labs. However, 30% China revenue (down from 37% in FY2023) creates some exposure to potentially subsidized/policy-driven demand.",
+          "source": "AMAT 10-K FY2024: Samsung 12%, TSMC 11% of revenue. China 37% FY2023, declining to ~30% Q4 FY2024 per earnings calls",
+          "confidence": "high"
+        },
+        "customer_concentration": {
+          "score": 3,
+          "reason": "Moderate concentration: Top 2 customers (Samsung 12%, TSMC 11%) = 23% of revenue. Intel was 10% in FY2022. Geographic concentration: China 37% FY2024 (though down from 40%). Not highly diversified, but not single-customer dependent either. Three major customers account for ~25-30% combined.",
+          "source": "AMAT 10-K FY2024 Note 14: Samsung 12%, TSMC 11%. 10-Q Q2 FY2024: Samsung 15%. China revenue 37% per 10-K",
+          "confidence": "high"
+        },
+        "moat": {
+          "score": 4,
+          "reason": "Strong but contested moat. Commands 18-20% WFE market share (down from 22% in 2016). Deep integration: 5-10 year equipment development cycles, 12-24 month re-qualification costs millions. 15,000+ patents. Installed base lock-in with 52,000+ systems. Services segment 30% margins with >90% renewal rates. However, losing market share (20% to 17.9% in 2025) to Lam Research and Chinese competitors.",
+          "source": "Multiple analyst reports June-Oct 2024: 19-20% WFE share, declining to 17.9% in 2025. Services 30% margins, 90%+ renewal per Q4 earnings. Patent moat analysis",
+          "confidence": "medium"
+        },
+        "management_candor": {
+          "score": 4,
+          "reason": "Management candidly discloses major risks: Multiple 10-K risk factor disclosures on China export controls (already impacting revenue), customer concentration risks, cyclicality, geopolitical tensions. Disclosed DOJ/BIS/SEC subpoenas since 2022 on export compliance. Q4 FY2024 guidance transparent about China headwinds. However, market share erosion (20% to 17.9%) not prominently discussed in prepared remarks despite being material.",
+          "source": "AMAT 10-K FY2024 & FY2025 risk factors; DOJ/BIS subpoenas disclosed in 10-K; Q3/Q4 FY2024 earnings calls Aug-Nov 2024",
+          "confidence": "high"
+        }
+      },
+      "durability_total": 20,
+      "flag": "SOLID",
+      "one_line": "Cash-generating equipment oligopolist with blue-chip customers but facing market share erosion and 30% China exposure under export controls."
     },
     {
       "ticker": "KLAC",
-      "error": "failed",
-      "flag": "",
-      "durability_total": 0,
-      "scores": {},
-      "one_line": "scan failed"
+      "scores": {
+        "self_funding": {
+          "score": 5,
+          "reason": "Strong positive free cash flow generation ($935M Q1 FY2025, $3.2B LTM with 31% FCF margin). Net cash position with $4.6B cash vs $6.7B debt but manageable with strong cash generation. No equity dilution, returning capital through buybacks and dividends ($2.5B+ annually).",
+          "source": "KLA Q1 FY2025 earnings (Oct 2024): quarterly FCF $935M, LTM FCF $3.2B; balance sheet shows $4.6B cash, $6.7B debt",
+          "confidence": "high"
+        },
+        "real_vs_circular_demand": {
+          "score": 5,
+          "reason": "Customers are profitable blue-chip semiconductor manufacturers (TSMC, Samsung) producing chips for diverse end markets. TSMC alone accounted for >10% revenue in FY2024. These foundries serve Apple, Nvidia, AMD and other profitable end customers. Process control is mission-critical to chip production regardless of AI hype cycles.",
+          "source": "KLA 10-K FY2024: TSMC and Samsung each >10% of revenue; serving profitable foundry/logic (68%) and memory manufacturers with real production demand",
+          "confidence": "high"
+        },
+        "customer_concentration": {
+          "score": 2,
+          "reason": "High customer concentration with TSMC alone >10% of revenue, Samsung also >10% in some periods. Top 2 customers represent significant portion of revenue. However, serves all major semiconductor manufacturers globally which provides some diversification within concentrated industry structure.",
+          "source": "SEC 10-K FY2024 disclosure: TSMC accounted for >10% revenue in FY2024, Samsung >10% in FY2023; China was 43% of revenue in FY2024",
+          "confidence": "high"
+        },
+        "moat": {
+          "score": 5,
+          "reason": "Dominant 58-60% market share in semiconductor process control with no credible at-scale competitor. Technical leadership creates high switching costs. Every advanced chip requires KLA inspection/metrology tools - structural bottleneck position. Competitors Applied Materials and ASML have <15% share each in process control.",
+          "source": "Multiple analyst reports cite 58-60% process control market share; management describes 'market leadership' and 'differentiated portfolio'; 10-K notes competitive advantage in automated process control systems",
+          "confidence": "high"
+        },
+        "management_candor": {
+          "score": 4,
+          "reason": "Management openly discusses risks including China export controls (expect revenue decline from 42% to ~30% in FY2025), weaker product mix affecting margins, memory market uncertainty, and geopolitical tensions. However, guidance tends to be consistently achievable (results at 'upper end' most quarters), suggesting conservative rather than promotional stance.",
+          "source": "Q1 FY2025 earnings call Oct 2024: disclosed China headwinds, margin pressures, export control risks; Q4 FY2024 call: discussed memory recovery uncertainty, operating expense pressures",
+          "confidence": "high"
+        }
+      },
+      "durability_total": 21,
+      "flag": "SURVIVOR",
+      "one_line": "KLA is a self-funding monopolist (58% share) at a structural bottleneck in chip production, serving profitable blue-chip foundries, though concentrated in top customers and China."
     },
     {
       "ticker": "TSM",
-      "error": "failed",
-      "flag": "",
-      "durability_total": 0,
-      "scores": {},
-      "one_line": "scan failed"
+      "scores": {
+        "self_funding": {
+          "score": 4,
+          "reason": "Strong FCF generation with Q3 2026 FCF of NT$476.56B (up 66% from Q2's NT$287.36B). Cash balance NT$3.62T ($126B). However, massive capex of $60-64B in 2026 (13-14% of revenue) and management stating 2026-2028 capex will be 'significantly higher than past three years' with 20 fabs under construction. Long-term debt NT$818B. Strong operational cash flow but growth heavily capex-dependent.",
+          "source": "TSMC Q3 2026 investor presentation, Q3 earnings transcript Oct 2026",
+          "confidence": "high"
+        },
+        "real_vs_circular_demand": {
+          "score": 3,
+          "reason": "HPC (AI chips) now 68% of Q3 revenue, up from 66% in Q2. Nvidia estimated at 22-25% of total revenue as single largest customer. Management flags 'consumer and price-sensitive end market segments are being challenged' and noting 'macroeconomic uncertainties' for 2027. Demand concentration in AI accelerators for data centers\u2014end customers include hyperscalers but significant exposure to AI infrastructure buildout that could be speculative.",
+          "source": "TSMC Q3 2026 earnings call transcript Oct 15, 2026; Creative Strategies analyst estimates Jan 2026",
+          "confidence": "high"
+        },
+        "customer_concentration": {
+          "score": 2,
+          "reason": "Top 10 customers represent 76% of revenue (March 2026 disclosure). Largest customer (Nvidia) ~22-25% of revenue, second largest (Apple) ~18%. US customers account for 75.64% of H1 2026 revenue. Geographic revenue: 75.6% US, 6.85% Taiwan, 6.76% China. Two customers represent ~40% of revenue\u2014high concentration risk.",
+          "source": "TSMC March 2026 disclosure; SemiVision Research H1 2026 analysis; Creative Strategies analyst Jan 2026",
+          "confidence": "high"
+        },
+        "moat": {
+          "score": 5,
+          "reason": "Commands ~73% market share in advanced foundry nodes as of Q1 2026. CEO Wei stated 'demand far exceeds our capability today to supply' and 'all the AI players are working with TSMC.' Advanced tech (7nm and below) is 79% of wafer revenue. Leading on 2nm (8% of Q3 revenue), 3nm (33%), with A14 coming 2028. No credible competitor at leading edge\u2014clear monopoly at critical bottleneck.",
+          "source": "TSMC Q3 2026 earnings call Oct 15, 2026; market share data from multiple sources Q1-Q3 2026",
+          "confidence": "high"
+        },
+        "management_candor": {
+          "score": 4,
+          "reason": "Management explicitly warned of margin dilution from 2nm ramp (3-4 ppt impact in H2 2026), overseas fab dilution widening to 3-4% in coming years, tool supply constraints, price inflation pressures, and consumer segment challenges for 2027. Guidance consistently met or beaten. However, very bullish on AI demand ('mid-to-high 50s% CAGR through 2029, probably will be higher') with limited discussion of demand-side risks beyond macro uncertainty.",
+          "source": "TSMC Q2 and Q3 2026 earnings call transcripts July and Oct 2026",
+          "confidence": "high"
+        }
+      },
+      "durability_total": 18,
+      "flag": "SOLID",
+      "one_line": "Monopoly foundry with strong FCF but 68% revenue tied to AI boom, 40% from two customers, funding massive expansion with $60B+ annual capex\u2014durable moat but elevated cyclical exposure."
     },
     {
       "ticker": "MU",
-      "error": "failed",
-      "flag": "",
-      "durability_total": 0,
-      "scores": {},
-      "one_line": "scan failed"
+      "scores": {
+        "self_funding": {
+          "score": 4,
+          "reason": "FY24 operating cash flow of $8.5B, FY25 TTM operating cash flow $89.7B with $29.1B levered free cash flow. Q1 FY26 generated record free cash flow of $8.4B. Returned to net cash position in Q1 FY26 ($43.4B cash vs $5.2B debt). Reduced debt by $10B in recent quarters. Still investing heavily ($15.9B capex in FY25, receiving $6.1B CHIPS Act funding). Strong FCF+ but high capex for expansion.",
+          "source": "SEC Form 10-Q Q1 FY2025 (Nov 2024); Yahoo Finance balance sheet; Micron Q1 FY2026 earnings call Dec 17, 2025",
+          "confidence": "high"
+        },
+        "real_vs_circular_demand": {
+          "score": 4,
+          "reason": "Data center now 55% of revenue (grew 400% YoY in Q1 FY25), driven by blue-chip hyperscalers and AI infrastructure build-out. Customer mix includes Apple, Microsoft, Dell, Lenovo, Intel, AMD, NVIDIA - profitable end users. Mobile 20%, PC/graphics 15%, automotive/industrial/consumer 10%. HBM demand from NVIDIA, AMD for AI chips. Some AI infrastructure risk but predominantly real demand from cash-generative enterprises.",
+          "source": "SEC Form 10-Q Q1 FY2025; Micron Q1 FY2025 earnings call transcript Dec 18, 2024; SEC Form 10-K FY2024",
+          "confidence": "high"
+        },
+        "customer_concentration": {
+          "score": 3,
+          "reason": "One customer = 10% of FY2024 revenue (Apple, across multiple segments). Top 10 customers = approximately 50% of total revenue per 10-K risk factors. Revenue diversified across market segments: data center 55%, mobile 20%, PC 15%, intelligent edge 10%. Geographic diversification across US, Taiwan, China, Hong Kong. Moderate concentration risk but not extreme.",
+          "source": "SEC Form 10-K FY2024 p.29; SEC Form 10-Q Q1 FY2025 revenue concentration disclosure; Babson Center Micron analysis",
+          "confidence": "high"
+        },
+        "moat": {
+          "score": 4,
+          "reason": "One of only 3 HBM manufacturers globally (with Samsung, SK Hynix). 18-21% HBM market share, qualified with NVIDIA, AMD. Technology leadership in HBM3E/HBM4, 1-gamma DRAM node. High barriers: $8-16B annual capex, 12-18 month capacity lead times, complex fabrication. However faces intense competition from Samsung (38.5% DRAM share) and SK Hynix (58% HBM share). Strong oligopoly position but not monopoly.",
+          "source": "SEC Form 10-Q Q1 FY2026; HBM Market Analysis Oct 2026; Micron Q1 FY2026 earnings call; TrendForce DRAM market share data",
+          "confidence": "high"
+        },
+        "management_candor": {
+          "score": 4,
+          "reason": "Management discloses supply constraints, acknowledges 'unable to meet demand from other customers,' discusses consumer price elasticity impacts, identifies concentration risks (50% from top 10 customers), geopolitical risks (China restrictions), competitive pressures. Forward-looking statements include appropriate risk disclaimers. Guidance has been accurate (beat by 3-6% consistently). Some promotional language on AI opportunity but substantive risk disclosure present.",
+          "source": "Micron Q1 FY2026 earnings call Dec 17, 2025; SEC Form 10-K FY2024 risk factors; Micron Q1 FY2025 earnings call Dec 18, 2024",
+          "confidence": "high"
+        }
+      },
+      "durability_total": 19,
+      "flag": "SOLID",
+      "one_line": "Oligopoly memory supplier with strong FCF and real enterprise demand, but faces capital intensity, customer concentration, and fierce competition from Samsung/SK Hynix."
     },
     {
       "ticker": "SNDK",
-      "error": "failed",
-      "flag": "",
-      "durability_total": 0,
-      "scores": {},
-      "one_line": "scan failed"
+      "scores": {
+        "self_funding": {
+          "score": 5,
+          "reason": "Strong free cash flow generation with $11.49B FCF (ttm), $4.76B cash vs. only $201M debt (net cash position of $6.34B). Repaid entire $2B term loan by March 2026. Operating cash flow of $11.67B in FY2026 far exceeds capital needs.",
+          "source": "SEC Form 10-K FY2026, Yahoo Finance key statistics, StockAnalysis balance sheet data showing $4.76B cash, $201M debt, $11.49B FCF",
+          "confidence": "high"
+        },
+        "real_vs_circular_demand": {
+          "score": 3,
+          "reason": "Mixed picture: Datacenter revenue grew 437% YoY driven by AI demand, now 38% of bits vs. 12% a year ago. However, primary growth driver is AI infrastructure buildout. NBM contracts include financial guarantees ($16.5B) suggesting some customers are well-capitalized, but concentration in AI datacenter customers raises circular demand risk. No disclosure of specific customer profitability or end-use cases beyond 'AI inference and training workloads.'",
+          "source": "SEC Form 10-K FY2026, Q4 FY2026 earnings call transcript, Yahoo Finance articles on NBM contracts and $93.9B minimum contracted revenue with 8 datacenter/edge customers",
+          "confidence": "medium"
+        },
+        "customer_concentration": {
+          "score": 2,
+          "reason": "Significant concentration risk: Only 8 customers account for $93.9B in NBM contracts representing 50%+ of FY2027 bits and ~67% of FY2028 bits. While diversified across Datacenter (38% of bits), Edge, and Consumer segments, the NBM model creates structural concentration in a small number of large datacenter customers. 10 total NBM agreements across 8 customers.",
+          "source": "SEC Form 10-K FY2026, CFO Luis Visoso statements in Q4 earnings call, Fool.com and Yahoo Finance articles detailing 8 customers with NBM agreements",
+          "confidence": "high"
+        },
+        "moat": {
+          "score": 3,
+          "reason": "Moderate moat: Leading position in NAND flash with advanced BiCS8/9/10 technology and early HBF (high-bandwidth flash) development. However, faces direct competition from Samsung and Micron in commodity-like NAND market. NBM contracts provide some stickiness but pricing includes variable components with floors/ceilings. Technology leadership in QLC and capacity, but not a monopoly chokepoint. Partnership with Toshiba for NAND production suggests dependency.",
+          "source": "SEC Form 10-K FY2026, investor day presentations referenced in TipRanks and TradingKey articles, historical Toshiba partnership from WDC acquisition filings",
+          "confidence": "medium"
+        },
+        "management_candor": {
+          "score": 4,
+          "reason": "Good candor: Management acknowledges NBM contract risks, including potential for customers to seek renegotiation if NAND prices fall. Guidance has been consistently conservative (Q3 guided $4.4-4.8B, delivered $5.95B). Discloses that NBM pricing has variable components subject to floors/ceilings and that actual pricing may differ. CFO transparent about excluding $2.48B in customer prepayments from adjusted FCF. However, limited disclosure on specific customer identities or end-market sustainability.",
+          "source": "SEC Form 10-K FY2026 risk factors, earnings call transcripts Q2-Q4 FY2026, Seeking Alpha analysis citing management statements on contract economics and prepayment adjustments",
+          "confidence": "high"
+        }
+      },
+      "durability_total": 17,
+      "flag": "SOLID",
+      "one_line": "Cash-rich NAND leader riding AI storage boom with $94B contracted revenue, but concentrated in 8 datacenter customers amid circular AI demand risk."
     },
     {
       "ticker": "MSFT",
-      "error": "failed",
-      "flag": "",
-      "durability_total": 0,
-      "scores": {},
-      "one_line": "scan failed"
+      "scores": {
+        "self_funding": {
+          "score": 4,
+          "reason": "Strong operating cash flow of $136B in FY2025, up 15%, generating $72B free cash flow. However, FCF declining due to massive AI capex ($64.5B in FY25, growing to >$50B quarterly run rate in FY26), and net debt position deteriorated from net cash of $31.8B in FY23 to net debt of -$51.9B in FY26. Still self-funding but capital intensity rising sharply.",
+          "source": "SEC Form 10-K FY2025; stockanalysis.com cash flow statement showing FY25 FCF $71.6B vs FY26 $67B; net debt position -$51.97B as of Jun 2026",
+          "confidence": "high"
+        },
+        "real_vs_circular_demand": {
+          "score": 3,
+          "reason": "Mixed picture. ~90% of Microsoft Cloud revenue ($168.9B annually) comes from customers outside frontier-model companies, indicating broad enterprise demand. However, OpenAI represents $24.1B in related-party revenue (8.5% of total) and committed to $250B additional Azure purchases. Commercial bookings jumped 67% in Q2 FY25 'significantly ahead of expectations driven by Azure commitments from OpenAI.' Concentration risk acknowledged by management and analysts.",
+          "source": "Microsoft FY25 10-K Note 18 stating 'nearly 90% of Microsoft Cloud revenue came from customers outside frontier-model companies'; Motley Fool 9/22/26 article on $24.1B OpenAI revenue; Q2 FY25 earnings call CFO Amy Hood statement on OpenAI bookings impact; CNBC 7/29/26 reporting '45% of $625B commercial RPO tied to OpenAI'",
+          "confidence": "high"
+        },
+        "customer_concentration": {
+          "score": 4,
+          "reason": "No single customer or country >10% of revenue per FY25 10-K disclosure. However, OpenAI is the only customer named in filings and represents material concentration (8.5% of revenue, 45% of RPO). 95% Fortune 500 use Azure, 85% use Microsoft products broadly. Diversified customer base but OpenAI concentration creates meaningful risk.",
+          "source": "SEC 10-K FY2025 Note 18: 'No sales to an individual customer or country other than the United States accounted for more than 10% of revenue'; turbo360.com reporting 85% Fortune 500 adoption; Deutsche Bank note cited by CNBC 7/29/26 on 'concentration risk' with OpenAI",
+          "confidence": "high"
+        },
+        "moat": {
+          "score": 5,
+          "reason": "Dominant position across multiple chokepoints: Windows OS, Office/M365 (89M consumer subscribers, 6% commercial seat growth), Azure #2 cloud at 21% market share growing 40%+, LinkedIn, enterprise lock-in through integrated stack. Microsoft 365 Commercial has 97% annuity mix. Azure grew 34% to $75B+ in FY25, now >$100B run rate. Switching costs extremely high for enterprise customers.",
+          "source": "Microsoft FY25 10-K showing Microsoft 365 Commercial cloud 15% growth, 89M consumer subs, Azure $75B revenue up 34%; Q2 FY25 earnings call '97% annuity mix'; getpanto.ai reporting Azure 21% market share in Q4 2025; Microsoft Q4 FY26 earnings showing Azure >$100B annually",
+          "confidence": "high"
+        },
+        "management_candor": {
+          "score": 4,
+          "reason": "Management explicitly acknowledges material risks: capacity constraints limiting Azure revenue ('demand exceeding supply', 'capacity constrained through at least end of fiscal year'), margin compression from AI infrastructure scaling (Cloud gross margin down to 66-67% from 69%+), OpenAI partnership creating 'increased volatility' and concentration risk. CFO Amy Hood states 'it is safe to say [Azure revenue] could be higher' if not capacity constrained. However, some promotional language around AI '$13B run rate up 175%' without profitability disclosure.",
+          "source": "Microsoft Q1 FY26 earnings call - CFO Amy Hood: 'capacity constrained through at least end of fiscal year'; Q4 FY25 call guidance on Cloud gross margin 67% 'down year-over-year driven by scaling AI infrastructure'; ciodive.com 10/29/25 quoting Hood on capacity limiting revenue; Motley Fool Q1 FY26 transcript noting 'increased volatility' from OpenAI partnership conversion",
+          "confidence": "high"
+        }
+      },
+      "durability_total": 20,
+      "flag": "SOLID",
+      "one_line": "Dominant enterprise moat with strong self-funding, but rising capital intensity, OpenAI revenue concentration (8.5% revenue, 45% RPO), and acknowledged capacity constraints create durability concerns around AI buildout sustainability."
     },
     {
       "ticker": "GOOGL",
-      "error": "failed",
-      "flag": "",
-      "durability_total": 0,
-      "scores": {},
-      "one_line": "scan failed"
+      "scores": {
+        "self_funding": {
+          "score": 2,
+          "reason": "Q2 2026 FCF turned negative (-$5.9B) for first time as CapEx ($44.9B) outpaced operating cash flow ($39.1B). TTM FCF still positive at $53B but down 20% YoY. Total debt quadrupled to $121B. Raised $80B in equity June 2026 to fund AI buildout. Still holds $242.5B cash/marketable securities and $121.7B net cash, but growth now heavily debt+dilution funded.",
+          "source": "SEC Form 10-Q Q2 2026, Alpha Spread FCF analysis, SEC Form FWP equity raise June 1 2026",
+          "confidence": "high"
+        },
+        "real_vs_circular_demand": {
+          "score": 4,
+          "reason": "Cloud backlog $514B with ~500 customers each processing >1 trillion tokens. Management disclosed 'just over 50%' of backlog converts to revenue in next 24 months, indicating multi-year enterprise commitments. 90% of Fortune 100 use Google Cloud security. Search revenue ($63.3B Q2, +17%) and YouTube ads ($11.1B, +13%) from end advertisers. Some Cloud growth is TPU system sales to hyperscalers, but majority is 'typical GCP contracts from a broad mix of customers' per CFO.",
+          "source": "Q2 2026 earnings call transcript July 22 2026, SEC 8-K Q2 2026",
+          "confidence": "high"
+        },
+        "customer_concentration": {
+          "score": 5,
+          "reason": "Highly diversified. Search+YouTube ads serve millions of advertisers across industries. Cloud revenue split across enterprise AI solutions (Fortune 100 adoption), core GCP services, and cybersecurity with 'broad mix of customers.' Revenue by segment: Search $63B, YouTube ads $11B, Cloud $25B, subscriptions/platforms $13B. Geographic split: US 51%, EMEA 27%, APAC 16%, Americas 6%. No single customer or segment dominance.",
+          "source": "SEC Form 10-Q Q2 2026 segment disclosures, Q2 2026 earnings call",
+          "confidence": "high"
+        },
+        "moat": {
+          "score": 5,
+          "reason": "Search remains dominant cash engine with network effects and data moat. 17% growth despite AI disruption concerns. YouTube is entrenched two-sided platform. Cloud differentiated by proprietary TPU infrastructure and Gemini models integrated into solutions (Chronicle, Wiz). 35.6% Cloud operating margin in Q2 2026 vs. 20.7% prior year. Android, Chrome, Maps create ecosystem lock-in. Substantial barriers to replicating integrated AI+infrastructure stack.",
+          "source": "Q2 2026 8-K earnings release, Q2 2026 earnings call transcript",
+          "confidence": "high"
+        },
+        "management_candor": {
+          "score": 4,
+          "reason": "CFO Anat Ashkenazi disclosed Q3 Cloud margin pressure from third-party capacity costs, Wiz integration headwinds, rising depreciation and energy costs. Raised CapEx guidance twice in 2026 ($175-185B to $195-205B) acknowledging supply constraints. Transparent about TPU revenue timing (mostly 2027). Q2 EPS beat ($9.11 vs $2.89 est) driven by $37.7B non-operating gain from unrealized equity gains, clearly disclosed. However, declined to quantify AI ROIC or payback timing when pressed by analysts.",
+          "source": "Q2 2026 earnings call July 22 2026, Q1 2026 10-Q, Investing.com transcript analysis",
+          "confidence": "high"
+        }
+      },
+      "durability_total": 20,
+      "flag": "SOLID",
+      "one_line": "Search+YouTube cash machine funding massive AI buildout; FCF turned negative Q2 on $45B/qtr CapEx but still $122B net cash; diverse enterprise Cloud demand ($514B backlog) offsets debt-fueled infrastructure race."
     },
     {
       "ticker": "AMZN",
-      "error": "failed",
-      "flag": "",
-      "durability_total": 0,
-      "scores": {},
-      "one_line": "scan failed"
+      "scores": {
+        "self_funding": {
+          "score": 2,
+          "reason": "Free cash flow turned negative in 2026 for first time since 2023. TTM FCF through Q2 2026 was -$11.6B. Company raised $25B+ in bonds in July 2026 specifically to fund AI infrastructure buildout. Operating cash flow of $71.4B for H1 2026 is strong but insufficient to cover ~$220B guided capex. Heavy debt-funded expansion, not self-sustaining.",
+          "source": "SEC 10-Q Q2 2026 (Jun 30, 2026), GuruFocus TTM FCF -$11.625B, TIKR.com bond sale article July 2026, Q2 2026 earnings call transcript",
+          "confidence": "high"
+        },
+        "real_vs_circular_demand": {
+          "score": 4,
+          "reason": "AWS backlog of $496B (Q2 2026) growing triple-digits YoY, with $364B in contractual commitments as of Q1 2026. Management stated capacity for 2027 largely reserved and significant 2028 capacity pre-sold. AWS serves 4.19M business customers including large enterprises (67.4% of market). However, some AI demand concentration exists\u2014AI revenue run rate $25B+ but specific customer breakdown unclear. Majority appears blue-chip enterprise vs. speculative AI labs.",
+          "source": "Q2 2026 earnings call (Jul 30, 2026), SEC 10-Q Q1 2026, AWS statistics report (esparkinfo.com Oct 2026)",
+          "confidence": "medium-high"
+        },
+        "customer_concentration": {
+          "score": 5,
+          "reason": "Highly diversified. AWS serves ~4.19M business customers across sectors. E-commerce has 250M+ Prime members. Revenue breakdown: AWS 18%, Online Stores 36%, Third-party sellers 23%, Advertising 10%, Subscription 7%, Physical stores 3%. No evidence of significant concentration in single customers. North America 60%, International 22%, AWS 18% by geography.",
+          "source": "Amazon 2025 annual data, SEC filings Q2 2026, AWS customer statistics (esparkinfo.com), revenue segment data (stockanalysis.com Jun 2026)",
+          "confidence": "high"
+        },
+        "moat": {
+          "score": 5,
+          "reason": "Wide moat score 9/10 per GuruFocus (Sep 2026). AWS holds ~30% cloud market share vs. Azure 27%. Amazon controls 38-40% of US e-commerce (6x Walmart's share). Prime 250M members creates switching costs. 1,200+ fulfillment facilities with robotics handling 75% of delivery. Network effects in two-sided marketplace. Proprietary Trainium/Graviton chips. High barriers to replicating logistics scale and AWS ecosystem. Clear defensible chokepoint in cloud and e-commerce infrastructure.",
+          "source": "GuruFocus Moat Score Sep 2026, Synergy Research cloud share Q1 2026, wisernotify.com statistics, Aurelion Research moat analysis, koalagains.com moat analysis 2026",
+          "confidence": "high"
+        },
+        "management_candor": {
+          "score": 4,
+          "reason": "Management transparent about risks: explicitly raised capex guidance from $200B to $220B citing memory costs, acknowledged FCF pressure, disclosed capacity constraints through 2027, detailed tariff refund one-time benefits ($600M), explained Prime Day timing impact on Q3 guidance. CEO Jassy stated 'we will still not have enough capacity to meet all demand in 2026.' However, highly promotional about AI opportunity ('trillion-dollar revenue business'), ROIC claims not yet proven. Balance of candor with optimism.",
+          "source": "Q2 2026 earnings call transcript (Jul 30, 2026), Q1 2026 earnings call (Apr 29, 2026), SEC 10-Q filings Q1-Q2 2026, TipRanks earnings summary",
+          "confidence": "high"
+        }
+      },
+      "durability_total": 20,
+      "flag": "SOLID",
+      "one_line": "Dominant moat and diversified demand offset by debt-funded AI buildout turning FCF negative; management candid about risks but unproven on ROIC claims."
     },
     {
       "ticker": "META",
-      "error": "failed",
-      "flag": "",
-      "durability_total": 0,
-      "scores": {},
-      "one_line": "scan failed"
+      "scores": {
+        "self_funding": {
+          "score": 2,
+          "reason": "Q2 2026 free cash flow collapsed to $784M vs $8.5B year prior, as capex of $31.1B nearly equaled operating cash flow of $31.9B. Full-year 2026 capex guidance of $130-145B dramatically outpaces historical FCF generation. Meta has increased debt from $58.7B (Dec 2025) to $83.7B (June 2026) and has $279B in signed operating leases not yet started plus $349B in non-cancelable commitments ($628B total off-balance sheet). While the company has $90.3B in cash/securities and strong operating cash flow, growth is now heavily debt and lease-financed rather than FCF-funded.",
+          "source": "SEC Form 8-K Q2 2026 (meta-06302026xexhibit991.htm), TIKR analysis of off-balance sheet financing",
+          "confidence": "high"
+        },
+        "real_vs_circular_demand": {
+          "score": 5,
+          "reason": "Revenue is 97.6% advertising from millions of diversified advertisers, primarily SMBs and e-commerce brands (8M advertisers using AI creative tools per Q1 2026 earnings). Online commerce was the largest contributor to Q2 2026 ad revenue growth. Top spenders include Amazon ($1.2B annually), Temu/Shein ($3B combined), Disney ($800M) - all end-demand businesses selling to consumers. No evidence of circular AI-lab spending or cash-burning customers. Q2 2026 ad revenue $59.4B, up 27% YoY.",
+          "source": "Meta Q2 2026 10-Q filing, Q1 2026 earnings call transcript, Stackmatix top advertisers analysis",
+          "confidence": "high"
+        },
+        "customer_concentration": {
+          "score": 5,
+          "reason": "Meta explicitly states in its 10-K that 'no individual customer represented 10% or more of total revenue or accounts receivable during 2025, 2024 or 2023.' Revenue comes from millions of advertisers spanning e-commerce, retail, CPG, financial services, automotive, real estate across global markets. 8M advertisers using AI tools, majority SMBs. Highly diversified customer base.",
+          "source": "Meta 2025 10-K (cited in thestrategystory.com business model analysis), Q1 2026 earnings",
+          "confidence": "high"
+        },
+        "moat": {
+          "score": 5,
+          "reason": "Meta owns Facebook (3.07B users), Instagram (2B daily actives as of Q2 2026), WhatsApp, Messenger - commanding 3.6B daily active people across Family of Apps. Network effects create irreplaceable two-sided marketplace connecting billions of users to millions of advertisers. Proprietary AI ad-targeting infrastructure (GEM models, Advantage+ suite at $75B annual run rate). Regulatory scrutiny (GDPR, DSA, DMA) actually raises barriers for competitors. Not a commodity - advertisers cannot replicate this reach/engagement elsewhere.",
+          "source": "Meta Q2 2026 earnings call transcript, Q2 2026 10-Q filing",
+          "confidence": "high"
+        },
+        "management_candor": {
+          "score": 4,
+          "reason": "Management explicitly discusses material risks: Q1 2026 CFO outlook warned 'active legal and regulatory matters, including headwinds in the EU and the U.S. that could significantly impact our business' and 'additional trials scheduled for this year in the U.S., which may ultimately result in a material loss.' Q2 took $2.4B legal charge. Acknowledged advertising revenue will 'continue to be adversely affected' by regulatory changes. Transparent about capex increases ($125-145B raised to $130-145B). However, promotional on AI monetization timelines without concrete details on enterprise revenue ramp.",
+          "source": "Meta Q1 2026 10-Q CFO Outlook Commentary (meta-03312026xexhibit991.htm), Q2 2026 earnings call",
+          "confidence": "high"
+        }
+      },
+      "durability_total": 21,
+      "flag": "SURVIVOR",
+      "one_line": "Dominant ad platform with bulletproof demand and zero customer concentration, but mortgaging the balance sheet ($628B in commitments) to fund AI capex race that turned FCF positive to near-zero."
     },
     {
       "ticker": "ORCL",
-      "error": "failed",
-      "flag": "",
-      "durability_total": 0,
-      "scores": {},
-      "one_line": "scan failed"
+      "scores": {
+        "self_funding": {
+          "score": 2,
+          "reason": "Oracle generated strong operating cash flow of $20.8B in FY2025 but free cash flow turned deeply negative (-$394M in FY2025, -$5.9B in Q1 FY2026) due to massive capital expenditures ($21B in FY2025, projected $90-95B in FY2026) for data center buildout. Company is raising debt (net debt issued $40B in FY2026) to fund AI infrastructure expansion. While profitable, growth is heavily debt-funded rather than self-funded.",
+          "source": "SEC Form 10-Q FY2026 Q1 (Aug 31, 2025), Oracle FY2025 Q4 earnings (Jun 2025), Q2 FY2026 earnings call (Dec 10, 2025)",
+          "confidence": "high"
+        },
+        "real_vs_circular_demand": {
+          "score": 3,
+          "reason": "Mixed demand profile. RPO jumped 433% to $523B driven by contracts with Meta and Nvidia - AI infrastructure customers. Oracle explicitly noted 'diversifying customer backlog' but highlighted Meta/Nvidia specifically. Also serves traditional enterprise customers (Cerner healthcare, NetSuite ERP, Fusion applications) with real end-user demand. Significant exposure to AI training/inference workloads suggests partial circular demand risk.",
+          "source": "Oracle Q2 FY2026 earnings call transcript (Dec 10, 2025), Q2 FY2026 Form 8-K",
+          "confidence": "high"
+        },
+        "customer_concentration": {
+          "score": 3,
+          "reason": "Geographic revenue split shows Americas 63%, EMEA 25%, Asia 12% (Q3 FY2025). Management highlighted Meta and Nvidia contracts as drivers of $68B RPO increase in Q2 FY2026. Applications segment (46-47% of cloud revenues) serves broad enterprise base including healthcare, ERP customers. However, recent massive RPO growth concentrated in few large AI infrastructure deals indicates increasing concentration risk.",
+          "source": "SEC Form 10-Q FY2025 Q3 (Feb 28, 2025), Oracle Q2 FY2026 earnings call (Dec 10, 2025)",
+          "confidence": "medium"
+        },
+        "moat": {
+          "score": 4,
+          "reason": "Oracle Database maintains ~11% global market share with strong enterprise lock-in and license support revenues (77% of total revenue in Q2 FY2025). Autonomous database, integration with applications, and multicloud partnerships (AWS, Azure, Google) create switching costs. Faces intense competition from AWS Aurora, Microsoft, SAP, but database/ERP installed base provides durable revenue stream. Cloud infrastructure (OCI) less defensible at 3-5% market share.",
+          "source": "SEC Form 10-K FY2024, RankRed market share analysis (2026), Oracle Q2 FY2025 earnings (Dec 2024)",
+          "confidence": "high"
+        },
+        "management_candor": {
+          "score": 3,
+          "reason": "Management disclosed massive CapEx increase ($15B higher than Q1 forecast) and negative free cash flow transparently. Acknowledged debt-funding: 'will pursue expansion only when capital available on favorable terms.' However, promoted 433% RPO growth heavily without clearly breaking out concentration in Meta/Nvidia deals or discussing risks of AI customer spending sustainability. Mixed promotional/candid tone.",
+          "source": "Oracle Q2 FY2026 earnings call transcript (Dec 10, 2025), SEC Form 10-Q disclosures",
+          "confidence": "high"
+        }
+      },
+      "durability_total": 15,
+      "flag": "FRAGILE",
+      "one_line": "Oracle burns cash funding AI data center buildout with debt; strong database moat offset by concentration in Meta/Nvidia contracts and uncertain AI demand durability."
     },
     {
       "ticker": "IBM",
-      "error": "failed",
-      "flag": "",
-      "durability_total": 0,
-      "scores": {},
-      "one_line": "scan failed"
+      "scores": {
+        "self_funding": {
+          "score": 4,
+          "reason": "Q1-Q2 2026 generated $4.8B free cash flow on track for ~$1B YoY growth. Strong FCF ($13.1B TTM) but $62B total debt vs $8.2B cash creates net debt of ~$54B. Self-funds operations and dividends ($1.6B returned Q1) without dilution, but debt-funded $10.5B in acquisitions (Confluent).",
+          "source": "IBM 10-Q Q2 2026 (SEC filing Jun 30, 2026); IBM Q2 2026 earnings transcript Jul 22, 2026",
+          "confidence": "high"
+        },
+        "real_vs_circular_demand": {
+          "score": 5,
+          "reason": "Customer base of 530,000+ clients including Fortune 500 enterprises across banking (97% of global banks), retail (80%), travel (80% of reservations). No exposure to cash-burning AI labs; serves profitable end-users in financial services, telecom, government. Revenue 45% software (80% recurring), 33% consulting to real enterprises, not speculative AI startups.",
+          "source": "IBM 10-Q Q2 2026; Q2 2026 earnings call transcript; third-party analysis citing IBM investor data",
+          "confidence": "high"
+        },
+        "customer_concentration": {
+          "score": 5,
+          "reason": "No single customer >10% of revenue per SEC disclosures. Over 530,000 clients globally; diversified across Americas (52%), EMEA (28%), Asia-Pacific (20%). Enterprise accounts 65%, mid-market 22%, small business 8%, public sector 5%. Geographic and industry diversification across banking, retail, telecom, government.",
+          "source": "Risk Intelligence analysis citing IBM 10-K disclosures; IBM revenue breakdown 2025-2026; IBM Q1 2026 10-Q",
+          "confidence": "high"
+        },
+        "moat": {
+          "score": 4,
+          "reason": "Deep mainframe lock-in: 70% of global transaction value runs on IBM Z, 97% of banks use IBM, 140M installed MIPS with 85% of clients maintaining/growing capacity. 80% recurring software revenue provides stickiness. Red Hat hybrid cloud and watsonx AI create switching costs. However, faces intense cloud competition from hyperscalers (AWS, Azure, GCP) and consulting rivals. Not a monopoly but has defensible embedded-base moat.",
+          "source": "IBM Q2 2026 earnings transcript Jul 22, 2026; Futurum Group analysis Jul 2026; IBM statistics 2026",
+          "confidence": "high"
+        },
+        "management_candor": {
+          "score": 5,
+          "reason": "Q2 2026: Pre-announced revenue miss as soon as financial close complete, citing transparency commitment. CFO detailed late-quarter client spending shift to supply-constrained hardware, delayed deals vs lost deals. Cut full-year guidance from >5% to 4-5% growth. Named specific risks: infrastructure supply dislocation, mainframe cycle timing, quarter-end deal concentration. No hype; acknowledged shortfall directly.",
+          "source": "IBM Q2 2026 earnings call transcript Jul 22, 2026; IBM pre-announcement Jul 14, 2026",
+          "confidence": "high"
+        }
+      },
+      "durability_total": 23,
+      "flag": "SURVIVOR",
+      "one_line": "Diversified enterprise IT giant with strong FCF and embedded mainframe/software moat serving real profitable customers, though carrying material debt from M&A."
     },
     {
       "ticker": "CRDO",
-      "error": "failed",
-      "flag": "",
-      "durability_total": 0,
-      "scores": {},
-      "one_line": "scan failed"
+      "scores": {
+        "self_funding": {
+          "score": 4,
+          "reason": "Company turned FCF positive in FY2025 ($29M FCF, up 70% YoY) and generated $407M FCF in FY2026. Operating cash flow reached $464M in FY2026 vs $65M in FY2025. Balance sheet shows zero debt, $764M cash (Q2 FY2026), net cash position of $738M. However, SBC represents ~39% of operating cash flow per recent analysis, inflating reported cash generation.",
+          "source": "TipRanks financials showing FY2025 FCF $29.02M, FY2026 FCF $407M; Fool.com Oct 2026 noting zero debt, $764M cash; StockAnalysis.com showing operating cash flow $464M FY2026 vs $65M FY2025",
+          "confidence": "high"
+        },
+        "real_vs_circular_demand": {
+          "score": 3,
+          "reason": "Major identified customers include Amazon (AMZN), Microsoft (MSFT), and Arista Networks (ANET) - mix of profitable hyperscalers and networking OEMs. Success driven by AI deployments per Q4 FY2024 filing. Four hyperscalers each >10% revenue in Q2 FY2026, largest at 42%. End customers are profitable cloud giants, but revenue concentrated in AI infrastructure buildout which could be cyclical. Not speculative AI labs, but AI-driven capex dependent.",
+          "source": "Trefis.com listing Amazon, Microsoft, Arista as major customers >10% revenue; SEC Q4 FY2024 filing stating 'success primarily driven by AI deployments'; MarketBeat Dec 2025 showing four hyperscalers >10% revenue, largest 42%",
+          "confidence": "medium-high"
+        },
+        "customer_concentration": {
+          "score": 2,
+          "reason": "Severe concentration risk. Q2 FY2026: largest customer 42%, second 24%, third 16%, fourth 11% (top two = 66%). Historical data shows FY2023 Customer A at 46% revenue, both served same end customer via distributors. Q4 FY2025 saw Amazon alone at 61% per analyst report. Improving slightly with 4th customer crossing 10% threshold, but still highly concentrated in top 2-3 hyperscalers.",
+          "source": "MarketBeat Q2 FY2026 earnings Dec 2025: largest 42%, second 24%, third 16%, fourth 11%; SEC FY2023 10-K Customer A 46% revenue; Substack analysis noting Amazon 61% in Q4 FY2025",
+          "confidence": "high"
+        },
+        "moat": {
+          "score": 3,
+          "reason": "Company pioneered Active Electrical Cables (AEC) category with foundational patents validated via March 2026 settlements with TE Connectivity, Molex, Amphenol, Volex. Holds 80-88% AEC market share per analyst estimates. Proprietary SerDes technology offers power efficiency advantage (50% lower power vs optics). However, moat has 'expiry date' per analysis - patent settlements license competitors, and physics limits AEC reach (5-6.5m). Faces competition from Broadcom ($600B cap), Marvell ($50B cap), Astera Labs. First-mover advantage but not permanent monopoly.",
+          "source": "Substack March 2026 noting patent settlements validating foundational AEC patents; analysisofficial.substack noting 'moat with expiry date'; JPMorgan/650 Group estimates of 80-88% AEC share; Nasdaq article on 50% power savings vs optics; iamfabian.substack on Broadcom/Marvell/Astera competition",
+          "confidence": "medium-high"
+        },
+        "management_candor": {
+          "score": 4,
+          "reason": "Management explicitly acknowledges key risks: Q2 FY2026 call flagged supply constraints (wafer foundry capacity), increased competition requiring ITC filing, customer concentration risk, and guided gross margins DOWN to 63-65% range long-term from current 67.7%. CFO stated OPEX will increase 50% YoY in FY2026. Guided conservatively per analyst notes. However, unveiled three 'new growth pillars' claiming >$10B TAM expansion which could be promotional. Overall transparent about challenges while ambitious on opportunities.",
+          "source": "GuruFocus Q2 FY2026 call highlights noting management flagged supply constraints, competition risks, margin compression to 63-65%; MarketBeat Dec 2025 showing OPEX +50% YoY guidance; SimpleTechTrend noting three new growth engines with $10B+ TAM claim",
+          "confidence": "medium-high"
+        }
+      },
+      "durability_total": 16,
+      "flag": "SOLID",
+      "one_line": "CRDO: FCF-positive AEC pioneer with 80%+ market share serving profitable hyperscalers (Amazon/Microsoft), but extreme customer concentration (top 2 = 66%) and time-limited moat risk long-term durability despite strong current execution."
     },
     {
       "ticker": "ANET",
-      "error": "failed",
-      "flag": "",
-      "durability_total": 0,
-      "scores": {},
-      "one_line": "scan failed"
+      "scores": {
+        "self_funding": {
+          "score": 5,
+          "reason": "Debt-free balance sheet with $13.3B cash/equivalents and zero debt. Generated $5.3B operating cash flow (TTM) and $5.2B free cash flow. Q2 2026 operating cash flow $1.1B. No reliance on external financing.",
+          "source": "SEC 10-Q Q2 2026, StockAnalysis.com (Jun 2026), Yahoo Finance Q2 2026 earnings",
+          "confidence": "high"
+        },
+        "real_vs_circular_demand": {
+          "score": 3,
+          "reason": "Etherlink AI fabric customer base expanded from 4-5 customers in 2024 to 100+ by Q2 2026, suggesting broader adoption. However, 42% of FY2025 revenue from two customers (26% and 16% respectively, identified by analysts as Microsoft and Meta). CFO stated demand is 'broad-based across hyperscalers, AI labs, neoclouds, enterprises and campus' but heavy concentration in cloud titans (48% of revenue in 2025) creates circular risk given many AI labs are funded by same hyperscalers.",
+          "source": "Phemex analysis (Sep 2026), AlphaSense Q2 2026, MarketBeat conference Aug 2026, Futunn Q2 2026 analysis",
+          "confidence": "medium"
+        },
+        "customer_concentration": {
+          "score": 2,
+          "reason": "Two customers represent 42% of total revenue in FY2025 (26% and 16%). Microsoft and Meta confirmed as 10%+ customers with potential for 1-2 additional 10% customers. Top two resellers account for 52% of accounts receivable at Dec 2025. Concentration increased from 39% (2023) to 35% (2024) to 42% (2025).",
+          "source": "Phemex analysis (Sep 2026), Q1 2026 earnings call transcript (Motley Fool), Yahoo Finance AI outlook article (Apr 2026)",
+          "confidence": "high"
+        },
+        "moat": {
+          "score": 4,
+          "reason": "Wide moat based on switching costs from EOS platform integration and technical leadership in high-speed switching. Morningstar assigns 'wide moat' rating. Customers face 'immense switching costs' due to deep EOS integration, retraining requirements, and network reconfiguration. Commands #1 market share in >10G Ethernet and gaining share vs Cisco. However, faces competition from Nvidia's Spectrum-X and white-box alternatives. Not a true monopoly bottleneck.",
+          "source": "Morningstar analysis (May 2026), Koalagains moat analysis (Apr 2026), StockIntent moat analysis (Sep 2026), BYU Silver Fund report (Mar 2026)",
+          "confidence": "high"
+        },
+        "management_candor": {
+          "score": 4,
+          "reason": "Management explicitly flags risks in earnings calls and filings including: 'industry-wide 2-year supply problem until 2028', customer concentration risks, margin pressure from component costs, deferred revenue volatility. CEO Ullal stated supply constraints 'hurt our gross margins' and acknowledged eating costs vs passing to customers. Raised guidance 3x in 2026 but maintained conservative 2-quarter visibility. Transparent about competition and execution risks.",
+          "source": "Q2 2026 earnings call transcript (Motley Fool Aug 2026), Q1 2026 earnings call (Globe & Mail May 2026), Gloom.sh Q2 2026 summary",
+          "confidence": "high"
+        }
+      },
+      "durability_total": 18,
+      "flag": "SOLID",
+      "one_line": "Fortress balance sheet and real moat, but 42% revenue concentration in two hyperscale customers creates dependency risk despite AI demand broadening to 100+ customers."
     },
     {
       "ticker": "COHR",
-      "error": "failed",
-      "flag": "",
-      "durability_total": 0,
-      "scores": {},
-      "one_line": "scan failed"
+      "scores": {
+        "self_funding": {
+          "score": 2,
+          "reason": "Operating cash flow positive but capex-heavy with negative free cash flow. FY24 operating cash flow $546M but capex $347M = $199M FCF. Q1 FY25: $153M operating CF, $92M capex = $61M FCF. Still carries $4.17B gross debt vs $926M cash (net debt ~$3.24B). Debt reduction ongoing ($229M paid in FY24, $118M in Q1 FY25) but not self-funding growth\u2014heavy capex funded partly by $1B SiC minority investment from DENSO/MELCO.",
+          "source": "SEC 10-K FY2024 (Aug 2024), SEC 8-K Q1 FY2025 (Nov 2024)",
+          "confidence": "high"
+        },
+        "real_vs_circular_demand": {
+          "score": 4,
+          "reason": "Revenue diversified across industrial (36%), communications (48%), electronics (8%), instrumentation (8%). Communications growth driven by AI datacenter demand\u2014datacom up 89% YoY in Q1 FY25. Primary customers include hyperscalers (likely profitable: NVDA, GOOG mentioned) for 800G/1.6T transceivers. One customer ~10% of FY24 revenue (Networking segment). Not concentrated in cash-burning AI labs\u2014serves established cloud/telecom infrastructure. Some cyclical risk in industrial/telecom but core demand appears real.",
+          "source": "SEC 10-K FY2024, Q1 FY2025 earnings call transcript (Nov 2024), revenue breakdown by market",
+          "confidence": "high"
+        },
+        "customer_concentration": {
+          "score": 3,
+          "reason": "One customer accounted for 10% of consolidated revenue in FY24 (Networking segment). Geographic diversification: North America 56%, China 13%, Europe 15%, Japan/Korea 8%. Segment split: Networking 49%, Materials 22%, Lasers 29%. Moderate concentration\u2014not catastrophic but not highly diversified. Lost major consumer electronics customer (~10% of FY23 revenue) due to design change, showing single-customer risk.",
+          "source": "SEC 10-K FY2024 Note 18 (Major Customers), revenue breakdown FY2024",
+          "confidence": "high"
+        },
+        "moat": {
+          "score": 4,
+          "reason": "Vertically integrated photonics: owns InP fabs (only company operating 6-inch InP wafer fabs per third-party analysis), laser chip production to module assembly. Manufacturing moat in laser capacity\u2014bottleneck asset in supply-constrained market. Moving to 6-inch wafers provides ~4x output at half cost vs competitors. However, faces competition from Zhongji Innolight (lower cost, 10-20% advantage) and others. Real but narrow moat\u2014cost/capacity lead, not customer lock-in. Product delays (800G modules halted H1 2024) show execution risk.",
+          "source": "Third-party analysis (LongYield, Deep Fundamental Substack), Q3/Q4 FY2024 earnings materials, competitive positioning data",
+          "confidence": "medium-high"
+        },
+        "management_candor": {
+          "score": 4,
+          "reason": "Management disclosed major headwinds: consumer electronics revenue decline from 10% to 3% due to design change by major customer, acknowledged 'macroeconomic uncertainty' impacting visibility, disclosed 800G production issues. Guidance generally met/beaten per analysis. New CEO Jim Anderson (joined Jun 2024) acknowledged 'opportunity for improvement' while highlighting strengths. Disclosed debt reduction plans, capex funded by minority investment. Some promotional language ('world class innovation') but balanced with risk disclosure. No red flags of egregious hype.",
+          "source": "Q2-Q4 FY2024 shareholder letters, Q1 FY2025 earnings call, SEC 10-K FY2024 risk factors",
+          "confidence": "high"
+        }
+      },
+      "durability_total": 17,
+      "flag": "SOLID",
+      "one_line": "Vertically integrated photonics supplier with real manufacturing moat in AI datacenter optics, serves profitable hyperscalers but carries heavy debt and capex burden while generating modest positive FCF\u2014durable tech position undermined by levered balance sheet."
     },
     {
       "ticker": "FN",
-      "error": "failed",
-      "flag": "",
-      "durability_total": 0,
-      "scores": {},
-      "one_line": "scan failed"
+      "scores": {
+        "self_funding": {
+          "score": 3,
+          "reason": "Net cash position of $871M (Dec 2025), but FCF turned sharply negative in FY2026 at $4.2M vs $207M in FY2025 due to heavy capex ($253M) for AI capacity buildout. Operating cash flow positive at $257M but nearly all consumed by expansion. Drew $75M term loan in Aug 2026 for capex.",
+          "source": "SEC Form 10-K FY2026, stockanalysis.com balance sheet data Dec 2025, stocktitan.net 8-K filing Aug 2026",
+          "confidence": "high"
+        },
+        "real_vs_circular_demand": {
+          "score": 4,
+          "reason": "Customer mix includes Cisco (20%), Nokia (11%), Amazon (11%) - established infrastructure buyers - alongside NVIDIA (16% in FY2026, down from 35% in FY2024). 73.5% optical comms revenue split between telecom/DCI and datacom for AI. Automotive segment ($128M) provides diversification. Majority appears real infrastructure demand.",
+          "source": "SEC Form 10-K FY2026 customer concentration disclosure, SEC Form 10-Q Q2 FY2026, Fabrinet Q4 FY2025 earnings call transcript Aug 2025",
+          "confidence": "high"
+        },
+        "customer_concentration": {
+          "score": 3,
+          "reason": "Four customers each >10% of revenue in FY2026: Cisco 20%, NVIDIA 16%, Nokia 11%, Amazon 11%. Top customer was 58% combined. Historical volatility - NVIDIA went from 35% in FY2024 to 16% in FY2026. Moderately concentrated but improving diversification.",
+          "source": "SEC Form 10-K FY2026, Yahoo Finance Q4 2026 earnings highlights, Motley Fool Q4 2026 earnings transcript",
+          "confidence": "high"
+        },
+        "moat": {
+          "score": 4,
+          "reason": "Specialized optical assembly at sub-micron precision with limited competition at scale. Neutral non-competing position allows competitors to use same manufacturer. 'Factory-within-a-factory' model protects IP. Sole-source for NVIDIA 400G/800G transceivers. However, still contract manufacturer without pricing power - 12% gross margins.",
+          "source": "SEC Form 10-K FY2025 competitive strengths section, note.com bottleneck analysis, investseekers.com moat analysis, Rosenblatt Technology Summit transcript",
+          "confidence": "high"
+        },
+        "management_candor": {
+          "score": 4,
+          "reason": "Management consistently discusses risks including customer concentration, supply chain disruptions, inventory corrections at customers, rising labor costs in Thailand. Guided conservatively and beat guidance 6 consecutive quarters. Acknowledged capex pressures on FCF. SEC filings detail concentration risks transparently.",
+          "source": "SEC Form 10-Q FY2025 Q2 risk factors, SEC Form 10-K FY2024 risk factors section, earnings call transcripts Q1-Q4 FY2024-2025",
+          "confidence": "high"
+        }
+      },
+      "durability_total": 18,
+      "flag": "SOLID",
+      "one_line": "Specialized optical contract manufacturer with real moat in precision assembly and diversifying customer base, but burning cash on AI-driven capacity expansion that may prove cyclical."
     },
     {
       "ticker": "ALAB",
-      "error": "failed",
-      "flag": "",
-      "durability_total": 0,
-      "scores": {},
-      "one_line": "scan failed"
+      "scores": {
+        "self_funding": {
+          "score": 5,
+          "reason": "Strong positive operating cash flow of $335.7M TTM (Q2 2026), $96.97M for 9 months ended Sept 2024. Net cash position of $1.21B ($887M cash + marketable securities as of Sept 2024, vs minimal debt $44.41M). Free cash flow positive $276.68M TTM. IPO raised $672M in March 2024, now fully self-funding from operations with no reliance on debt or dilution.",
+          "source": "SEC 10-Q Sept 2024, Yahoo Finance, StockAnalysis.com balance sheet & cash flow statements",
+          "confidence": "high"
+        },
+        "real_vs_circular_demand": {
+          "score": 2,
+          "reason": "Revenue comes from hyperscale data centers building AI infrastructure. Top 3 customers accounted for 86% of revenue in 2025 per analyst reports. Customers are large hyperscalers (cloud providers) but heavy concentration in AI buildout which may be partially speculative or cash-burning. No clear disclosure showing end customers are profitable users vs. funded AI labs. Management discusses 'AI platforms' but doesn't detail end-user economics.",
+          "source": "Yahoo Finance article (24-6), SEC 10-K FY2024 customer concentration tables showing Customer A 36%, Customer B 24%, Customer C 11%, Seeking Alpha article (26-6, 26-11)",
+          "confidence": "medium"
+        },
+        "customer_concentration": {
+          "score": 1,
+          "reason": "Extreme concentration: Top 3 customers = 86% of 2025 revenue per analyst reports. SEC filings show Customer A at 36%, Customer B at 24% for FY2024, with top 2 customers comprising 60%+. Q3 2024: Customer A 35%, Customer B 26%, Customer C 11%, Customer D 11%. Multiple analysts flag 70%+ from single largest customer as major risk.",
+          "source": "SEC 10-K FY2024 customer concentration table (20-1), SEC 10-Q Q2 2025 (21-1), Yahoo Finance article (24-6), Seeking Alpha article (26-6, 26-11)",
+          "confidence": "high"
+        },
+        "moat": {
+          "score": 3,
+          "reason": "Mixed picture: First-to-market with PCIe 5/6 retimers and COSMOS software creates switching costs as hyperscalers integrate fleet management. However, critical analysis shows Broadcom competitive threat, fabless model means no manufacturing moat, and GuruFocus rates moat at 4/10 ('narrow'). IP portfolio around connectivity standards provides some defensibility but vulnerable to standards evolution and larger competitors. Design wins provide near-term stickiness but not monopoly position.",
+          "source": "Irrational Analysis critical report (46-1, 46-26), GuruFocus moat score 4/10 (47-2, 47-13), SimplyWall.st analysis of software moat (53-5, 53-8), FR.com IPO study noting 'first-to-market' IP strategy (52-3)",
+          "confidence": "medium"
+        },
+        "management_candor": {
+          "score": 4,
+          "reason": "Earnings calls and filings acknowledge customer concentration risks explicitly. Q3 2024 10-Q includes detailed risk factors. Management discusses forward risks including competition, ecosystem dependencies. However, heavy promotional tone around 'AI revolution' and growth narratives. Guidance has been conservative (beat estimates consistently Q2-Q4 2024) suggesting credible forecasting. Material weakness in internal controls disclosed in Q1 2024 10-Q shows transparency, but overall tone leans optimistic on TAM expansion without deep discussion of competitive threats.",
+          "source": "SEC 10-Q Sept 2024 forward-looking statements section (32-2, 32-3), earnings call transcripts Q2-Q4 2024, SEC 10-Q Q1 2024 material weakness disclosure (36-5), earnings beats (6-5, 6-6)",
+          "confidence": "medium"
+        }
+      },
+      "durability_total": 15,
+      "flag": "FRAGILE",
+      "one_line": "Strong self-funding and first-mover tech offset by extreme customer concentration (86% from top 3) and unclear if end demand is durable profitable users vs. speculative AI buildout\u2014capped at FRAGILE due to low real_vs_circular_demand score."
     },
     {
       "ticker": "DELL",
-      "error": "failed",
-      "flag": "",
-      "durability_total": 0,
-      "scores": {},
-      "one_line": "scan failed"
+      "scores": {
+        "self_funding": {
+          "score": 3,
+          "reason": "Dell generates strong operating cash flow ($12.15B TTM) and robust free cash flow ($8.56B TTM), but carries significant net debt of $23.6B. The company funds buybacks and dividends from operations but also raised $5.68B in net borrowing TTM. Recent Q2 FY27 saw FCF fall 47% to $986M as $6.7B went into customer financing receivables, showing mixed self-funding picture.",
+          "source": "Stock Analysis data (Jul 2026 TTM); Tikr article Oct 2026 noting Q2 FY27 FCF fell 47% with $6.7B into financing receivables; Dell 10-Q Aug 2024",
+          "confidence": "high"
+        },
+        "real_vs_circular_demand": {
+          "score": 3,
+          "reason": "Dell reports 6,500+ AI server customers including neoclouds, sovereign clients, and enterprises with $95B AI backlog. Management states demand spans traditional enterprises, but significant portion flows to neoclouds and speculative infrastructure builds. Mix includes blue-chip customers but also heavily reliant on AI infrastructure build-out with customers requiring financing (Dell Financial Services debt rose from $14B to $20B per recent analysis).",
+          "source": "Dell Q2 FY27 earnings Aug 2026 showing 6,500 customers, $95B backlog; CNBC Aug 2026 noting neocloud/sovereign/enterprise mix; Tikr Oct 2026 on DFS debt rising to $20B",
+          "confidence": "high"
+        },
+        "customer_concentration": {
+          "score": 4,
+          "reason": "Dell serves 6,500+ AI server customers plus traditional enterprise PC/server base. Revenue diversified across Infrastructure Solutions Group ($31.8B Q2 FY27), Client Solutions Group ($14.6B), storage, traditional servers, and AI servers. No single customer concentration disclosed. Broad enterprise customer base across commercial PCs, traditional infrastructure, and AI deployments indicates solid diversification.",
+          "source": "Dell Q2 FY27 earnings Aug 2026 showing 6,500 AI customers; Q1 FY27 showing 5,000+ customers; Revenue mix across ISG/CSG segments",
+          "confidence": "high"
+        },
+        "moat": {
+          "score": 2,
+          "reason": "Dell primarily assembles servers using third-party components (Nvidia GPUs, DRAM, NAND). Management acknowledges AI server margins are mid-single-digits, with most value flowing to chip suppliers. ISG operating margin only 15% vs suppliers' much higher margins. Dell competes on scale, direct sales relationships, and integration but faces commoditization risk. Limited defensibility as system integrator/assembler rather than component/IP owner.",
+          "source": "Yahoo Finance article Oct 2026 noting Dell assembles around others' chips with 15% ISG operating margin; Q3 FY26 transcript Nov 2025 stating AI margins mid-single-digits; Motley Fool Q3 transcript on supplier value capture",
+          "confidence": "high"
+        },
+        "management_candor": {
+          "score": 4,
+          "reason": "Management explicitly discusses risks including rising component costs (DRAM, NAND, HDD) impacting margins across portfolio, acknowledges cost basis going up across all products, discusses AI server margin pressure at mid-single-digits, and transparent about customer financing strain on FCF. CFO states costs will make their way into customer base despite mitigation efforts. Forward-looking statements include standard risk disclosures per SEC filings.",
+          "source": "Q3 FY26 transcript Nov 2025 with Clarke stating cost basis is going up across all products and cannot eliminate customer cost impacts; Q2 FY27 earnings discussing financing receivables impact; SEC 8-K filings with standard risk disclosures",
+          "confidence": "high"
+        }
+      },
+      "durability_total": 16,
+      "flag": "SOLID",
+      "one_line": "Dell generates solid cash flow and serves diversified customers but carries net debt, relies partly on AI build-out demand with thin assembler margins, and extends significant customer financing\u2014durably positioned but not fortress-grade."
     },
     {
       "ticker": "SMCI",
-      "error": "failed",
-      "flag": "",
-      "durability_total": 0,
-      "scores": {},
-      "one_line": "scan failed"
+      "scores": {
+        "self_funding": {
+          "score": 1,
+          "reason": "FY2024 free cash flow was -$2.5B to -$7B depending on source. As of Q2 FY2025 (Dec 2024), operating cash flow turned positive at $169M but FY2026 still showed -$6.97B FCF. Total debt $9.3B vs cash $1.4B = net debt -$1.8B. Growth funded by inventory buildup, debt issuance ($1.7B in FY2024), and $2.3B equity raise. Heavy cash burn despite record revenue.",
+          "source": "SEC 10-K FY2024, stockanalysis.com Aug 2026, TradingView cash flow, ad-hoc-news Oct 2026",
+          "confidence": "high"
+        },
+        "real_vs_circular_demand": {
+          "score": 2,
+          "reason": "Q3 FY2026 showed AI GPU platforms >80% of revenue. Large data center/OEM segment 72% of Q3 revenue (down from previous), with enterprise/channel 28%. FY2026 Q4 improved to 50/50 split. Customer base includes hyperscalers and cloud providers building AI infrastructure - demand is real but concentrated in early-stage AI buildout phase. Nine customers >$1B each in FY2026 vs four in FY2025 shows diversification, but still heavily weighted to AI infrastructure capex cycle.",
+          "source": "Fool.com Q3 FY2026 transcript, BigGo Finance Aug 2026, Yahoo Finance Q4 FY2024",
+          "confidence": "medium"
+        },
+        "customer_concentration": {
+          "score": 2,
+          "reason": "Q3 FY2026: two customers >10% each (27% and 10%). FY2024/FY2026: single customer accounted for 20%+ of revenue. Deep Research Global notes 'single customer = 20% of revenue; top 5 likely = 50%+'. Improving from 4 customers >$1B in FY2025 to 9 in FY2026, but concentration remains high and creates asymmetric risk.",
+          "source": "AOL Q3 FY2026 transcript, Deep Research Global Jun 2026, ad-hoc-news Oct 2026, BigGo Finance Sep 2026",
+          "confidence": "high"
+        },
+        "moat": {
+          "score": 2,
+          "reason": "Narrow moat per Alpha Spread. Speed-to-market advantage and liquid cooling leadership (70% share per gate.com) but fundamentally an assembler without proprietary silicon. AI server market share dropped from ~80% in 2022 to 40-50% in 2024 per Deep Research. Gross margins 9-11% vs Dell/HPE 14-17% show limited pricing power. Dell and HPE rapidly closing liquid cooling gap. Assembly-focused model means 'low switching costs' and competitors catching up.",
+          "source": "Alpha Spread moat analysis, Deep Research Global Jun 2026, gate.com Jun 2026, investing.com analysis Apr 2026",
+          "confidence": "high"
+        },
+        "management_candor": {
+          "score": 1,
+          "reason": "Ernst & Young resigned Oct 2024 stating 'unwilling to be associated with financial statements' and unable to 'rely on management's representations'. Delayed FY2024 10-K filing (Aug 2024). DOJ probe Sept 2024. Hindenburg short report Aug 2024 alleging accounting red flags. Special Committee found 'no evidence of misconduct' (Dec 2024) and new auditor BDO appointed, but pattern of delayed filings, prior SEC settlement ($17.5M in 2020), and auditor resignation citing integrity concerns severely damages credibility despite operational guidance.",
+          "source": "SEC 8-K Oct 24 2024, GuruFocus Oct 2024, Bloomberg Aug 2024, SEC 10-K FY2024 filed Feb 2025, CFO Dive Aug 2024",
+          "confidence": "high"
+        }
+      },
+      "durability_total": 8,
+      "flag": "PROPPED-UP",
+      "one_line": "AI server assembler burning billions in cash with 20%+ customer concentration, 9% margins, auditor resignation over integrity concerns, and rapidly eroding competitive moat as Dell/HPE close the gap."
     },
     {
       "ticker": "VRT",
-      "error": "failed",
-      "flag": "",
-      "durability_total": 0,
-      "scores": {},
-      "one_line": "scan failed"
+      "scores": {
+        "self_funding": {
+          "score": 5,
+          "reason": "Strong free cash flow generation with $1.135B adjusted FCF in 2024 (up 46% YoY from $778M), operating cash flow of $1.319B. Net leverage decreased to ~1.0x by Q4 2024 with zero ABL borrowings. Company is self-funding growth, paying dividends, and executing $600M share buybacks.",
+          "source": "SEC Form 10-K FY2024 & Q4 2024 8-K filed Feb 2025",
+          "confidence": "high"
+        },
+        "real_vs_circular_demand": {
+          "score": 4,
+          "reason": "Demand driven primarily by hyperscale (Microsoft, Google, Meta) and colocation operators (Equinix, Digital Realty) with profitable operations funding capex. 80% revenue tied to data centers with hyperscale/colocation segment. However, significant AI-related acceleration creates some dependency on continued AI buildout by tech giants still proving monetization models.",
+          "source": "Q3 2024 8-K (Oct 2024), analyst reports citing 80% data center revenue mix, customer names disclosed in Feb 2026 analysis",
+          "confidence": "medium-high"
+        },
+        "customer_concentration": {
+          "score": 3,
+          "reason": "SEC filings state no single customer exceeds 10% of revenue, but business heavily concentrated in hyperscale segment (small number of large customers). Multiple sources highlight concentration risk with 'handful of hyperscalers' driving growth. Diversified geographically (Americas 56%, EMEA 22%, APAC 22%) but end-market concentration is material.",
+          "source": "MLQ Research analysis citing 10-K disclosure; multiple analyst reports Feb-Jun 2026 noting hyperscale concentration risk",
+          "confidence": "medium"
+        },
+        "moat": {
+          "score": 4,
+          "reason": "Market leader position: #1 in thermal management (~20% share) and large UPS/power distribution (~25-30% share per segment). Global service network with 4,500+ field engineers and 310+ service centers creates switching costs. Deep integration with NVIDIA reference designs and hyperscaler architectures. Liquid cooling leadership (11.3% global share) in high-growth segment. However, faces capable competitors (Schneider 21-22%, Eaton 16%) and not a true monopoly.",
+          "source": "Analyst research (Crackthemarket Substack, Investing.com, Koalagains) citing Dell'Oro/Omdia market data; Q3 2024 transcript noting NVIDIA partnership",
+          "confidence": "high"
+        },
+        "management_candor": {
+          "score": 4,
+          "reason": "Management discloses substantial forward-looking risks including supply chain, customer concentration, tariff impacts, technology competition, and AI cycle risk in SEC filings. Raised guidance multiple times in 2024 and consistently beat. CFO noted new product launch timing risks and customer deferral risks transparently in Q4 call. However, very bullish on AI secular tailwinds with limited discussion of monetization risks for customers.",
+          "source": "Q3 2024 8-K risk factors, Q4 2024 earnings transcript (Feb 2025) discussing execution risks, 10-K forward-looking statement disclosures",
+          "confidence": "medium-high"
+        }
+      },
+      "durability_total": 20,
+      "flag": "SOLID",
+      "one_line": "Market-leading data center infrastructure supplier with strong self-funding and defensible service moat, but concentrated exposure to hyperscale AI buildout creates cyclical dependency on handful of mega-customers."
     },
     {
       "ticker": "CEG",
-      "error": "failed",
-      "flag": "",
-      "durability_total": 0,
-      "scores": {},
-      "one_line": "scan failed"
+      "scores": {
+        "self_funding": {
+          "score": 3,
+          "reason": "Mixed picture. Q3 2024 showed strong adjusted operating earnings of $2.74/share (up 28.6% YoY) with raised full-year guidance to $8.00-$8.40/share. However, FY2024 operating cash flow was negative $2.464B vs positive in 2025, though 2025 improved to +$4.237B. Total debt ~$8.4B with $1.79B cash (net debt $6.62B). Three Mile Island restart receiving $1B DOE loan, covering majority of $1.6B cost, suggesting partial external funding for growth. Strong earnings but historically inconsistent FCF and debt-funded expansion.",
+          "source": "SEC Form 10-K FY2024, Q3 2024 earnings release (Nov 4, 2024), CNBC DOE loan article (Nov 2025), balance sheet data Sep 2024",
+          "confidence": "high"
+        },
+        "real_vs_circular_demand": {
+          "score": 4,
+          "reason": "Majority revenue from diversified customer base including utilities, municipalities, C&I customers, and ~2.5M retail accounts. Microsoft 20-year PPA for 835 MW at Three Mile Island and Meta 1,121 MW PPA represent significant but not dominant portion of ~31,676 MW total capacity. Nearly 30% of baseload generation secured under long-term contracts. While data center/AI deals are growing segment, core business serves established blue-chip end users (Walmart 176 MW deal cited). Microsoft and Meta are profitable hyperscalers, not cash-burning startups, but concentration in AI power deals is increasing.",
+          "source": "Q3 2024 earnings call transcript, Yahoo Finance C&I demand article (Sep 2024), company investor materials, Constellation 2026 overview report",
+          "confidence": "high"
+        },
+        "customer_concentration": {
+          "score": 4,
+          "reason": "Relatively diversified across five operating segments (Mid-Atlantic 22%, Midwest 21%, Calpine 29%, New York 7%, ERCOT 4%, Other 18% of Q1 2026 revenue). Serves ~2.5M customer accounts, distribution utilities, municipalities, cooperatives, C&I customers, three-fourths of Fortune 100 companies. However, Microsoft (835 MW) and Meta (1,121 MW) deals together represent ~2 GW of ~31.7 GW capacity, creating modest but growing hyperscaler concentration. No single customer dominates, but top tech PPAs increasingly material to growth narrative.",
+          "source": "Q1 2026 segment revenue breakdown (Finn analysis), company profile data, Constellation 2026 overview, Yahoo Finance article",
+          "confidence": "high"
+        },
+        "moat": {
+          "score": 5,
+          "reason": "Owns largest U.S. nuclear fleet producing ~10% of all carbon-free energy nationally. Nuclear assets are effectively irreplaceable due to regulatory barriers, decades-long build timelines, and cost (~$10B+ for new nuclear). Existing nuclear plants described as 'effectively irreplaceable' with 95% capacity factor Q3 2024. Post-Calpine acquisition became largest U.S. power producer. 24/7 carbon-free baseload power is unique bottleneck for AI/data center demand vs. intermittent renewables. Long-term contracts at premium pricing (~$100-102/MWh, roughly double merchant wholesale). Clear monopolistic position at critical chokepoint.",
+          "source": "Q3 2024 earnings, Henry Fund analysis (Apr 2026), Constellation 2026 overview, company description as 'nation's largest producer of clean, carbon-free energy'",
+          "confidence": "high"
+        },
+        "management_candor": {
+          "score": 4,
+          "reason": "CEO Joe Dominguez directly addressed FERC colocation ruling uncertainty on Q3 call, acknowledging it's 'top of mind' and discussing multiple pathway scenarios without overpromising outcomes. Raised guidance based on performance ($8.00-$8.40 from $7.60-$8.40) rather than just projections. Acknowledged Three Mile Island restart execution risks, regulatory dependencies (NRC approval needed), and grid interconnection challenges that initially suggested 2031 timeline before FERC waiver. Forward-looking statements properly disclosed. However, heavy emphasis on AI/data center growth narrative without deeply quantifying execution risks or alternative scenarios if tech demand moderates.",
+          "source": "Q3 2024 earnings call transcript (Motley Fool, Nov 4, 2024), FERC waiver coverage, earnings release disclosures",
+          "confidence": "medium-high"
+        }
+      },
+      "durability_total": 20,
+      "flag": "SOLID",
+      "one_line": "Irreplaceable nuclear monopoly with diversified base but growing AI bet; strong moat and real demand offset debt-funded growth and execution risks."
     },
     {
       "ticker": "VST",
-      "error": "failed",
-      "flag": "",
-      "durability_total": 0,
-      "scores": {},
-      "one_line": "scan failed"
+      "scores": {
+        "self_funding": {
+          "score": 5,
+          "reason": "Strong free cash flow generation with $2.65-2.85B FCF guidance for 2024, $3.0-3.6B for 2025. Generated $5.45B cash from operations in 2023, $2.49B adjusted FCF. Actively buying back shares ($5.4B returned since 2021, $1B additional authorization Nov 2024). Net leverage ~2.7x EBITDA at Q3 2024, targeting below 3x. Cash self-funds growth capex and returns capital.",
+          "source": "SEC Form 8-K Nov 7 2024, Q3 2024 earnings; GuruFocus Q3 summary",
+          "confidence": "High - multiple consistent SEC filings"
+        },
+        "real_vs_circular_demand": {
+          "score": 4,
+          "reason": "Mixed demand base. Core business serves ~5M retail electricity customers (residential/commercial/industrial) via TXU Energy across 20 states - stable end-user demand. Recently added data center PPAs with Meta, Amazon, Microsoft for nuclear/gas power. One source notes top customer = 36% of receivables (June 2026 data, likely data center). Retail segment generated $773M adj EBITDA in Q2 2024 alone, largest segment. Majority demand appears real (retail electricity consumers), but growing data center exposure adds AI-related risk.",
+          "source": "Equibles VST summary (customer concentration); Anand Capital Substack (retail EBITDA); SEC 8-K Aug 2024 (Microsoft/Amazon PPAs)",
+          "confidence": "Medium-High - retail dominance clear, but data center concentration emerging"
+        },
+        "customer_concentration": {
+          "score": 3,
+          "reason": "Serves ~5M retail customers providing diversification, but one customer represents 36% of receivables as of June 2026 data. Recent long-term PPAs with hyperscalers (Meta, Amazon, Microsoft) suggest growing concentration risk in data center segment despite broad retail base. Integrated model combines generation with retail reducing single-customer dependence at business-model level.",
+          "source": "Equibles VST summary (36% concentration); SEC 8-K filings Q2-Q3 2024 (hyperscaler deals); Trefis/Alpha Spread (5M customers)",
+          "confidence": "Medium - concentration metric from forward-looking 2026 data but corroborated by recent hyperscaler deal announcements"
+        },
+        "moat": {
+          "score": 4,
+          "reason": "Strong but not monopolistic. Owns ~44,000 MW generation capacity including nuclear, gas, coal, solar, battery storage. Integrated retail+generation model creates natural hedge (retail margins expand when wholesale prices fall). Nuclear fleet provides reliable baseload with 20-year license extensions (Comanche Peak). Data centers require 24/7 dispatchable power - nuclear/gas assets position Vistra well. However operates in competitive wholesale markets (not regulated utility), faces commodity price exposure, and multiple competitors exist. Moat = scale + integration + nuclear assets, not absolute bottleneck.",
+          "source": "SEC 8-K Q2 2024 (Comanche Peak license extension); Anand Capital (integrated model hedge); DCF Analyst/Trefis (44K MW capacity); Alpha Spread (competitive not regulated)",
+          "confidence": "High - business model and asset base well-documented"
+        },
+        "management_candor": {
+          "score": 4,
+          "reason": "Management acknowledges multiple risks explicitly: Q3 2024 call discussed PJM capacity auction delays, Talon interconnection rejection challenges, lower wholesale prices, regulatory uncertainties in ERCOT/PJM, colocation complexity. Q4 2024 disclosed Moss Landing battery fire impact. Guidance consistently met/exceeded (raised Q3 2024 guidance, beat Q4 2024). CEO Burke noted caution on long-term contracts due to forward price/load growth mismatch. Some promotional tone on AI opportunity but balanced with operational candor. Comprehensive hedging disclosed (100% hedged 2024, 96% 2025, 64% 2026 as of Q3).",
+          "source": "Yahoo Finance Q3/Q4 2024 earnings summaries; Investor.vistracorp.com Nov 2024 release; SEC 8-K filings Q2-Q4 2024",
+          "confidence": "High - multiple earnings transcripts and SEC filings reviewed"
+        }
+      },
+      "durability_total": 20,
+      "flag": "SOLID",
+      "one_line": "Cash-generative integrated power producer with strong retail base and nuclear/gas moat, but emerging data center customer concentration and AI exposure warrant monitoring."
     },
     {
       "ticker": "GEV",
-      "error": "failed",
-      "flag": "",
-      "durability_total": 0,
-      "scores": {},
-      "one_line": "scan failed"
+      "scores": {
+        "self_funding": {
+          "score": 4,
+          "reason": "Strong positive free cash flow generation. Full year 2024 delivered $1.7B FCF (up from $442M in 2023). Q3 2024 generated $968M FCF. Cash balance increased from $4.2B at April 2024 spin to $8.2B by year-end 2024. Minimal debt ($0 long-term debt as of Dec 2024 per SEC filings). Committed to returning 1/3 of FCF to shareholders via dividend and buyback. Not reliant on debt or dilution for growth.",
+          "source": "GE Vernova 10-K FY2024 (SEC filing), Q3 2024 earnings release (Oct 23, 2024), 2024 Annual Report",
+          "confidence": "high"
+        },
+        "real_vs_circular_demand": {
+          "score": 4,
+          "reason": "$119B backlog (Dec 2024) diversified across utilities, industrial customers, and data centers. Power segment serves traditional utilities plus hyperscalers (Microsoft, Meta, Google, Amazon AWS). Electrification backlog $23B includes grid infrastructure for utilities. While AI data center demand is significant (Crusoe, Microsoft deals), it's layered on top of base utility demand for grid modernization and gas power replacements. Not purely AI/speculative\u2014majority is traditional electric utility infrastructure.",
+          "source": "GE Vernova 2024 Annual Report, Q3 2024 earnings call transcript (Oct 23, 2024), press releases on Crusoe/Microsoft deals (Jul 2025, Mar 2025)",
+          "confidence": "high"
+        },
+        "customer_concentration": {
+          "score": 4,
+          "reason": "Highly diversified customer base across three segments (Power, Electrification, Wind) serving utilities globally. No single customer dominates. Backlog spans utilities, industrial customers, hyperscalers. Power segment has ~7,000 gas turbines installed globally. Electrification serves grid operators across continents. Wind has 59,000 turbines installed. Q3 2024 transcript shows orders from diverse geographies (Germany, Korea, North America). No disclosure of concentration risk in 10-K.",
+          "source": "GE Vernova 10-K FY2024, Q3 2024 earnings call transcript, 2024 Annual Report",
+          "confidence": "high"
+        },
+        "moat": {
+          "score": 4,
+          "reason": "Manufacturing capacity constraint creating scarcity moat. Gas turbine capacity expansion to 70-80 units/year by 2026 still insufficient vs demand\u2014'manufacturing slots are scarce' per Q3 call. Turbine prices up ~300% in 3 years per CNBC (Jun 2026). Installed base of 7,000 gas turbines drives recurring services revenue ($86B services backlog). Long-cycle nature (multi-year delivery) and technical complexity create barriers. However, not a pure monopoly\u2014Siemens, Mitsubishi compete in large turbines.",
+          "source": "Q3 2024 earnings call transcript (Oct 23, 2024), CNBC article on gas turbine prices (Jun 27, 2026), 2025 Annual Report",
+          "confidence": "high"
+        },
+        "management_candor": {
+          "score": 4,
+          "reason": "Management openly disclosed major offshore wind blade failure ($700M charge Q3 2024), fatality at Sweden site, and manufacturing deviation root cause. CEO stated 'we do not foresee adding to offshore backlog without substantially different economics.' Cautious on onshore wind order timing inflection. Acknowledged tariff headwinds ($100-200M in 2026). Transparent about Wind segment challenges while highlighting Power/Electrification strength. Guidance raised but with caveats on quarterly linearity and execution risks.",
+          "source": "Q3 2024 earnings call transcript (Oct 23, 2024), Q4 2024 earnings call transcript (Jan 22, 2025), GE Vernova press releases",
+          "confidence": "high"
+        }
+      },
+      "durability_total": 20,
+      "flag": "SOLID",
+      "one_line": "Cash-generative power infrastructure supplier riding utility grid buildout and data center demand, with manufacturing scarcity moat but candid about offshore wind losses."
     },
     {
       "ticker": "ETN",
-      "error": "failed",
-      "flag": "",
-      "durability_total": 0,
-      "scores": {},
-      "one_line": "scan failed"
+      "scores": {
+        "self_funding": {
+          "score": 2,
+          "reason": "Strong FCF generation ($874M Q2, $1.6B Q4'25) but heavily debt-funded growth. Issued $8.5B US notes + \u20ac1.2B Euro notes in Q1'26 to fund $11B acquisitions (Boyd $9.55B, Ultra PCS $1.53B). Long-term debt more than doubled from $8.8B to $18.5B. Total debt/equity 105%. No share repurchases in 2026 due to acquisitions. While operationally cash-generative, expansion is clearly debt-funded.",
+          "source": "SEC 10-Q Q1 2026 (filed May 5, 2026), SEC 10-Q Q2 2026 (filed Jul 31, 2026), Q2 earnings release",
+          "confidence": "high"
+        },
+        "real_vs_circular_demand": {
+          "score": 4,
+          "reason": "Diversified end-market demand with blue-chip exposure. Data centers up 65% (representing portion of revenue), but also strong demand from utilities, aerospace (commercial/defense), industrial, commercial & institutional. Serves customers in 180 countries across electrical, aerospace, mobility sectors. While data center growth is significant, CEO noted 'benefiting from robust demand across our end markets' and backlog shows aerospace +28%, multiple electrical segments strong. Not concentrated in speculative AI-only customers.",
+          "source": "Q2 2026 earnings call transcript (Jul 31, 2026), SEC 8-K Q2'26 exhibit 99, SEC Form SD 2026",
+          "confidence": "high"
+        },
+        "customer_concentration": {
+          "score": 4,
+          "reason": "Highly diversified. Operates across 7+ end markets (data center, utility, industrial, commercial/institutional, machine building, residential, aerospace, mobility). Serves customers in 180 countries. No single customer or segment dominates. Electrical Americas backlog $15.2B, Electrical Global backlog significant, Aerospace backlog $4.3B+. Book-to-bill 1.2-1.3 across segments. No disclosure of customer concentration risk in 10-Qs reviewed.",
+          "source": "SEC 10-Q Q2 2026, Q2 earnings transcript, SEC 8-K exhibits",
+          "confidence": "high"
+        },
+        "moat": {
+          "score": 4,
+          "reason": "Strong positioning in critical power infrastructure with scale advantages. Operating margins 22.7-24.9% with expanding backlog (48% growth electrical, 28% aerospace). Book-to-bill ratios 1.2-1.3 indicate pricing power. 'Grid-to-chip' integrated solutions for data centers create switching costs. 115-year history, expanding capacity with $1B invested in 24 projects. However, faces commodity inflation pressure (390-480 bps margin hit) indicating some input price vulnerability. Not a pure monopoly but defensible position.",
+          "source": "Q2 2026 earnings transcript, SEC 10-Q Q1 & Q2 2026, Q2 earnings call",
+          "confidence": "high"
+        },
+        "management_candor": {
+          "score": 4,
+          "reason": "Management transparently disclosed margin pressures (390-480 bps hit from commodity/wage inflation), higher tax rates offsetting beats, acquisition dilution impacts, and capacity ramp challenges. CEO stated Q1-Q2 was 'largest quarterly ramp in production output' and acknowledged it. Raised guidance multiple times but also disclosed specific headwinds. 10-Q contains detailed forward-looking risk factors. Guidance has been credible (beat or met estimates in last 4 quarters per sources).",
+          "source": "Q2 2026 earnings call transcript (Jul 31, 2026), SEC 10-Q Q2 2026, earnings releases Q1-Q2 2026",
+          "confidence": "high"
+        }
+      },
+      "durability_total": 18,
+      "flag": "SOLID",
+      "one_line": "Diversified industrial with real end-market demand and strong moat, but heavy debt-funded M&A ($10B borrowed for acquisitions) limits self-funding score despite solid FCF."
     },
     {
       "ticker": "CAT",
-      "error": "failed",
-      "flag": "",
-      "durability_total": 0,
-      "scores": {},
-      "one_line": "scan failed"
+      "scores": {
+        "self_funding": {
+          "score": 5,
+          "reason": "Strong free cash flow generation with $9.54B FCF in 2024. Generated $12.04B operating cash flow while deploying $10.3B to shareholders through buybacks and dividends. Zero borrowings under credit facility. ME&T free cash flow near top of $5-10B target range.",
+          "source": "SEC Form 10-K FY2024, Q3 2024 10-Q showing $3.6B Q3 operating cash flow, $6.4B nine-month ME&T free cash flow",
+          "confidence": "high"
+        },
+        "real_vs_circular_demand": {
+          "score": 5,
+          "reason": "Customers span construction, mining, energy, transportation across 190 countries through independent dealer network. End users include infrastructure, data centers, power generation\u2014real asset-intensive industries. No reliance on speculative AI labs; rather supplies equipment TO data center buildouts. Services revenue $24B (39% of ME&T revenue).",
+          "source": "2024 Annual Report showing three segments (Construction Industries, Resource Industries, Energy & Transportation) serving diverse end markets; Q3 2024 transcript noting diversified end markets",
+          "confidence": "high"
+        },
+        "customer_concentration": {
+          "score": 5,
+          "reason": "Highly diversified: sales across North America ($34.4B), EAME ($12.3B), Asia/Pacific ($11.4B), Latin America ($6.7B) in 2024. Operates through 157 independent dealers serving 190 countries. Three major segments with no single customer dominance. Cat Financial portfolio spread across regions and industries.",
+          "source": "2024 Annual Report geographic breakdown, SEC 10-K showing segment diversification across Construction, Resource, Energy & Transportation",
+          "confidence": "high"
+        },
+        "moat": {
+          "score": 4,
+          "reason": "Leading 18% market share in construction/mining equipment vs. John Deere 12.4%, Komatsu 11.7%. Extensive dealer network of 157 dealers (independent businesses) provides service/parts moat. Strong aftermarket services ($24B, 39% of revenue). However, faces competition and not a true monopoly\u2014replaceable but defensible position through scale, brand, and dealer network.",
+          "source": "2024 Annual Report noting world's leading manufacturer position; independent research showing 18% market share; Q3 2024 results showing strong services growth",
+          "confidence": "high"
+        },
+        "management_candor": {
+          "score": 4,
+          "reason": "Q3 2024 results acknowledged top-line miss vs. expectations due to lower-than-expected sales volumes and dealer inventory timing. Q4/FY2024 guidance called for slightly lower 2025 sales, margins in top half (not above) target range due to unfavorable price realization. Comprehensive risk factor disclosures in 10-K. However, maintains consistent optimistic framing without deeply probing cyclical vulnerabilities.",
+          "source": "Q3 2024 earnings transcript noting 'lower than we anticipated' sales; Q4 2024 guidance expecting slight 2025 decline; SEC 10-K Risk Factors section",
+          "confidence": "medium-high"
+        }
+      },
+      "durability_total": 23,
+      "flag": "SURVIVOR",
+      "one_line": "Cash-gushing industrial with real end-market diversity, strong dealer moat, and candid (if cyclical-optimistic) management; no debt dependency or circular demand."
     },
     {
       "ticker": "BE",
-      "error": "failed",
-      "flag": "",
-      "durability_total": 0,
-      "scores": {},
-      "one_line": "scan failed"
+      "scores": {
+        "self_funding": {
+          "score": 1,
+          "reason": "Q3 2024 showed $69M operating cash outflow. Full year 2024 generated $92M operating cash flow but carries $1.01B recourse debt. Q1-Q3 2024 cumulative operating cash outflow was significant before Q4 turned positive. Company issued $402.5M in new convertible debt in Q2 2024 and relies heavily on external financing through Brookfield ($25B framework) to fund growth.",
+          "source": "SEC 8-K Q3 2024 (Nov 7, 2024), SEC 8-K FY2024 (Feb 27, 2025)",
+          "confidence": "high"
+        },
+        "real_vs_circular_demand": {
+          "score": 2,
+          "reason": "Mixed customer base. Established C&I customers (AT&T, Walmart, Google) provide real end demand. However, major AI/data center backlog includes circular elements: Brookfield's own captive cloud company Radiant (no disclosed customers) as anchor tenant, Nebius backed by Nvidia. One customer accounted for 73% of Q2 2026 revenue. Oracle deal (2.8 GW) is legitimate hyperscaler but represents high concentration risk.",
+          "source": "SEC 10-Q Q1 2026, Hunterbrook investigative report (July 2026), sec-api.io financial analysis (Aug 2026)",
+          "confidence": "high"
+        },
+        "customer_concentration": {
+          "score": 1,
+          "reason": "Extreme concentration. One customer represented 73% of Q2 2026 revenue. FY2025 had three customers at 43%, 13%, and 12% of revenue (43% customer is Brookfield-related party). Q1 2026 had two customers at 50% and 12% of revenue. Pattern of high quarterly concentration persists despite management claims of diversification.",
+          "source": "SEC 10-Q/A Q2 2026, SEC 10-K FY2025, sec-api.io analysis",
+          "confidence": "high"
+        },
+        "moat": {
+          "score": 3,
+          "reason": "Moderate moat from solid oxide fuel cell technology expertise, 20+ year operational track record, and speed-to-deployment advantage (55-90 days vs years for grid). 800V DC native capability for AI racks is differentiated. However, basic fuel cell technology is 100+ years old, and competitors (FuelCell Energy, Plug Power) exist. Defensibility comes more from execution/scale than irreplaceable technology. Dependent on natural gas infrastructure and scandium supply constraints may limit scale.",
+          "source": "SEC 10-K FY2020, 247wallst.com (Apr 2026), Hunterbrook report, Arya's Substack analysis",
+          "confidence": "medium"
+        },
+        "management_candor": {
+          "score": 2,
+          "reason": "Mixed signals. Management markets $20B 'backlog' that is 40x larger than audited $492.6M Remaining Performance Obligations (RPO) as of Mar 2026\u2014widest gap among peers. Backlog includes non-binding service revenue and ungranted tax credits. Q3 2024 call showed confidence ('extremely confident' on guidance) but acknowledged 'timeline variances' and quarterly volatility. Disclosed concentration risks in filings but promotional tone on AI opportunity. Forward-looking statements heavily hedged.",
+          "source": "Hunterbrook report, SEC 10-Q Q1 2026, Equibles Q3 2024 transcript analysis, SEC 8-K Q3 2024",
+          "confidence": "high"
+        }
+      },
+      "durability_total": 9,
+      "flag": "PROPPED-UP",
+      "one_line": "Bloom burns cash, leans on Brookfield financing for AI buildout with circular demand signals (captive Radiant anchor, 73% single-customer concentration) and promotes 40x-inflated backlog vs audited obligations."
     },
     {
       "ticker": "AMKR",
-      "error": "failed",
-      "flag": "",
-      "durability_total": 0,
-      "scores": {},
-      "one_line": "scan failed"
+      "scores": {
+        "self_funding": {
+          "score": 4,
+          "reason": "Net cash position (~$400M: $1.5B cash vs $1.1B debt). Generated $1.27B operating cash flow and $534M FCF in 2023. Funding $750M annual capex from operations. Strong self-funding capability though capex-intensive.",
+          "source": "SEC Form 8-K Q3 2024 (Oct 2024), Form 8-K FY2023 (Feb 2024)",
+          "confidence": "high"
+        },
+        "real_vs_circular_demand": {
+          "score": 4,
+          "reason": "Top customer (~31% of revenue) likely Apple - profitable blue-chip. Serves premium smartphones, consumer wearables, automotive. AI/2.5D revenue quadrupling but from small base. Mix tilted toward established profitable end customers rather than cash-burning AI labs.",
+          "source": "SEC Form 10-K FY2024, Form 8-K Q2/Q3 2024 earnings",
+          "confidence": "high"
+        },
+        "customer_concentration": {
+          "score": 2,
+          "reason": "Top customer 30.8%, top two customers 41%, top ten 69% of revenue. Material concentration risk explicitly disclosed by management as potential adverse impact.",
+          "source": "SEC Form 10-K FY2024, Form 10-Q Q1 2024",
+          "confidence": "high"
+        },
+        "moat": {
+          "score": 2,
+          "reason": "Second-largest OSAT provider but highly competitive market. Faces larger competitor (ASE) and structural threat from foundries (TSMC, Intel, Samsung) bringing advanced packaging in-house. Management acknowledges 'very competitive' market with 'substantial competition.' Not a monopolistic chokepoint.",
+          "source": "SEC Form 10-Q Q1/Q2/Q3 2024, industry analysis",
+          "confidence": "high"
+        },
+        "management_candor": {
+          "score": 4,
+          "reason": "Transparent disclosure of customer concentration risks, competitive threats from China and foundries, cyclical weakness in automotive/industrial, margin constraints. Names specific risks without promotional spin. Credible guidance with reasonable beat/miss pattern.",
+          "source": "SEC Form 10-Q Q1/Q2/Q3 2024, earnings calls Oct 2024",
+          "confidence": "high"
+        }
+      },
+      "durability_total": 16,
+      "flag": "SOLID",
+      "one_line": "Profitable semiconductor packager with strong FCF and blue-chip customers (Apple ~31%), but faces customer concentration risk and competitive threats from larger rival ASE and foundries moving packaging in-house."
     },
     {
       "ticker": "CAMT",
-      "error": "failed",
-      "flag": "",
-      "durability_total": 0,
-      "scores": {},
-      "one_line": "scan failed"
+      "scores": {
+        "self_funding": {
+          "score": 5,
+          "reason": "Strong cash generation with $489M cash as of Q3 2024, generated $36M operating cash flow in Q3 alone, net cash position of $268M (after debt), no cash burn, consistent profitability with 30%+ operating margins",
+          "source": "SEC Form 6-K Q3 2024 (Nov 2024); Q3 earnings showed $489M cash, $36M OCF, $207M debt yielding $268M net cash",
+          "confidence": "high"
+        },
+        "real_vs_circular_demand": {
+          "score": 4,
+          "reason": "50% revenue from HPC/AI (concentrated in generative AI module demand), 20% other advanced packaging, rest diversified. OSATs (outsourced assembly/test) account for >50% of orders - these are established service providers to end semiconductor customers, not speculative AI labs. Customers include tier-1 HBM manufacturers and established chiplet producers",
+          "source": "Q3 2024 earnings transcript; revenue mix breakdown and OSAT customer concentration from Q2 2026 transcript showing OSATs >50% of $600M+ order intake",
+          "confidence": "medium-high"
+        },
+        "customer_concentration": {
+          "score": 3,
+          "reason": "Geographic concentration high: 87% Asia in Q3 2024, with China 49% of 2025 revenue (down from >40% prior). One customer accounted for >15% of 2023 revenue per 20-F filing. Customer base includes OSATs, IDMs, and packaging subcontractors across 2,150+ installed systems, providing some diversification despite geographic and single-customer concentration risks",
+          "source": "SEC Form 20-F FY2023; Q3 2024 6-K showing 87% Asia revenue; 2025 data showing China 49% of revenue",
+          "confidence": "high"
+        },
+        "moat": {
+          "score": 4,
+          "reason": "Specialized advanced packaging inspection/metrology player with technical moat in HBM and chiplet inspection (Eagle G5, Hawk platforms). Once qualified into production lines, switching is costly and risky. However, faces competition from much larger KLA Corporation and others with broader portfolios. Narrow product focus vs diversified competitors limits defensibility. Market fragmented with top 7 holding 61% share",
+          "source": "Q3 2024 transcript on qualification barriers; competitive analysis sources identifying KLA, Nova, Onto Innovation as competitors; market share data",
+          "confidence": "medium-high"
+        },
+        "management_candor": {
+          "score": 4,
+          "reason": "Management acknowledges specific risks: 2.5D substrate capacity bottleneck limiting 2025 growth, customer HBM qualification issues, limited visibility beyond 6 months, China revenue concentration declining to 30-35%. Guidance has been credible (consistently met/beat). However, tone is consistently promotional about AI/HPC opportunity with limited discussion of cyclicality or competitive threats",
+          "source": "Q3 2024 earnings call transcript discussing bottlenecks, qualification risks, visibility limits; Q3 2024 6-K on China concentration",
+          "confidence": "medium-high"
+        }
+      },
+      "durability_total": 20,
+      "flag": "SOLID",
+      "one_line": "Cash-rich advanced packaging inspection specialist riding AI wave with strong margins but concentrated in Asia/HPC demand and facing larger competitors; real OSAT customers but narrow moat vs. giants."
     },
     {
       "ticker": "AAPL",
-      "error": "failed",
-      "flag": "",
-      "durability_total": 0,
-      "scores": {},
-      "one_line": "scan failed"
+      "scores": {
+        "self_funding": {
+          "score": 5,
+          "reason": "Apple generated $111.48B in operating cash flow for FY2024 with free cash flow of $98.77B. Net cash position of $50B (cash/securities of $157B vs debt of $107B). Returned $110B+ to shareholders through buybacks and dividends, all funded from operations without needing external capital.",
+          "source": "Apple 10-K FY2024 (SEC filing Nov 2024) and Q4 2024 earnings call transcript (Oct 31, 2024)",
+          "confidence": "high"
+        },
+        "real_vs_circular_demand": {
+          "score": 5,
+          "reason": "Revenue is highly diversified across consumer end-users: iPhone ($201B, 51% of revenue), Services ($96B, 25%), Mac/iPad/Wearables ($94B, 24%). Customers are profitable end-users purchasing devices and subscriptions, not speculative AI labs. Installed base reached all-time high with 96% customer satisfaction.",
+          "source": "Apple 10-K FY2024 revenue breakdown and Q4 2024 earnings call (Oct 31, 2024)",
+          "confidence": "high"
+        },
+        "customer_concentration": {
+          "score": 5,
+          "reason": "Highly diversified: Americas ($167B), Europe ($101B), Greater China ($67B), Japan ($25B), Rest of Asia Pacific ($31B). iPhone sales distributed globally across millions of consumers. No single customer concentration disclosed; revenue from individual consumers and enterprises worldwide.",
+          "source": "Apple 10-K FY2024 segment reporting and geographic revenue breakdown",
+          "confidence": "high"
+        },
+        "moat": {
+          "score": 4,
+          "reason": "Strong ecosystem lock-in through iOS/App Store/Services integration with 2B+ active devices and 85% iPhone customer retention. However, 10-K acknowledges minority market share in smartphones/PCs globally and intense competitive pressure particularly in China. Faces regulatory risks from antitrust/Digital Markets Act that could weaken moat.",
+          "source": "Apple 10-K FY2024 risk factors section and Q4 2024 earnings materials",
+          "confidence": "high"
+        },
+        "management_candor": {
+          "score": 4,
+          "reason": "10-K contains detailed 34 risk factors covering supply chain concentration in Asia, competitive pressures, China revenue decline (-8%), regulatory challenges (\u20ac13B EU tax charge), minority market share admission, and geopolitical risks. CFO provided transparent guidance caveats. However, promotional tone on Apple Intelligence launch without quantifying impact.",
+          "source": "Apple 10-K FY2024 risk factors and Q4 2024 earnings call transcript (Oct 31, 2024)",
+          "confidence": "high"
+        }
+      },
+      "durability_total": 23,
+      "flag": "SURVIVOR",
+      "one_line": "Cash-generating consumer hardware/services giant with fortress balance sheet and ecosystem moat, though facing China headwinds and regulatory pressure on App Store."
     },
     {
       "ticker": "TSLA",
-      "error": "failed",
-      "flag": "",
-      "durability_total": 0,
-      "scores": {},
-      "one_line": "scan failed"
+      "scores": {
+        "self_funding": {
+          "score": 2,
+          "reason": "Q2 2026 FCF turned negative $1.1B with capex >$5.8B. TTM FCF positive at $5.8B but declining sharply. Has $43.5B cash vs $9.1B debt (net cash $34B), but analysts project negative FCF through 2029. Heavy AI/robotaxi buildout.",
+          "source": "Tesla 10-Q Q2 2026 (SEC filing July 22, 2026); Motley Fool Sept 21, 2026; GuruFocus June 2026 data",
+          "confidence": "high"
+        },
+        "real_vs_circular_demand": {
+          "score": 4,
+          "reason": "480K+ vehicle deliveries Q2 2026 to retail customers globally. Energy storage revenue $3.1B (up 13% YoY). 1.48M active FSD subscriptions. Core demand from end consumers, not speculative AI labs. Some exposure to robotaxi business model risk.",
+          "source": "Tesla Q2 2026 Earnings Report & 10-Q (July 22, 2026); Electrek Q2 2026 results",
+          "confidence": "high"
+        },
+        "customer_concentration": {
+          "score": 5,
+          "reason": "Highly diversified retail customer base across global markets (Americas, EMEA, Asia-Pacific). Automotive, energy storage, and services segments. No evidence of concentration risk in filings.",
+          "source": "Tesla 10-Q Q2 2026 (June 30, 2026); Q2 2026 Earnings deck",
+          "confidence": "high"
+        },
+        "moat": {
+          "score": 3,
+          "reason": "Vertical integration (batteries, chips, charging network) and FSD/AI development create advantages. But auto gross margin ex-credits fell to 16.3%, operating margin compressed to 1.4%. Facing intense EV competition globally. Not a clear monopoly chokepoint.",
+          "source": "Tesla Q2 2026 10-Q & earnings transcript (July 22, 2026); Platform Aeronaut transcript",
+          "confidence": "medium"
+        },
+        "management_candor": {
+          "score": 2,
+          "reason": "Musk stated 'this is going to be a great year for Tesla, I think one of our best years ever' and claimed 'best CapEx returns that we've ever seen' despite Q2 miss, negative FCF, and 57% operating income decline. Forward-looking statements acknowledge risks but tone remains promotional.",
+          "source": "Tesla Q2 2026 Earnings Call Transcript (July 22, 2026); Tesla 10-Q forward-looking statements section",
+          "confidence": "high"
+        }
+      },
+      "durability_total": 16,
+      "flag": "SOLID",
+      "one_line": "Tesla maintains strong balance sheet and diversified retail demand but burning cash on massive AI/robotaxi buildout; management tone promotional despite margin compression and negative FCF."
     },
     {
       "ticker": "PWR",
-      "error": "failed",
-      "flag": "",
-      "durability_total": 0,
-      "scores": {},
-      "one_line": "scan failed"
+      "scores": {
+        "self_funding": {
+          "score": 4,
+          "reason": "Strong positive free cash flow generation. Generated $1.55B FCF in full year 2024 and $979M YTD through Q3 2024. Operating cash flow of $2.08B in 2024, up 32% YoY. However, carries net debt of $3.7B (debt ~$4.2B vs cash $742M as of Dec 2024), and used $1.75B cash for acquisitions in 2024. Self-funds operations but uses moderate debt for growth.",
+          "source": "SEC 10-K FY2024 and Q3 2024 10-Q filings; Q3 2024 earnings release Oct 31, 2024",
+          "confidence": "high"
+        },
+        "real_vs_circular_demand": {
+          "score": 4,
+          "reason": "Customer mix heavily weighted to established utilities and regulated power companies. 74% of 2024 revenue from Utility & Power customers (electric/gas utilities, power developers), 17% Energy & Other, only 9% Technology/Manufacturing/Communications. Largest customer ~6% of revenue, top 10 customers ~31%. Client list includes American Electric Power, Duke Energy, NextEra, National Grid, PG&E - all cash-generative utilities. Data center/AI work growing but still modest portion (<10-13% range). Not dependent on cash-burning AI labs.",
+          "source": "Quanta investor presentation Nov 2024; SEC 10-K FY2025 customer breakdown; Q3 2024 earnings materials",
+          "confidence": "high"
+        },
+        "customer_concentration": {
+          "score": 5,
+          "reason": "Highly diversified customer base. Largest customer only 6% of 2024 revenues (8% in 2025), top 10 customers only 30-31% of revenues. Management states 'large and diverse customer base' with 'no single customer accounting for 10% or more of consolidated revenues in recent years.' Serves broad base of utilities, power companies, and industrial customers across multiple geographies.",
+          "source": "SEC 10-K FY2025 filed Feb 2025; Quanta investor presentation Nov 2024; Trefis customer concentration data",
+          "confidence": "high"
+        },
+        "moat": {
+          "score": 3,
+          "reason": "Moderate moat from scale, relationships, and specialized capabilities. Leading position in electric power infrastructure with 58,000+ employees, $34B+ backlog, decades-long customer relationships with major utilities. Acquired over 200 companies including Cupertino Electric for data center expertise. However, fundamentally a contractor/service business in fragmented market - not a true monopoly or irreplaceable bottleneck. Competitors exist (Kiewit, MasTec, EMCOR). Differentiation from scale, safety record, and execution, not structural lock-in.",
+          "source": "Wikipedia company profile; Q3 2024 earnings call transcript; SEC filings on acquisitions Q3 2024",
+          "confidence": "high"
+        },
+        "management_candor": {
+          "score": 4,
+          "reason": "Management discloses challenges openly in earnings calls and filings. Q3 2024 transcript cited: 'supply chain constraints, particularly in large transformers,' 'renewable segment backlog growth slower than expected,' 'labor shortages and inflationary pressures in data center business,' 'underground segment faced storm impacts.' Q1 2024: 'renewable segment margins fell short of expectations due to underperformance.' Also notes risks of 'violent weather events,' execution challenges. Guidance raised conservatively. Not promotional hype, but measured optimism with specific risk acknowledgment.",
+          "source": "Q3 2024 earnings call transcript Oct 31, 2024; Q1 2024 earnings call transcript; Q4 2024 earnings call transcript",
+          "confidence": "high"
+        }
+      },
+      "durability_total": 20,
+      "flag": "SOLID",
+      "one_line": "Infrastructure contractor riding multi-decade utility/grid upgrade cycle with blue-chip utility customers, strong FCF, low concentration, but modest moat as service provider in fragmented market."
     },
     {
       "ticker": "CCJ",
-      "error": "failed",
-      "flag": "",
-      "durability_total": 0,
-      "scores": {},
-      "one_line": "scan failed"
+      "scores": {
+        "self_funding": {
+          "score": 4,
+          "reason": "Strong operating cash flow of CAD $1,408M in FY2025 (up 56% YoY). Q1 2026 showed cash position of CAD $1.1B vs debt of CAD $1.0B (net cash positive), plus $1B undrawn credit facility. Q1 2026 operating cash flow negative CAD $22M due to working capital timing but FY guidance maintained. Company paid down US$200M term loan in 2025. Received US$220M distributions from Westinghouse in 2025. Minor capex relative to OCF (CAD $333M capex in FY2025 vs CAD $1,408M OCF). Not perfect 5 due to Q2 2026 earnings miss and some reliance on Westinghouse dividends for growth capital.",
+          "source": "SEC Form 6-K Q1 2026 (May 5, 2026), Annual Report 2025 (Feb 13, 2026)",
+          "confidence": "high"
+        },
+        "real_vs_circular_demand": {
+          "score": 5,
+          "reason": "Customers are established nuclear utilities - blue-chip end users generating electricity. Company states 'large, creditworthy customers that continue to need our nuclear fuel products even during weak economic conditions' and 'in two decades of Cameco's existence, we have never had a customer default.' Sells to utilities in 16 countries including Belgium, Canada, Finland, France, Germany, Japan, South Korea, Spain, Sweden, Taiwan, US. These are regulated utilities or state-owned entities with rate-of-return guarantees, not speculative AI labs. Zero exposure to circular venture-funded demand.",
+          "source": "SEC Form 6-K Q1 2026, Cameco.com Markets page, SEC Form 6-K FY2009",
+          "confidence": "high"
+        },
+        "customer_concentration": {
+          "score": 3,
+          "reason": "Has 39 uranium customers and 33 fuel services customers across 16 countries. However, historical filings show moderate concentration: ~33-49% of U3O8 sales to top 5 customers (2007-2011 data). Top 5 customers represent 47% of contract commitments per 2011 filing. Geographic diversification exists (38% Americas, 36% Asia, 26% Europe) but individual customer concentration is material. Long-term contracts with 28M lbs/year commitments 2026-2030 suggest stable but concentrated customer base.",
+          "source": "Cameco.com Markets, SEC Form 40-F 2009 (49% to top 5), SEC Form 6-K 2012 (47% to top 5)",
+          "confidence": "medium"
+        },
+        "moat": {
+          "score": 5,
+          "reason": "Owns world's highest-grade uranium reserves in tier-one jurisdiction (Northern Canada). Operates Cigar Lake, McArthur River/Key Lake - irreplaceable assets. Vertically integrated across fuel cycle: mining, conversion, fuel services, plus 49% of Westinghouse (reactor services). Management states 'tier-one mining assets' and 'integrated fuel and reactor life cycle strategy.' Regulatory barriers to new uranium mines are immense (10+ years, billions in capital). Industry is tight oligopoly with 'relatively small number of world uranium mining companies.' Company is one of world's lowest-cost producers with multi-decade reserve life. Clear bottleneck position.",
+          "source": "SEC Form 6-K Q1 2026, SEC Form 40-F 2009, Kalkinemedia analysis citing 'barriers to entry are high', KoalaGains analysis",
+          "confidence": "high"
+        },
+        "management_candor": {
+          "score": 4,
+          "reason": "Q2 2026 earnings call showed transparency about operational challenges: 'temporary unplanned operational disruptions at Key Lake, McArthur River, and Cigar Lake' yet maintained guidance. CEO stated results reflect 'normal quarterly variations' and 'quarterly results will always reflect normal variability.' Acknowledged risks around production execution, CRA tax dispute ($555M held by tax authority), and Kazakh supply issues. Q1 transcript noted 'we manage this for long-term sustainability, not short-term headlines.' However, Q2 2026 missed badly (EPS $0.13 vs $0.28 est, -55%) with limited advance warning - deduct one point for guidance quality.",
+          "source": "Q2 2026 Earnings Call Transcript (Aug 7, 2026), Q1 2026 Earnings Call Transcript (May 5, 2026), SEC Form 6-K filings",
+          "confidence": "high"
+        }
+      },
+      "durability_total": 21,
+      "flag": "SURVIVOR",
+      "one_line": "Tier-one uranium monopolist with irreplaceable assets, blue-chip utility customers, net cash balance, and strong FCF - minor concentration risk and recent earnings volatility don't undermine structural durability."
     },
     {
       "ticker": "BWXT",
-      "error": "failed",
-      "flag": "",
-      "durability_total": 0,
-      "scores": {},
-      "one_line": "scan failed"
+      "scores": {
+        "self_funding": {
+          "score": 4,
+          "reason": "Generated $255M free cash flow in 2024, up 20% YoY. Q3 2024 FCF guidance maintained at $225-250M despite $40M capex in Q3. Has $608M cash vs $2.02B debt (Debt/Equity 1.51), but debt used for acquisitions not operational burn. Strong OCF of $408M in 2024, sustaining capex at 5.5-6% of sales. Not net cash, but self-funding growth.",
+          "source": "SEC Form 10-Q Q3 2024, SEC Form 8-K Nov 4 2024, StockAnalysis data",
+          "confidence": "high"
+        },
+        "real_vs_circular_demand": {
+          "score": 5,
+          "reason": "76% of revenue from U.S. Government (Navy, DOE, NNSA) - ultimate blue-chip end customer funding national defense and nuclear infrastructure. Remaining 24% from commercial nuclear utilities and CANDU operators - profitable, essential infrastructure customers. Zero exposure to cash-burning AI labs or speculative ventures. All customers are profitable, mission-critical end users.",
+          "source": "SEC Form 10-K 2024, page showing 76% U.S. Government revenue for 2024",
+          "confidence": "high"
+        },
+        "customer_concentration": {
+          "score": 2,
+          "reason": "U.S. Government represents 76% of total revenue (2024), heavily concentrated in single customer. Government Operations backlog $3.9B of $4.8B total (81%). Within that, naval propulsion alone is ~70% of Government segment. No other customer >10%. Classic single-customer concentration risk despite backlog diversification across programs.",
+          "source": "SEC Form 10-K 2024 and Q3 2024 10-Q showing customer concentration",
+          "confidence": "high"
+        },
+        "moat": {
+          "score": 5,
+          "reason": "Sole-source monopoly: only company licensed to manufacture naval nuclear reactor components and fuel for entire U.S. Navy fleet. Naval Reactors certification took decades, creates 10-20 year barrier to entry. Regulatory moat includes classified technology and government security clearances. Switching costs effectively infinite - government cannot replace supplier. Unassailable chokepoint position.",
+          "source": "Seeking Alpha analysis, Yahoo Finance articles, SEC 10-K describing competitive position and licensing barriers",
+          "confidence": "high"
+        },
+        "management_candor": {
+          "score": 4,
+          "reason": "Q3 2024 earnings call explicitly named Hurricane Helene impact, labor market challenges, supply chain risks, government funding/appropriations uncertainty, and timing/automation risks. Raised guidance conservatively (to high-end $3.20 vs range) after beating expectations. Consistent reconciliation of non-GAAP metrics. One concern: heavy use of non-GAAP metrics, but disclosed clearly. Overall credible and risk-aware.",
+          "source": "SEC Form 8-K Q3 2024 earnings release and risk factors, Q2 2024 8-K forward-looking statements",
+          "confidence": "high"
+        }
+      },
+      "durability_total": 20,
+      "flag": "SOLID",
+      "one_line": "Government-backed naval nuclear monopoly with fortress moat and blue-chip demand, but 76% revenue concentration in single customer (U.S. Gov) prevents top-tier score despite strong self-funding and unassailable competitive position."
     },
     {
       "ticker": "GLW",
-      "error": "failed",
-      "flag": "",
-      "durability_total": 0,
-      "scores": {},
-      "one_line": "scan failed"
+      "scores": {
+        "self_funding": {
+          "score": 4,
+          "reason": "Q2 2026 generated $1.42B free cash flow, up from $451M YoY. TTM operating cash flow $3.9B with $2.4B FCF. Debt-to-equity 0.71x (Dec 2025), net debt declining Q2 to $5.9B from $7.2B in Q1. However, planning ~$2B capex in 2026 for capacity expansion, which will pressure near-term FCF despite strong operating cash generation.",
+          "source": "Corning Q2 2026 earnings (Jul 28, 2026), Yahoo Finance key statistics, Stockrow financial analysis",
+          "confidence": "high"
+        },
+        "real_vs_circular_demand": {
+          "score": 3,
+          "reason": "Mix of blue-chip and AI-dependent demand. Signed multibillion-dollar agreements with Meta ($6B through 2030), Amazon, and Nvidia for AI data center optical fiber. Optical Communications 38% of revenue, Enterprise Networks up 65% YoY driven heavily by AI data centers. Display, automotive, and life sciences segments provide diversification to non-AI end markets, but AI infrastructure growth is the primary driver.",
+          "source": "Corning Q2 2026 transcript (Jul 28, 2026), CNBC Meta deal announcement (Jan 27, 2026), Yahoo Finance AI partnerships",
+          "confidence": "high"
+        },
+        "customer_concentration": {
+          "score": 2,
+          "reason": "Significant concentration risk. Historical SEC filings show segment-level concentration (Display: 3-4 customers = 67-76% of segment sales; Automotive: 3 customers = 85-89%). Recent analysis notes 'just two customers account for nearly 28% of optical sales' and 'A small number of end customers account for more than half of sales in display and automotive segments.'",
+          "source": "Motley Fool analysis (Sep 30, 2026), Corning SEC Form 10-Q (Q3 2011 disclosure pattern), CSI Market customer analysis",
+          "confidence": "medium-high"
+        },
+        "moat": {
+          "score": 4,
+          "reason": "Strong technological moat in specialty glass and optical fiber. Partnerships with Apple (Gorilla Glass), Meta, Nvidia, Amazon demonstrate hard-to-replicate capabilities. Expanding into photonics with $10B revenue target by 2030. Operating margins 20.9% (up 190bps YoY) suggest pricing power. However, faces competition from Amphenol and Lumen in optical. Not a pure monopoly but defensible chokepoint in AI data center interconnects.",
+          "source": "Corning Q2 2026 earnings call, Zacks analysis (May 2026), earnings transcript re: photonics platform",
+          "confidence": "high"
+        },
+        "management_candor": {
+          "score": 4,
+          "reason": "Management discloses specific risks: solar segment $7M loss in Q2, handheld units down mid-teens for year, automotive market 'relatively muted,' heavy $2B capex pressuring near-term FCF, 'timing challenges difficult to predict' for optical scale-up adoption. Uses 70% confidence interval for internal plans, translates to 'risk-adjusted high confidence plan' for investors. Upgraded Springboard Plan targets appear aggressive but backed by long-term customer agreements.",
+          "source": "Corning Q2 2026 earnings call transcript (Jul 28, 2026), Investing.com transcript analysis, earnings call Q&A",
+          "confidence": "high"
+        }
+      },
+      "durability_total": 17,
+      "flag": "SOLID",
+      "one_line": "Cash-generative optical fiber leader riding AI infrastructure wave with blue-chip partnerships (Meta, Amazon, Nvidia), but concentrated customer base and heavy AI-dependency cap upside; strong self-funding and candid management offset execution risks."
     },
     {
       "ticker": "DDOG",
-      "error": "failed",
-      "flag": "",
-      "durability_total": 0,
-      "scores": {},
-      "one_line": "scan failed"
+      "scores": {
+        "self_funding": {
+          "score": 5,
+          "reason": "Strong positive free cash flow: $279M FCF in Q2 2026, $289M in Q1 2026. Full year 2025 generated $915M FCF. Cash position of $5.0B as of June 30, 2026 with no debt. Consistently generating 25-29% FCF margins. Company is entirely self-funded through operations.",
+          "source": "SEC Form 8-K Q2 2026 (Aug 6, 2026), SEC Form 10-Q Q2 2026",
+          "confidence": "high"
+        },
+        "real_vs_circular_demand": {
+          "score": 4,
+          "reason": "33,400 customers across diverse industries including Fortune 500 companies. 750+ AI customers but non-AI revenue growth accelerating at high-20s% YoY, showing real underlying demand. However, disclosed usage reduction from largest customer starting Q3 2026. Customer base includes established enterprises but also some exposure to AI-native startups.",
+          "source": "SEC Form 10-Q Q2 2026, Q2 2026 earnings call transcript (Aug 6, 2026)",
+          "confidence": "high"
+        },
+        "customer_concentration": {
+          "score": 3,
+          "reason": "4,720 customers with $100K+ ARR represent 91% of total ARR. Management disclosed 'largest customer' experiencing usage reduction significant enough to impact guidance and warrant full de-risking. Historic S-1 indicated no customer >5% of ARR, but recent emphasis on single customer risk suggests concentration concern. 603 customers at $1M+ ARR provides some diversification.",
+          "source": "SEC Form 10-Q Q2 2026, Q2 2026 earnings call transcript (Aug 6, 2026), TheStreet article (Aug 2026)",
+          "confidence": "medium"
+        },
+        "moat": {
+          "score": 4,
+          "reason": "Named Leader in Gartner Magic Quadrant for Observability 2026. Platform approach with 58% of customers using 4+ products creates switching costs. Dollar-based net retention of low-120s% shows customer expansion. Growing from 13.1K customers (2020) to 33.4K (2026) demonstrates market position. However, faces competition from Dynatrace, Elastic. Observability is competitive but platform breadth provides defensibility.",
+          "source": "SEC Form 8-K Q2 2026 (Aug 6, 2026), SEC Form 10-Q Q2 2026, Q2 2026 earnings summary",
+          "confidence": "high"
+        },
+        "management_candor": {
+          "score": 5,
+          "reason": "Management explicitly disclosed largest customer usage reduction and chose to 'fully de-risk' guidance rather than obscure the issue. CFO stated 'we wanted to be transparent about this on the call.' Guidance methodology clearly explained with conservative approach. SEC filings transparently noted the customer concentration risk starting Q3 2026. No promotional hype; honest about headwinds.",
+          "source": "Q2 2026 earnings call transcript (Aug 6, 2026), SEC Form 10-Q Q2 2026",
+          "confidence": "high"
+        }
+      },
+      "durability_total": 21,
+      "flag": "SURVIVOR",
+      "one_line": "Cash-rich observability platform with diversifying revenue base, but single large customer concentration creates visibility risk despite management transparency."
     }
   ]
 }
