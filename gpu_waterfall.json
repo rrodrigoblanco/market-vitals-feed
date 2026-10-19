@@ -1,75 +1,84 @@
 {
-  "updatedAt": "2026-09-07T18:35:02.514581+00:00",
+  "updatedAt": "2026-10-19T19:37:48.781641+00:00",
   "rates_usd_per_hr": {
     "B200": {
-      "low": 3.95,
-      "typical": 7.15,
-      "source": "Nebius preemptible $3.95/hr, on-demand $7.15/hr; Together AI $6.79-8.19/hr; Lambda $8.87-9.86/hr; CoreWeave $8.60/hr (Aug-Sep 2026)"
+      "low": 5.09,
+      "typical": 6.99,
+      "source": "Spheron spot $5.09/hr, Lambda 1x $6.99/hr, CoreWeave HGX 8-GPU $8.60/hr per GPU (Oct 2026)"
     },
     "H200": {
-      "low": 2.6,
-      "typical": 4.5,
-      "source": "GMI Cloud $2.60/hr, GPU.ai $3.59/hr, Nebius $4.50/hr, CoreWeave $3.89-6.31/hr, Lambda $4.49/hr (May-Sep 2026)"
+      "low": 3.32,
+      "typical": 5.7,
+      "source": "Spheron spot $3.32/hr, Vast.ai verified DC ~$4.24/hr, median across providers $5.70/hr (Oct 2026)"
     },
     "H100": {
-      "low": 1.49,
-      "typical": 3.85,
-      "source": "Vast.ai floor ~$1.45-2.27/hr, RunPod $1.99/hr, Lambda $2.49-3.29/hr, Nebius $3.85/hr, CoreWeave $4.25-6.16/hr (Aug-Sep 2026)"
+      "low": 0.67,
+      "typical": 3.57,
+      "source": "Vast.ai spot $0.67/hr, median across providers $3.57/hr, RunPod SXM $2.69/hr, Lambda SXM $4.29/hr (Oct 2026)"
     },
     "A100_80GB": {
-      "low": 0.82,
-      "typical": 1.49,
-      "source": "Vast.ai median ~$0.82-0.93/hr, Thunder Compute $1.09/hr, Hyperstack $1.35/hr, Spheron $1.43/hr, Jarvislabs $1.49/hr (Aug-Sep 2026)"
+      "low": 0.47,
+      "typical": 1.43,
+      "source": "Vast.ai spot $0.47/hr, Spheron on-demand $1.43/hr, RunPod PCIe $1.19/hr (Sep-Oct 2026)"
     },
     "L40S": {
-      "low": 0.39,
-      "typical": 0.79,
-      "source": "CloudRift $0.63/hr, RunPod $0.79/hr; estimates ~$0.39-0.79/hr range across neoclouds (Jul-Aug 2026)"
+      "low": 0.67,
+      "typical": 0.96,
+      "source": "Vast.ai spot $0.67/hr, RunPod $0.79/hr, Spheron on-demand $1.05/hr (Oct 2026)"
     }
   },
   "ratios": {
-    "B200_A100": 4.8,
-    "H100_A100": 2.58,
-    "B200_H100": 1.86,
-    "A100_absolute": 1.49
+    "B200_A100": 4.89,
+    "H100_A100": 2.5,
+    "B200_H100": 1.96,
+    "A100_absolute": 1.43
   },
   "depreciation_notes": [
     {
       "company": "Meta",
-      "change": "Extended server/network equipment useful life to 5.5 years in Jan 2025, reducing depreciation ~$2.9B in 2025; change announced just before $115-135B 2026 AI capex plan",
-      "source": "Yahoo Finance Feb 2025, IndMoney Jun 2026, Medium Jun 2026"
-    },
-    {
-      "company": "Amazon",
-      "change": "Shortened useful life of subset of servers/network equipment from 6 years to 5 years effective Jan 2025, citing AI/ML innovation pace; reduced 2025 operating income ~$0.7B",
-      "source": "Deep Quarry Feb 2025, FootnoteBrief May 2026"
+      "change": "Extended server useful life to 5.5 years in Jan 2025, reducing depreciation by $2.9B annually; servers-and-network depreciation reached $4.38B in Q1 2026 vs $2.63B prior year (+67%)",
+      "source": "Meta 10-Q Q1 2026, multiple analyst reports Oct 2026"
     },
     {
       "company": "Microsoft",
-      "change": "Extended server/network equipment useful life to 6 years in 2022; extended data center building life to 25 years (reported 2026); no recent reversal disclosed",
-      "source": "Yahoo Finance Feb 2025, AOL Sep 2026, Medium Jun 2026"
+      "change": "Servers and network equipment depreciated over 2-6 years (widest range); depreciation expense rose to $9.0B in Q1 FY26 vs $5.8B (+55%); extended to 6 years in FY2022-23",
+      "source": "Microsoft 10-K FY2026, 10-Q Q1 FY26"
     },
     {
-      "company": "Alphabet",
-      "change": "Extended server useful life from 4 to 6 years in 2023, reducing depreciation ~$3.9B that year; no recent change disclosed",
-      "source": "FootnoteBrief May 2026, Medium Jun 2026"
+      "company": "Google/Alphabet",
+      "change": "Extended servers to 6 years in early 2023 (from 4), cutting 2023 depreciation by $3.9B; Q1 2026 depreciation rose to $6.48B from $4.49B (+44%)",
+      "source": "Alphabet 10-K 2023, earnings Q1 2026"
+    },
+    {
+      "company": "Amazon/AWS",
+      "change": "Reversed course: extended to 6 years by 2023, then shortened a subset back to 5 years effective Jan 2025 citing 'increased pace of AI/ML technology development'; AWS servers 5-6 years per 2026 filings",
+      "source": "Amazon 10-K 2025-2026, SiliconAnalysts Jul 2026"
     },
     {
       "company": "Oracle",
-      "change": "Extended server useful life to 5 years from 4 in 2023; no recent reversal disclosed",
-      "source": "Yahoo Finance Feb 2025, Medium Jun 2026"
+      "change": "Moved from 4 to 5 years in 2023, now operating on 6-year schedule for servers and networking per recent filings",
+      "source": "Oracle 10-K filings per footnotebrief.com Aug 2026"
+    },
+    {
+      "company": "CoreWeave",
+      "change": "Disclosed 6-year useful life for servers in 2025 filings, matching hyperscaler peers",
+      "source": "TheCube Research, GPUInsights Oct 2026"
     }
   ],
   "credit_notes": [
     {
-      "note": "CoreWeave total debt $35B as of Jun 30 2026, up from $21B at end 2025; Q2 2026 interest expense $640M (>25% of revenue); 5-year bonds yield ~11.5-13%; CDS spreads hit 855bp in Jul 2026 implying ~50% 5-year default probability",
-      "source": "RealInvestmentAdvice Sep 2026, Capacity Aug 2026, TechTimes Jul 2026, ValueAddVC Aug 2026"
+      "note": "CoreWeave 9.625% bond due 2032 yielded 14.8-15.4% and traded near 78 cents on dollar; 9.75% 2031 bond yielded ~14.9%; stock fell 16-25% Oct 14-16, 2026 on debt concerns",
+      "source": "Forbes, Benzinga, GuruFocus Oct 14-18 2026"
     },
     {
-      "note": "CoreWeave closed $2.6B GPU-backed delayed-draw term loan in Aug 2026 at SOFR+550bp, 5yr maturity; total 2026 capital secured >$30B (equity + debt); $98.8B revenue backlog as of Mar 31 2026",
-      "source": "Yahoo Finance Aug 2026"
+      "note": "CoreWeave secured up-to-$8.5B GPU-backed loan facility (investment-grade, oversubscribed) in April 2026 to lower borrowing costs; carries ~$35.6B debt principal as of June 2026",
+      "source": "MarketBeat, Forbes Oct 2026"
+    },
+    {
+      "note": "$37B of $80B data-center bonds raised in 2026 YTD are rated junk (below BBB), nearly 50% of total, 4x prior year; AI-related debt issuance fell from $113B in June to $23B in September",
+      "source": "Forbes, CryptoBriefing Oct 2026"
     }
   ],
-  "commentary": "H100 on-demand rates have collapsed to $1.49-3.85/hr (median ~$3.38-4.17/hr) as Blackwell ships, down ~50% since early 2024, while H200 sits at $2.60-4.50/hr and B200 at $3.95-8.19/hr. The depreciation divergence is stark: Meta extended AI server life to 5.5 years (adding $2.9B to 2025 earnings) the same month Amazon shortened it to 5 years citing AI innovation pace, revealing acute uncertainty about economic vs. accounting life. CoreWeave's bond yields (11.5-13%) and CDS spreads (50% implied 5yr default probability) signal credit markets pricing GPU collateral risk and the refinancing wall, even as the company reports $104B backlog\u2014the waterfall is repricing faster than the depreciation schedules admit.",
+  "commentary": "The GPU rental waterfall is steep and bifurcated: Vast.ai marketplace spot rates (H100 $0.67/hr, A100 $0.47/hr) sit 5-8x below specialist-cloud on-demand medians, while hyperscalers charge 2-4x the specialist floor. Depreciation divergence is the key risk flag: Meta, Microsoft, Google and Oracle all extended server lives to 5.5-6 years just as AI capex surged, collectively suppressing tens of billions in annual depreciation, yet Amazon uniquely reversed a subset back to 5 years in Jan 2025 citing AI hardware turnover pace\u2014a direct repudiation of peers' accounting. CoreWeave's bonds trading at distressed levels (15% yields, sub-80 cents) signal credit markets are pricing GPU collateral and revenue backlog very differently than equity bulls, and the $176B Burry depreciation-understatement estimate (disputed but unrefuted in filings) implies reported AI operating margins may be 20%+ overstated through 2028 as the capex wave hits income statements.",
   "alerts_enabled": false
 }
