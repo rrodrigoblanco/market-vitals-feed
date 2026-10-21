@@ -1,7 +1,7 @@
 {
   "status": "error",
   "fail_job": true,
-  "last_attempt": "2026-10-21T14:14:36Z",
+  "last_attempt": "2026-10-21T19:02:10Z",
   "last_success": null,
   "run_date": "2026-10-21",
   "run_timezone": "America/New_York",
@@ -9,65 +9,77 @@
   "weekly_stale_after_calendar_days": 12,
   "daily": {
     "BAMLH0A0HYM2": {
-      "as_of": "2026-10-20",
-      "business_days_old": 1,
-      "stale": false,
-      "reason": null
+      "as_of": null,
+      "business_days_old": null,
+      "stale": true,
+      "reason": "no observation"
     },
     "BAMLC0A0CM": {
-      "as_of": "2026-10-20",
-      "business_days_old": 1,
-      "stale": false,
-      "reason": null
+      "as_of": null,
+      "business_days_old": null,
+      "stale": true,
+      "reason": "no observation"
     },
     "BAMLH0A1HYBB": {
-      "as_of": "2026-10-20",
-      "business_days_old": 1,
-      "stale": false,
-      "reason": null
+      "as_of": null,
+      "business_days_old": null,
+      "stale": true,
+      "reason": "no observation"
     },
     "BAMLH0A3HYC": {
-      "as_of": "2026-10-20",
-      "business_days_old": 1,
-      "stale": false,
-      "reason": null
+      "as_of": null,
+      "business_days_old": null,
+      "stale": true,
+      "reason": "no observation"
     },
     "VIXCLS": {
-      "as_of": "2026-10-20",
-      "business_days_old": 1,
-      "stale": false,
-      "reason": null
+      "as_of": null,
+      "business_days_old": null,
+      "stale": true,
+      "reason": "no observation"
     },
     "DGS10": {
-      "as_of": "2026-10-19",
-      "business_days_old": 2,
-      "stale": false,
-      "reason": null
+      "as_of": null,
+      "business_days_old": null,
+      "stale": true,
+      "reason": "no observation"
     },
     "T5YIE": {
-      "as_of": "2026-10-20",
-      "business_days_old": 1,
-      "stale": false,
-      "reason": null
+      "as_of": null,
+      "business_days_old": null,
+      "stale": true,
+      "reason": "no observation"
     }
   },
   "weekly": {
     "WALCL": {
-      "as_of": "2026-10-14",
-      "calendar_days_old": 7,
-      "stale": false,
-      "reason": null
+      "as_of": null,
+      "calendar_days_old": null,
+      "stale": true,
+      "reason": "no observation"
     },
     "WRESBAL": {
-      "as_of": "2026-10-14",
-      "calendar_days_old": 7,
-      "stale": false,
-      "reason": null
+      "as_of": null,
+      "calendar_days_old": null,
+      "stale": true,
+      "reason": "no observation"
     }
   },
-  "stale_series": [],
+  "stale_series": [
+    "BAMLH0A0HYM2",
+    "BAMLC0A0CM",
+    "BAMLH0A1HYBB",
+    "BAMLH0A3HYC",
+    "VIXCLS",
+    "DGS10",
+    "T5YIE",
+    "WALCL",
+    "WRESBAL"
+  ],
   "errors": [
-    "credit: bb_oas as_of 2026-10-20 != last history date 2026-10-19"
+    "credit: could not read the latest FRED date (BAMLH0A0HYM2: FRED did not return a CSV for BAMLH0A0HYM2; BAMLH0A1HYBB: FRED did not return a CSV for BAMLH0A1HYBB; BAMLH0A3HYC: FRED did not return a CSV for BAMLH0A3HYC; BAMLC0A0CM: FRED did not return a CSV for BAMLC0A0CM; BAMLH0A0HYM2EY: FRED did not return a CSV for BAMLH0A0HYM2EY; DGS10: FRED did not return a CSV for DGS10; DGS30: FRED did not return a CSV for DGS30)",
+    "oil: could not read the latest FRED date (DCOILBRENTEU: FRED did not return a CSV for DCOILBRENTEU; DCOILWTICO: FRED did not return a CSV for DCOILWTICO; DHOILNYH: FRED did not return a CSV for DHOILNYH; DGS30: FRED did not return a CSV for DGS30; T5YIE: FRED did not return a CSV for T5YIE)",
+    "yields: could not read the latest FRED date (BAMLH0A0HYM2: FRED did not return a CSV for BAMLH0A0HYM2; BAMLC0A0CM: FRED did not return a CSV for BAMLC0A0CM; BAMLH0A1HYBB: FRED did not return a CSV for BAMLH0A1HYBB; BAMLH0A3HYC: FRED did not return a CSV for BAMLH0A3HYC; VIXCLS: FRED did not return a CSV for VIXCLS; VXVCLS: FRED did not return a CSV for VXVCLS)"
   ],
   "note": "This file is the heartbeat. status ok means every core daily series is at most 3 business days old and no feed raised an error. A stale or error state fails the GitHub Actions job after the latest good files have been written."
 }
