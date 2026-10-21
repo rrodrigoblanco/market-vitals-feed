@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-20T18:49:56.856169+00:00",
+  "updatedAt": "2026-10-21T14:14:36.037688+00:00",
   "days": 60,
   "story_version": 3,
   "summary": "As of October 19, 2026, junk-bond spreads are 3.29 percentage points, +0.18 percentage points over five trading days, and the junk-versus-safe gap is 2.42 percentage points. VIX is 18.44 and the 3-month VIX is 19.60, so near-term fear is below the 3-month reading. The Nasdaq-100 is -5.4 percent from its trailing high, semiconductors are +7.1 percent versus their 200-day average, and 77 percent of the 30-name list is above its own 200-day average.",
@@ -8,12 +8,12 @@
     "HY_OAS": "2026-10-19",
     "VIX": "2026-10-19",
     "QQQ": "2026-10-19",
-    "BAMLH0A0HYM2": "2026-10-19",
-    "BAMLC0A0CM": "2026-10-19",
-    "BAMLH0A1HYBB": "2026-10-19",
-    "BAMLH0A3HYC": "2026-10-19",
-    "VIXCLS": "2026-10-19",
-    "VXVCLS": "2026-10-19"
+    "BAMLH0A0HYM2": "2026-10-20",
+    "BAMLC0A0CM": "2026-10-20",
+    "BAMLH0A1HYBB": "2026-10-20",
+    "BAMLH0A3HYC": "2026-10-20",
+    "VIXCLS": "2026-10-20",
+    "VXVCLS": "2026-10-20"
   },
   "breadth_note": "Breadth is the share of a fixed 30-name large-cap list whose close that day is above its own 200-day average. A name with no print that day is left out. The number is not copied forward onto a later date.",
   "rows": [
