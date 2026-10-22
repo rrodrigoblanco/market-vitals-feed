@@ -1,13 +1,13 @@
 {
-  "updatedAt": "2026-10-21T14:14:36.037688+00:00",
+  "updatedAt": "2026-10-22T08:07:15.503522+00:00",
   "days": 60,
   "story_version": 3,
-  "summary": "As of October 19, 2026, junk-bond spreads are 3.29 percentage points, +0.18 percentage points over five trading days, and the junk-versus-safe gap is 2.42 percentage points. VIX is 18.44 and the 3-month VIX is 19.60, so near-term fear is below the 3-month reading. The Nasdaq-100 is -5.4 percent from its trailing high, semiconductors are +7.1 percent versus their 200-day average, and 77 percent of the 30-name list is above its own 200-day average.",
+  "summary": "As of October 20, 2026, junk-bond spreads are 3.33 percentage points, +0.17 percentage points over five trading days, and the junk-versus-safe gap is 2.46 percentage points. VIX is 17.31 and the 3-month VIX is 18.99, so near-term fear is below the 3-month reading. The Nasdaq-100 is -5.5 percent from its trailing high, semiconductors are +6.5 percent versus their 200-day average, and 70 percent of the 30-name list is above its own 200-day average.",
   "what_would_change_this": "The latest row would turn to GROWTH SCARE if the Nasdaq-100 closed more than 10 percent below its trailing high while junk spreads stayed under 6 percentage points, and it would turn to RISK-OFF if junk spreads reached 6 percentage points or VIX reached 35.",
   "official_as_of": {
-    "HY_OAS": "2026-10-19",
-    "VIX": "2026-10-19",
-    "QQQ": "2026-10-19",
+    "HY_OAS": "2026-10-20",
+    "VIX": "2026-10-20",
+    "QQQ": "2026-10-20",
     "BAMLH0A0HYM2": "2026-10-20",
     "BAMLC0A0CM": "2026-10-20",
     "BAMLH0A1HYBB": "2026-10-20",
@@ -17,20 +17,6 @@
   },
   "breadth_note": "Breadth is the share of a fixed 30-name large-cap list whose close that day is above its own 200-day average. A name with no print that day is left out. The number is not copied forward onto a later date.",
   "rows": [
-    {
-      "date": "2026-07-27",
-      "HY_OAS": 281,
-      "IG_OAS": 81,
-      "HY_IG": 200,
-      "dHY_5d": 12,
-      "VIX": 18.67,
-      "VIX3M": 20.2,
-      "VIX_slope": -1.53,
-      "QQQ_DD": -0.086,
-      "SMH_200d": 0.228,
-      "Breadth": 0.6,
-      "REGIME": "RISK-ON"
-    },
     {
       "date": "2026-07-28",
       "HY_OAS": 284,
@@ -855,6 +841,20 @@
       "QQQ_DD": -0.054,
       "SMH_200d": 0.071,
       "Breadth": 0.767,
+      "REGIME": "RISK-ON"
+    },
+    {
+      "date": "2026-10-20",
+      "HY_OAS": 333,
+      "IG_OAS": 87,
+      "HY_IG": 246,
+      "dHY_5d": 17,
+      "VIX": 17.31,
+      "VIX3M": 18.99,
+      "VIX_slope": -1.68,
+      "QQQ_DD": -0.055,
+      "SMH_200d": 0.065,
+      "Breadth": 0.7,
       "REGIME": "RISK-ON"
     }
   ]
