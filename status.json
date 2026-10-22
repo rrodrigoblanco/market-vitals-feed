@@ -1,8 +1,8 @@
 {
   "status": "ok",
   "fail_job": false,
-  "last_attempt": "2026-10-22T14:14:07Z",
-  "last_success": "2026-10-22T14:14:07Z",
+  "last_attempt": "2026-10-22T23:47:02Z",
+  "last_success": "2026-10-22T23:47:02Z",
   "run_date": "2026-10-22",
   "run_timezone": "America/New_York",
   "stale_after_business_days": 3,
@@ -39,28 +39,28 @@
       "reason": null
     },
     "DGS10": {
-      "as_of": "2026-10-20",
-      "business_days_old": 2,
+      "as_of": "2026-10-21",
+      "business_days_old": 1,
       "stale": false,
       "reason": null
     },
     "T5YIE": {
-      "as_of": "2026-10-21",
-      "business_days_old": 1,
+      "as_of": "2026-10-22",
+      "business_days_old": 0,
       "stale": false,
       "reason": null
     }
   },
   "weekly": {
     "WALCL": {
-      "as_of": "2026-10-14",
-      "calendar_days_old": 8,
+      "as_of": "2026-10-21",
+      "calendar_days_old": 1,
       "stale": false,
       "reason": null
     },
     "WRESBAL": {
-      "as_of": "2026-10-14",
-      "calendar_days_old": 8,
+      "as_of": "2026-10-21",
+      "calendar_days_old": 1,
       "stale": false,
       "reason": null
     }
