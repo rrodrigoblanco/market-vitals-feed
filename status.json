@@ -1,9 +1,9 @@
 {
   "status": "ok",
   "fail_job": false,
-  "last_attempt": "2026-10-24T07:45:18Z",
-  "last_success": "2026-10-24T07:45:18Z",
-  "run_date": "2026-10-24",
+  "last_attempt": "2026-10-25T07:55:36Z",
+  "last_success": "2026-10-25T07:55:36Z",
+  "run_date": "2026-10-25",
   "run_timezone": "America/New_York",
   "stale_after_business_days": 3,
   "weekly_stale_after_calendar_days": 12,
@@ -54,13 +54,13 @@
   "weekly": {
     "WALCL": {
       "as_of": "2026-10-21",
-      "calendar_days_old": 3,
+      "calendar_days_old": 4,
       "stale": false,
       "reason": null
     },
     "WRESBAL": {
       "as_of": "2026-10-21",
-      "calendar_days_old": 3,
+      "calendar_days_old": 4,
       "stale": false,
       "reason": null
     }
