@@ -1,36 +1,22 @@
 {
-  "updatedAt": "2026-10-28T17:39:37.038008+00:00",
+  "updatedAt": "2026-10-29T18:05:13.598292+00:00",
   "days": 60,
   "story_version": 3,
-  "summary": "As of October 27, 2026, junk-bond spreads are 3.18 percentage points, -0.15 percentage points over five trading days, and the junk-versus-safe gap is 2.30 percentage points. VIX is 17.52 and the 3-month VIX is 19.57, so near-term fear is below the 3-month reading. The Nasdaq-100 is -5.1 percent from its trailing high, semiconductors are +7.9 percent versus their 200-day average, and 73 percent of the 30-name list is above its own 200-day average.",
+  "summary": "As of October 28, 2026, junk-bond spreads are 3.14 percentage points, -0.13 percentage points over five trading days, and the junk-versus-safe gap is 2.28 percentage points. VIX is 16.91 and the 3-month VIX is 19.22, so near-term fear is below the 3-month reading. The Nasdaq-100 is -4.5 percent from its trailing high, semiconductors are +9.6 percent versus their 200-day average, and 73 percent of the 30-name list is above its own 200-day average.",
   "what_would_change_this": "The latest row would turn to GROWTH SCARE if the Nasdaq-100 closed more than 10 percent below its trailing high while junk spreads stayed under 6 percentage points, and it would turn to RISK-OFF if junk spreads reached 6 percentage points or VIX reached 35.",
   "official_as_of": {
-    "HY_OAS": "2026-10-27",
-    "VIX": "2026-10-27",
-    "QQQ": "2026-10-27",
-    "BAMLH0A0HYM2": "2026-10-27",
-    "BAMLC0A0CM": "2026-10-27",
-    "BAMLH0A1HYBB": "2026-10-27",
-    "BAMLH0A3HYC": "2026-10-27",
-    "VIXCLS": "2026-10-27",
-    "VXVCLS": "2026-10-27"
+    "HY_OAS": "2026-10-28",
+    "VIX": "2026-10-28",
+    "QQQ": "2026-10-28",
+    "BAMLH0A0HYM2": "2026-10-28",
+    "BAMLC0A0CM": "2026-10-28",
+    "BAMLH0A1HYBB": "2026-10-28",
+    "BAMLH0A3HYC": "2026-10-28",
+    "VIXCLS": "2026-10-28",
+    "VXVCLS": "2026-10-28"
   },
   "breadth_note": "Breadth is the share of a fixed 30-name large-cap list whose close that day is above its own 200-day average. A name with no print that day is left out. The number is not copied forward onto a later date.",
   "rows": [
-    {
-      "date": "2026-08-04",
-      "HY_OAS": 273,
-      "IG_OAS": 78,
-      "HY_IG": 195,
-      "dHY_5d": -11,
-      "VIX": 16.5,
-      "VIX3M": 19.34,
-      "VIX_slope": -2.84,
-      "QQQ_DD": -0.03,
-      "SMH_200d": 0.272,
-      "Breadth": 0.633,
-      "REGIME": "RISK-ON"
-    },
     {
       "date": "2026-08-05",
       "HY_OAS": 275,
@@ -854,6 +840,20 @@
       "VIX_slope": -2.05,
       "QQQ_DD": -0.051,
       "SMH_200d": 0.079,
+      "Breadth": 0.733,
+      "REGIME": "RISK-ON"
+    },
+    {
+      "date": "2026-10-28",
+      "HY_OAS": 314,
+      "IG_OAS": 86,
+      "HY_IG": 228,
+      "dHY_5d": -13,
+      "VIX": 16.91,
+      "VIX3M": 19.22,
+      "VIX_slope": -2.31,
+      "QQQ_DD": -0.045,
+      "SMH_200d": 0.096,
       "Breadth": 0.733,
       "REGIME": "RISK-ON"
     }
