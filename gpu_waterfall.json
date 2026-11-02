@@ -1,46 +1,84 @@
 {
-  "updatedAt": "2026-10-26T19:42:54.685684+00:00",
+  "updatedAt": "2026-11-02T22:35:18.275500+00:00",
   "rates_usd_per_hr": {
     "B200": {
-      "low": 3.75,
-      "typical": 8.19,
-      "source": "Packet.ai $3.75/hr dynamic on-demand (Oct 2026); median $8.19/hr across providers per uvik.net; Nebius $8.50, Together AI $8.19, Lambda $6.69/hr for 8x config"
+      "low": 5.5,
+      "typical": 6.69,
+      "source": "Lambda Labs $6.69/hr 8x B200 SXM (Nov 2026); CoreWeave $8.60/hr (8x HGX B200 node); Together AI $8.19/hr on-demand GPU clusters; market floor ~$5.50-6.00/hr"
     },
     "H200": {
-      "low": 2.0,
+      "low": 3.59,
       "typical": 5.4,
-      "source": "Nebius spot $2.00/hr, on-demand $5.40/hr (Oct 2026); CoreWeave $6.31/hr; Together AI $5.99/hr on-demand; RunPod $3.59/hr"
+      "source": "RunPod Community $3.59/hr; Nebius $5.40/hr on-demand (post-Oct 2026 hike); CoreWeave $6.31/hr (8x HGX node); Together AI $5.99/hr on-demand clusters; Vast.ai spot ~$2.63-3.99/hr"
     },
     "H100": {
-      "low": 0.95,
+      "low": 1.99,
       "typical": 3.99,
-      "source": "Vast.ai marketplace floor ~$1.49-1.79/hr (Sep 2026); Nebius spot from $0.95/hr; typical on-demand: Lambda $3.99-4.29/hr, Together AI $3.99/hr, RunPod $2.89/hr PCIe; CoreWeave $6.16/hr (8-GPU node)"
+      "source": "Vast.ai spot floor ~$1.11-2.27/hr; RunPod Community $2.69/hr; Together AI preemptible $1.99/hr; Lambda $3.99/hr (8x SXM); Nebius $4.50/hr; CoreWeave $6.16/hr (8x HGX); market median ~$3.99-4.50/hr on-demand"
     },
     "A100_80GB": {
-      "low": 0.39,
-      "typical": 1.59,
-      "source": "Vast.ai spot from $0.39-0.47/hr (Oct 2026); RunPod $1.39/hr PCIe Secure, $1.59/hr SXM; Lambda $2.79/hr (8x); CoreWeave $2.70/hr"
+      "low": 0.4,
+      "typical": 1.99,
+      "source": "Vast.ai spot floor $0.40/hr (8x PCIe), $1.11/hr (1x SXM); RunPod $1.39/hr PCIe; Lambda $2.79/hr (8x SXM); CoreWeave $2.21-2.70/hr; Together AI $1.20/hr (cited); typical on-demand ~$1.99-2.79/hr"
     },
     "L40S": {
-      "low": 0.47,
-      "typical": 0.99,
-      "source": "Vast.ai from $0.47/hr; RunPod $0.79-0.99/hr; Spheron $0.96/hr; Nebius $1.55/hr; median across providers $1.29/hr per gpus.io"
+      "low": 0.79,
+      "typical": 1.09,
+      "source": "RunPod Community $0.79/hr; RunPod Secure $1.09/hr; Nebius $1.55/hr on-demand; market range ~$0.79-1.55/hr (Nov 2026)"
     }
   },
   "ratios": {
-    "B200_A100": 5.15,
-    "H100_A100": 2.51,
-    "B200_H100": 2.05,
-    "A100_absolute": 1.59
+    "B200_A100": 3.36,
+    "H100_A100": 2.01,
+    "B200_H100": 1.68,
+    "A100_absolute": 1.99
   },
   "depreciation_notes": [
     {
-      "company": "Nebius",
-      "change": "Raised GPU on-demand pricing 17-21% effective Oct 1, 2026: H100 $3.85\u2192$4.50/hr, H200 $4.50\u2192$5.40/hr, B200 $7.15\u2192$8.50/hr, B300 $7.85\u2192$9.50/hr",
-      "source": "usagepricing.com, fool.com, spheron.network (Sep 2026 announcements)"
+      "company": "Microsoft",
+      "change": "Servers and network equipment at 6 years (extended from 4 years previously); Q1 FY2026 depreciation rose 55% to $9.0B from $5.8B YoY",
+      "source": "MSFT 10-K FY2026; multiple sources Oct 2026"
+    },
+    {
+      "company": "Alphabet (Google)",
+      "change": "Servers and network equipment at 6 years (extended from 4 years in 2023); Q1 2026 depreciation $6.48B vs $4.49B YoY",
+      "source": "GOOGL 10-K 2025; earnings releases"
+    },
+    {
+      "company": "Meta",
+      "change": "Extended server/network useful life to 5.5 years in Jan 2025 (from 5 years), reducing 2025 depreciation by ~$2.9B; Q1 2026 server depreciation $4.38B vs $2.63B",
+      "source": "META 10-K; amcompute.com Oct 2026"
+    },
+    {
+      "company": "Amazon",
+      "change": "Shortened subset of servers from 6 years to 5 years in Jan 2025, increasing 2025 depreciation by $1.4B; previously extended from 5 to 6 years in 2024",
+      "source": "AMZN 10-K FY2025; multiple sources"
+    },
+    {
+      "company": "Oracle",
+      "change": "Extended server and network useful life from 5 years to 6 years in fiscal 2025 (Jun 2024), reducing FY2025 operating expenses by $733M",
+      "source": "ORCL 10-K fiscal 2025; amcompute.com"
+    },
+    {
+      "company": "CoreWeave",
+      "change": "Depreciates servers over 6 years per 10-K filings; no recent change reported in last 90 days",
+      "source": "CoreWeave 10-K; gpuinsights.net Oct 2026"
     }
   ],
-  "credit_notes": [],
-  "commentary": "The GPU rental waterfall shows clear tiering as of late October 2026: frontier B200 commands $8-9/hr typical on-demand (with aggressive spot at $3.75-4.78/hr), H200 mid-$5s, workhorse H100 clusters $4/hr, and bottom-tier A100 80GB converging toward $1.50-1.80/hr on managed clouds. Vast.ai marketplace floors remain 50-70% below on-demand for interruptible capacity. Nebius's October price hike (17-21% across Hopper/Blackwell) signals supply remains tight even as Blackwell ramps, supporting the view that utilization and contract backlog justify rate power for neo-clouds.",
+  "credit_notes": [
+    {
+      "note": "CoreWeave raised $8.5B GPU-backed loan in March 2026 (DDTL 4.0) at A3/investment-grade, backed by Meta contracts; cost of debt fell from ~15% (2023) to 5.9% fixed rate; followed by $3.1B (May) and $2.6B (Aug) facilities",
+      "source": "Bloomberg March/April 2026; Forbes June 2026; multiple sources"
+    },
+    {
+      "note": "CoreWeave total debt $35.6B as of June 30 2026, of which $13.6B project loans backed by GPUs and customer contracts; $10.6B due through 2027; CDS markets priced 50% five-year default probability in July 2026",
+      "source": "CoreWeave 10-Q Q2 2026; TechTimes July 30 2026; stocktitan.net Nov 2026"
+    },
+    {
+      "note": "Michael Burry estimated ~$176B of understated depreciation across MSFT/META/GOOGL/AMZN/ORCL from 2026-2028 due to extended useful-life assumptions (Nov 2025 comments); one analysis estimates shortening by 1 year would cut combined net income by $36B in 2027",
+      "source": "Multiple financial analysis sources citing Burry Nov 2025; rallies.ai Oct 30 2026"
+    }
+  ],
+  "commentary": "The current rate waterfall shows dramatic compression: H100 spot rates have collapsed to $1.99-2.69/hr (from $3.99+ on-demand), and even H200 spot is trading at $3.59/hr\u2014below where H100 on-demand sat a year ago. Meanwhile, hyperscalers extended AI server depreciation to 5.5-6 years (saving ~$18B annually per estimates), yet Amazon's partial reversal and Burry's $176B understatement claim signal rising skepticism that GPU economics support 6-year lives. CoreWeave's cost of debt fell from 15% to 5.9% investment-grade in 30 months, but July 2026 CDS at 50% default probability suggests credit markets see the GPU refresh treadmill as unsustainable\u2014the waterfall is real, the accounting may not be.",
   "alerts_enabled": false
 }
