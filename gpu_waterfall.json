@@ -1,79 +1,79 @@
 {
-  "updatedAt": "2026-11-16T23:11:25.223914+00:00",
+  "updatedAt": "2026-11-24T01:28:25.004211+00:00",
   "rates_usd_per_hr": {
     "B200": {
-      "low": 5.25,
-      "typical": 8.24,
-      "source": "Median $8.24 Nov 2026 (Finitizer); Spheron spot $5.25, on-demand $10.17; OCPI-B200 index $9.66 (Nov 14); range $4.11-$16.11"
+      "low": 5.0,
+      "typical": 7.99,
+      "source": "GMI Cloud floor $5.00 Nov 2026; Lambda $7.69-7.99, RunPod $7.99, CoreWeave $8.60 (gpurentalprices.com, thundercompute.com Nov 2026)"
     },
     "H200": {
-      "low": 3.59,
-      "typical": 5.4,
-      "source": "RunPod Community $3.59, Secure $5.29; median $5.40 Nov 2026 (Finitizer); CoreWeave $6.31/GPU (8-GPU node)"
+      "low": 3.2,
+      "typical": 5.06,
+      "source": "GMI Cloud $3.20 Nov 2026; Typical on-demand $5.06/hr Nov 2026 (gpurentalprices.com); Nebius spot $0.79, on-demand $5.40"
     },
     "H100": {
       "low": 1.73,
-      "typical": 4.4,
-      "source": "Vast.ai floor $1.73, median $1.93 (Nov 16); RunPod Community $2.69; median $4.40 across providers (ThunderCompute Nov 13)"
+      "typical": 3.51,
+      "source": "Vast.ai floor $1.73-1.93 Nov 16 2026 (markaicode.com); Typical on-demand $3.51/hr Nov 2026 (gpurentalprices.com); Ornn index settled $2.89 Nov 21 2026"
     },
     "A100_80GB": {
-      "low": 0.71,
-      "typical": 1.79,
-      "source": "Vast.ai $0.71 median; RunPod $1.79; Lambda $2.79 (8-GPU node); Nebius $1.65"
+      "low": 0.27,
+      "typical": 1.49,
+      "source": "Vast.ai spot floor ~$0.27-0.53 (various sources Nov 2026); Typical $1.43-1.75/hr on-demand (Spheron $1.43, Compute Census median $1.75 Oct 2026)"
     },
     "L40S": {
-      "low": 0.38,
+      "low": 0.43,
       "typical": 1.09,
-      "source": "Lium $0.38, RunPod Community $0.79, Secure $1.09; Spheron $0.96; median ~$1.28 (GPUs.io)"
+      "source": "GPU.ai community $0.43/hr, Vast.ai ~$0.47/hr Nov 2026; RunPod on-demand $1.09/hr, median $1.55-1.65 across providers (getdeploying.com, thundercompute.com Nov 2026)"
     }
   },
   "ratios": {
-    "B200_A100": 4.6,
-    "H100_A100": 2.46,
-    "B200_H100": 1.87,
-    "A100_absolute": 1.79
+    "B200_A100": 5.36,
+    "H100_A100": 2.36,
+    "B200_H100": 2.28,
+    "A100_absolute": 1.49
   },
   "depreciation_notes": [
     {
       "company": "Amazon (AMZN)",
-      "change": "Shortened subset of servers from 6 years to 5 years effective Jan 1, 2025, citing AI technology pace; +$1.4B depreciation impact FY2025",
-      "source": "CNBC Nov 2025; 10-K filings; Kaikei-media Sep 2026"
+      "change": "Shortened subset of servers from 6 years to 5 years effective Jan 1 2025, citing 'increased pace of AI technology development'; increased FY2025 depreciation by $1.4B",
+      "source": "wiresift.com, footnotebrief.com, gpuinsights.net Nov 2026"
     },
     {
       "company": "Meta (META)",
-      "change": "Extended server/network useful life to 5.5 years effective Jan 1, 2025; reduced depreciation ~$2.9B in FY2025",
-      "source": "CNBC Nov 2025; Kaikei-media Sep 2026; multiple filings"
+      "change": "Extended most servers and network assets to 5.5 years effective Jan 1 2025, reducing FY2025 depreciation by $2.9B",
+      "source": "gpuinsights.net, valueaddvc.com, wiresift.com Nov 2026"
     },
     {
       "company": "Microsoft (MSFT)",
-      "change": "Extended server/network equipment from 4 to 6 years (2022); no new change disclosed in FY2026 reports",
-      "source": "GPU Insights Oct 2026; Kaikei-media Sep 2026"
+      "change": "Extended servers/network equipment from 4 years to 6 years effective Aug 2022; FY2026 10-K shows 2-6 year range, no new change disclosed in 2026",
+      "source": "universalvalueadvisors.com, useluminix.com Nov 2026"
     },
     {
-      "company": "Google (GOOGL/Alphabet)",
-      "change": "Maintains server useful life up to 6 years; extended in 2023; no new change in 2025-2026 period",
-      "source": "CNBC Nov 2025; Wiresift May 2026"
+      "company": "Alphabet (GOOGL)",
+      "change": "Extended servers and network equipment to 6 years effective 2023; no new change disclosed in 2026 filings",
+      "source": "gpuinsights.net, deeperer.com, useluminix.com Nov 2026"
     },
     {
       "company": "Oracle (ORCL)",
-      "change": "Extended servers/networking from 5 to 6 years effective June 1, 2024 (start of FY2025); -$733M opex, +$573M net income",
-      "source": "Kaikei-media Sep 2026; GPU Insights Oct 2026"
+      "change": "Extended servers/networking from 5 to 6 years effective FY2025 (June 2024), reducing operating expenses by $733M and increasing net income by $573M; no new change in FY2027 Q1",
+      "source": "kaikei-media.github.io, deeperer.com, useluminix.com Nov 2026"
     }
   ],
   "credit_notes": [
     {
-      "note": "CoreWeave 9.625% 2032 bond yield topped 16% (Nov 6, 2026); 5-yr CDS spiked above 1,289 bps, then eased to ~1,155 bps; $35.6B debt at June 30, 2026",
-      "source": "CNBC Nov 6, 2026; Qz.com Nov 6; multiple sources Nov 2026"
+      "note": "CoreWeave 2032 bonds yielding above 16-17% as of Nov 5-7 2026, up from 9.625% coupon; 5-year CDS spreads peaked above 1,289 bps Nov 5 (12.9% annual premium), eased to ~1,155 bps Nov 6; total debt ~$47B with >$10B due 2027",
+      "source": "Yahoo Finance, CNBC, 247wallst.com, startupfortune.com, superpowerdaily.com Nov 2026"
     },
     {
-      "note": "CoreWeave credit rating B+ (S&P); debt-to-equity 702% (up from 291% YoY); bond prices fell to 79.5 cents/dollar; yields characterized as distressed territory",
-      "source": "CNBC Oct 14, Nov 6-10, 2026; 247wallst Nov 7"
+      "note": "CoreWeave carries ~$25B in GPU-backed debt (Guardian Nov 21 2026); co-founder Brannin McBee stated Nov 18 2026 preference for GPU capex over buying back high-yield debt; company does not intend to issue more parent-level unsecured debt through 2027",
+      "source": "superpowerdaily.com, startupfortune.com Nov 2026"
     },
     {
-      "note": "Nvidia CDS +76% in one month (to ~139 bps); Broadcom +49%; Oracle ~298 bps; broader AI credit stress spreading but hyperscaler levels remain low vs CoreWeave",
-      "source": "CNBC Nov 6, 2026; Qz.com Nov 6"
+      "note": "Michael Burry estimates hyperscalers will understate depreciation by $176B from 2026-2028, putting Oracle earnings overstated by ~27% and Meta by ~21% by 2028, claiming real server life is 2-3 years vs. disclosed 5-6 years",
+      "source": "CNBC, wiresift.com, deeperer.com, yieldtheory.app Nov 2025-2026"
     }
   ],
-  "commentary": "Current spot rates show a dramatic generational cascade: H100 floor has collapsed to $1.73/hr (Vast.ai) while B200 commands $8-10/hr, suggesting prior-gen silicon is repricing faster than hyperscaler 5-6 year depreciation schedules imply. Amazon's Jan 2025 move to shorten AI server life (citing technology pace) directly contradicts Meta's simultaneous extension to 5.5 years\u2014a $4.3B swing in opposite directions on identical hardware. CoreWeave bond yields above 16% and CDS at distressed levels (1,155+ bps) signal lenders are pricing 2-3 year effective GPU lives, not the 6-year book lives, creating a potential $176B industry-wide profit overstatement through 2028 per Burry's estimate.",
+  "commentary": "Current spot rates show a clear waterfall: B200 at $5-8/hr, H200 at $3.20-5.06/hr, H100 at $1.73-3.51/hr, A100 at $0.27-1.75/hr, and L40S (inference-focused Ada) at $0.43-1.65/hr. The H100 rental price compression (down to $2.89-3.51 typical in Nov 2026 from $7+/hr in early 2024) reflects supply coming online, yet CoreWeave's bonds now yield 16-17% and CDS spreads above 1,200 bps, signaling credit markets doubt GPU collateral values can support the debt if depreciation accelerates. Amazon's reversal\u2014shortening a subset of servers from 6 to 5 years citing AI hardware pace\u2014directly contradicts Meta, Microsoft, Google, and Oracle extending lives to 5.5-6 years, creating a $176B earnings gap (per Burry) that hinges on whether Blackwell/Rubin render Hopper economically obsolete faster than the 5-6 year schedules assume.",
   "alerts_enabled": false
 }
