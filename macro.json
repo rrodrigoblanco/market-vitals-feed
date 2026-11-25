@@ -1,29 +1,29 @@
 {
   "story_version": 3,
-  "summary": "As of November 23, 2026, junk-bond spreads are 3.63 percentage points, +0.29 percentage points over five trading days, and the junk-versus-safe gap is 2.66 percentage points. VIX is 26.62 and the 3-month VIX is 25.50, so near-term fear is above the 3-month reading. The Nasdaq-100 is -14.3 percent from its trailing high, semiconductors are -12.4 percent versus their 200-day average, and 60 percent of the 30-name list is above its own 200-day average.",
+  "summary": "As of November 24, 2026, junk-bond spreads are 3.72 percentage points, +0.29 percentage points over five trading days, and the junk-versus-safe gap is 2.74 percentage points. VIX is 26.36 and the 3-month VIX is 25.47, so near-term fear is above the 3-month reading. The Nasdaq-100 is -16.0 percent from its trailing high, semiconductors are -18.8 percent versus their 200-day average, and 57 percent of the 30-name list is above its own 200-day average.",
   "what_would_change_this": "The headline would leave risk-on if junk spreads reached 4.50 percentage points, near-term volatility rose above the 3-month reading by more than half a point, or the Nasdaq-100 fell more than 10 percent below its trailing high.",
-  "what_the_tape_is_saying": "As of November 23, 2026, junk-bond spreads are 3.63 percentage points and are up 0.29 percentage points over five trading days. Investment-grade spreads are up 0.07 percentage points over those same five trading days. The CCC-minus-BB gap is 11.68 percentage points. Of the 0.11 percentage-point move in the all-in junk yield, 0.29 was the credit spread and 0.18 was Treasury rates. The 10-year yield is 4.92 percent as of November 23, 2026 and the 30-year is 5.29 percent as of November 23, 2026, a gap of 0.37 percentage points. Brent is 87.54 dollars a barrel as of November 24, 2026 (-6.01 percent over five trading days), and the curve is backwardation. The 5-year inflation breakeven is 2.11 percent as of November 24, 2026, down 0.15 percentage points over five observations. The 10-year real yield is 2.79 percent as of November 23, 2026. The broad dollar index is 123.60 as of November 20, 2026, +2.25 index points over 20 observations. VIX is 26.62 as of November 23, 2026. The Fed balance sheet is 6.74 trillion dollars as of November 18, 2026, down 12 billion dollars over the latest four weekly observations. Reserve balances are 2.98 trillion dollars as of November 18, 2026, up 17 billion dollars over the latest four weekly observations. Overnight reverse repo is 0.301 billion dollars as of November 24, 2026, down 0.03 billion over the latest four observations.",
+  "what_the_tape_is_saying": "As of November 24, 2026, junk-bond spreads are 3.72 percentage points and are up 0.29 percentage points over five trading days. Investment-grade spreads are up 0.06 percentage points over those same five trading days. The CCC-minus-BB gap is 11.80 percentage points. Of the 0.13 percentage-point move in the all-in junk yield, 0.29 was the credit spread and 0.16 was Treasury rates. The 10-year yield is 4.92 percent as of November 23, 2026 and the 30-year is 5.29 percent as of November 23, 2026, a gap of 0.37 percentage points. Brent is 89.78 dollars a barrel as of November 25, 2026 (-2.36 percent over five trading days), and the curve is an unpublished curve shape. The 5-year inflation breakeven is 2.11 percent as of November 24, 2026, down 0.15 percentage points over five observations. The 10-year real yield is 2.79 percent as of November 23, 2026. The broad dollar index is 123.60 as of November 20, 2026, +2.25 index points over 20 observations. VIX is 26.36 as of November 24, 2026. The Fed balance sheet is 6.74 trillion dollars as of November 18, 2026, down 12 billion dollars over the latest four weekly observations. Reserve balances are 2.98 trillion dollars as of November 18, 2026, up 17 billion dollars over the latest four weekly observations. Overnight reverse repo is 0.301 billion dollars as of November 24, 2026, down 0.03 billion over the latest four observations.",
   "official_as_of": {
-    "HY_OAS": "2026-11-23",
-    "VIX": "2026-11-23",
-    "QQQ": "2026-11-23",
-    "BAMLH0A0HYM2": "2026-11-23",
-    "BAMLC0A0CM": "2026-11-23",
-    "BAMLH0A1HYBB": "2026-11-23",
-    "BAMLH0A3HYC": "2026-11-23",
-    "VIXCLS": "2026-11-23",
-    "VXVCLS": "2026-11-23"
+    "HY_OAS": "2026-11-24",
+    "VIX": "2026-11-24",
+    "QQQ": "2026-11-24",
+    "BAMLH0A0HYM2": "2026-11-24",
+    "BAMLC0A0CM": "2026-11-24",
+    "BAMLH0A1HYBB": "2026-11-24",
+    "BAMLH0A3HYC": "2026-11-24",
+    "VIXCLS": "2026-11-24",
+    "VXVCLS": "2026-11-24"
   },
   "macro": {
-    "updatedAt": "2026-11-25T03:52:39.227687+00:00",
+    "updatedAt": "2026-11-25T16:28:53.193666+00:00",
     "regime": "GROWTH SCARE",
     "risk_lr": 0.5,
-    "headline": "GROWTH SCARE — 4 red, 1 watch",
+    "headline": "GROWTH SCARE — 3 red, 2 watch",
     "advice": "This is an equity drawdown with credit still open. Trim into strength and do not assume it is only a dip.",
     "signals": [
       {
         "signal": "Credit (HY OAS)",
-        "value": "363 bps",
+        "value": "372 bps",
         "grade": "watch",
         "reason": "Junk-bond spreads are no longer low.",
         "trend": "worsening ↑"
@@ -37,67 +37,66 @@
       },
       {
         "signal": "Contagion (HY-IG)",
-        "value": "266 bps",
+        "value": "274 bps",
         "grade": "green",
         "reason": "Junk-vs-safe gap normal — not spreading.",
         "trend": "worsening ↑"
       },
       {
         "signal": "Volatility shape",
-        "value": "slope 1.1",
-        "grade": "red",
+        "value": "slope 0.9",
+        "grade": "watch",
         "reason": "Near-term fear is above the 3-month reading.",
         "trend": "worsening ↑"
       },
       {
         "signal": "Nasdaq drawdown",
-        "value": "-14.3%",
+        "value": "-16.0%",
         "grade": "red",
         "reason": "Nasdaq is off its high.",
         "trend": "worsening ↑"
       },
       {
         "signal": "Breadth",
-        "value": "60%",
+        "value": "57%",
         "grade": "green",
-        "reason": "60% of the 30-name list is above its own 200-day average.",
+        "reason": "57% of the 30-name list is above its own 200-day average.",
         "trend": "worsening ↑"
       },
       {
         "signal": "Semis vs trend",
-        "value": "-12%",
+        "value": "-19%",
         "grade": "red",
         "reason": "Semis are below their 200-day average.",
         "trend": "worsening ↑"
       }
     ],
     "raw": {
-      "hy_oas": 363,
-      "hy_ig": 266,
-      "vix_slope": 1.12,
-      "qqq_dd": -0.143,
-      "breadth": 0.6,
-      "smh_vs_200dma": -0.124
+      "hy_oas": 372,
+      "hy_ig": 274,
+      "vix_slope": 0.89,
+      "qqq_dd": -0.16,
+      "breadth": 0.567,
+      "smh_vs_200dma": -0.188
     },
     "alerts": [
       "Credit speed (5-day) is RED",
-      "Volatility shape is RED",
       "Nasdaq drawdown is RED",
       "Semis vs trend is RED"
     ],
     "dispersion": {
       "available": true,
       "signal": "Credit dispersion (CCC-BB)",
-      "value": "1168 bps",
-      "value_bp": 1168,
+      "value": "1180 bps",
+      "value_bp": 1180,
       "grade": "gray",
-      "reason": "CCC-BB 1168bps (100th percentile of 784 days since 2023-11-27, z 2.5). 20d 21.",
+      "reason": "CCC-BB 1180bps (100th percentile of 785 days since 2023-11-27, z 2.6). 20d 46.",
       "trend": "worsening ↑",
       "calibration": {
-        "current_bps": 1168,
-        "pctile_1y": 99.6,
-        "pctile_5y": 99.9,
-        "z_252d": 2.5,
+        "current_bps": 1180,
+        "pctile_1y": 100.0,
+        "pctile_5y": 100.0,
+        "z_252d": 2.6,
         "distribution_5y": {
           "min": 529,
           "p10": 568,
@@ -105,11 +104,11 @@
           "median": 719,
           "p75": 765,
           "p90": 856,
-          "max": 1173
+          "max": 1180
         },
-        "n_days": 784,
+        "n_days": 785,
         "window_start": "2023-11-27",
-        "window_end": "2026-11-23",
+        "window_end": "2026-11-24",
         "window_note": "pctile_5y and distribution_5y keep the names the dashboard already reads. The numbers are the full FRED sample still on file, not a five-year window."
       },
       "interpretation": "BROADENING. CCC and BB are both widening, so stress is climbing from the weakest junk into better junk. BB's level is elevated, but investment-grade spreads are calm, so this stays BROADENING and is not called SYSTEMIC. The high-yield minus investment-grade gap is widening.",
@@ -117,14 +116,14 @@
       "alerts_enabled": false,
       "alert": false,
       "raw": {
-        "bb_oas": 219,
-        "ccc_oas": 1387,
-        "ccc_bb": 1168,
-        "ccc_bb_5d": 54,
-        "ccc_bb_20d": 21,
-        "bb_20d": 21,
-        "ccc_20d": 42,
-        "hy_20d": 33
+        "bb_oas": 225,
+        "ccc_oas": 1405,
+        "ccc_bb": 1180,
+        "ccc_bb_5d": 55,
+        "ccc_bb_20d": 46,
+        "bb_20d": 38,
+        "ccc_20d": 84,
+        "hy_20d": 54
       }
     }
   }
